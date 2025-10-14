@@ -56,6 +56,24 @@ plot(elevation2)
 cl <- colorRampPalette(c("red", "orange", "yellow"))(3)
 plot(densitymap, col=cl)
 
-cl <- colorRampPalette(c("red", "orange", "yellow"))(10)
+l <- colorRampPalette(c("red", "orange", "yellow"))(10)
 plot(densitymap, col=cl)
+
+cl <- colorRampPalette(c("red", "orange", "yellow"))(100)
+plot(densitymap, col=cl)
+
+#R colours are here https://r-charts.com/colors/ 
+
+# Exercise: change the color ramp palette using different colors
+
+clnew <- colorRampPalette(c("darkgoldenrod", "darkorchid", "darkseagreen"))(3)
+plot(densitymap, col=clnew)
+
+# Exrcise: build a multiframe and plot the densitymap with two different color ramp palettes one ontop of the other
+par(mfrow=c(2,1))
+cl <- colorRampPalette(c("red", "orange", "yellow"))(100)
+plot(densitymap, col=cl)
+clnew <- colorRampPalette(c("darkgoldenrod", "darkorchid", "darkseagreen"))(100)
+plot(densitymap, col=clnew)
+
 
