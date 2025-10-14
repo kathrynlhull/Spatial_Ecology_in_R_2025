@@ -36,3 +36,26 @@ plot(elevation2)
 densitymap <- density(bei)
 plot(densitymap)
 points(bei, cex=.2)
+
+########## DAY 2
+# Plotting the maps one beside the other, create multiframe
+par(mfrow=c(1,2))
+plot(elevation2)
+plot(densitymap)
+
+# Exercise: make a multiframe with maps one on top of the other
+par(mfrow=c(2,1))
+plot(elevation2)
+plot(densitymap)
+
+# one friend to clear graphs
+dev.off()
+plot(elevation2)
+
+# Changin colors to maps
+cl <- colorRampPalette(c("red", "orange", "yellow"))(3)
+plot(densitymap, col=cl)
+
+cl <- colorRampPalette(c("red", "orange", "yellow"))(10)
+plot(densitymap, col=cl)
+
