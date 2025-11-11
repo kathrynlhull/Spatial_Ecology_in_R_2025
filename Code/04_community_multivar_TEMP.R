@@ -36,8 +36,16 @@ perc2 = prop2*100
 perc3 = prop3*100
 perc4 = prop4*100
 
+# or you can do it like perdca1= dca1l * 100 / total 
+
+
 # Whole amount of variability (%)
 perc1 + perc2
-# The first two axes explain 715 of variability
+# The first two axes explain 71% of variability
 
 plot(multivar)
+
+#lets try a PCS
+multipca <-pca(dune) 
+plot(multipca)
+
