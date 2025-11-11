@@ -1,6 +1,7 @@
 # Code to estimate the temporal overlap between species
 
 # install.packages("overlap")
+install.packages("overlap")
 
 library(overlap)
 
@@ -14,6 +15,9 @@ kerinci
 summary(kerinci)
 
 kerinci$Timecirc <- kerinci$Time * 2 * pi
+
+#add new column to dataset
+kerinci$circ <- kerinci$Time * 2 * pi
 
 # tiger data
 tiger <- kerinci[kerinci$Sps=="tiger",]
