@@ -20,7 +20,9 @@ dca2 = 3.1166
 dca3 = 1.30055
 dca4 = 1.47888
 
+#get the percentage of the range detected (Explained variability) by each axis
 total = dca1 + dca2 + dca3 + dca4
+# or sum(c(dca1, dca2, dca3, dca4))
 
 # Proportions
 prop1 = dca1/total
