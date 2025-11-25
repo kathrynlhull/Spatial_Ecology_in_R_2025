@@ -1,7 +1,8 @@
 # Code to visualize remote sensing data
 
 # Zenodo set: https://zenodo.org/records/15645465
-# install.packages("imageRy")
+
+install.packages("imageRy")
 #all of the functions of ImageRy start with "im"
 
 library(imageRy)
