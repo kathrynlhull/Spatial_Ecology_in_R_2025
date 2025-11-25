@@ -7,6 +7,7 @@ install.packages("imageRy")
 
 library(imageRy)
 library(terra)
+library(viridis) 
 
 # Listing data inside imageRy
 im.list()
@@ -19,12 +20,17 @@ im.list()
 # https://gisgeography.com/sentinel-2-bands-combinations/
 
 # importing the data
+#b2 is the Blue band
 b2 <- im.import("sentinel.dolomites.b2.tif")
+plot(b2) 
+#this shows blue and green image with green at highest elevations. 
 
+#to create a grayscale image
 cl <- colorRampPalette(c("black", "grey", "light grey")) (100)
 plot(b2, col=cl)
 
 # Exercise: import b3 and plot it with the previous palette
+#b3 is the Green band. Everything absorbing is dark blue. Everything reflecting is in yellow and lighter colours. 
 b3 <- im.import("sentinel.dolomites.b3.tif")
 plot(b3, col=cl)
 
@@ -54,6 +60,10 @@ plot(sentstack[[4]], col=cl)
 
 # Multiframe with different color palette
 par(mfrow=c(2,2))
+#or but im.multiframe function has errors.  Instead use par 
+im.multiframe(1,2)
+plot(b2, col=c1)
+plot(b3, col=cl) 
 
 clb <- colorRampPalette(c("dark blue", "blue", "light blue")) (100)
 plot(b2, col=clb)
