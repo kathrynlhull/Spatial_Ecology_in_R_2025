@@ -61,9 +61,14 @@ plot(sentstack[[4]], col=cl)
 # Multiframe with different color palette
 par(mfrow=c(2,2))
 #or but im.multiframe function has errors.  Instead use par 
+#corrected im.multiframe
+im.multiframe<-function(x,y) {par(mfrow=c(x,y))}
 im.multiframe(1,2)
-plot(b2, col=c1)
-plot(b3, col=cl) 
+plot(b2,col=cl)
+plot(b3,col=cl)
+
+#to show correlation of b2 and b3
+plot(b2,b3)
 
 clb <- colorRampPalette(c("dark blue", "blue", "light blue")) (100)
 plot(b2, col=clb)
@@ -76,7 +81,7 @@ plot(b3, col=clg)
 clr <- colorRampPalette(c("dark red", "red", "pink")) (100)
 plot(b4, col=clr)
 
-# Plotting the NIR band (b8)
+# Plotting the NIR band (b8).  NIR means NEAR INFRARED 
 cln <- colorRampPalette(c("brown", "orange", "yellow")) (100)
 plot(b8, col=cln)
 
