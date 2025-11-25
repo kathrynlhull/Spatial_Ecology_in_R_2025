@@ -110,3 +110,13 @@ plot(b3)
 plot(b4)
 plot(b8)
 
+#Excercise create a multiframe with 1 row and 2 columns, plot one against the other
+#b2  b3 
+#b2  b8
+
+DUCCIO(1,2)
+plot(b2,b3)
+plot(b2,b8)
+
+
+
