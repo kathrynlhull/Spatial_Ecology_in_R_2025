@@ -96,3 +96,17 @@ im.plotRGB(sentstack, r=3, g=2, b=1) # natural color image
 im.plotRGB(sentstack, r=4, g=3, b=2) # false color image
 im.plotRGB(sentstack, r=3, g=4, b=2) # false color image
 im.plotRGB(sentstack, r=3, g=2, b=4) # false color image
+
+
+
+#build your own function for plotting.  Call it DUCCIO  
+DUCCIO<-function(x,y){
+  par(mfrow=c(x,y))}
+
+#Exercise with the funciton DUCCIO, build a multiframe with 2 rows adn 2 columns adn plot all the imported data
+DUCCIO(2,2)
+plot(b2)
+plot(b3)
+plot(b4)
+plot(b8)
+
