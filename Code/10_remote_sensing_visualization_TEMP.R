@@ -4,6 +4,7 @@
 
 install.packages("imageRy")
 #all of the functions of ImageRy start with "im"
+#Library viridis is used to make colour schemes
 
 library(imageRy)
 library(terra)
@@ -118,5 +119,20 @@ DUCCIO(1,2)
 plot(b2,b3)
 plot(b2,b8)
 
+#NOV28:
+#Creating coloured images  (see imageRyhtml)
+#im.plotRGB(x, r, g, b, title = " ")
+#create a stack composed of these bands
+SENT<-c(b2, b3, b4, b8)
+plot(SENT)
 
+#layer 1 = original (from Sentinel-2) b2 = blue
+#layer 2 = original (from Sentinel-2) b3 = green 
+#layer 3 = original (from Sentinel-2) b4 = red
+#layer 4 = original (from Sentinel-2) b8 = NIR
 
+#r=3, g=2, b=2... correspond to layer numbers above
+im.plotRGB(sentstack, r=3, g=2, b=1) # natural color image
+im.plotRGB(sentstack, r=4, g=3, b=2) # false color image
+im.plotRGB(sentstack, r=3, g=4, b=2) # false color image
+im.plotRGB(sentstack, r=3, g=2, b=4) # false color image
