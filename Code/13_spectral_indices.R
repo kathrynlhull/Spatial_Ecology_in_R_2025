@@ -36,18 +36,15 @@ im.plotRGB(m2006, r=2, g=3, b=1)  #good to accentuate bare soil, bare soil becom
 
 dvi1992<-m1992[[1]] - m1992[[2]] 
 dvi2006<-m2006[[1]] - m2006[[2]] 
-
-par(mfrow=c(1,2))
-plot(dvi(1992)
-plot(dvi2006) 
-
-library(virids)
      
 par(mfrow=c(1,2))
-plot(dvi(1992,col=inferno(100))
-plot(dvi2006,col=inferno(100))
+plot(dvi1992, col=inferno(100))
+plot(dvi2006, col=inferno(100))
 
-#calculate NDVI
-ndvi1992<-im.ndvi(m1992,1,2)
+# ndvi
+ndvi1992 = dvi1992 / (m1992[[1]] + m1992[[2]])
+ndvi2006 = dvi2006 / (m2006[[1]] + m2006[[2]])
 
+plot(ndvi1992, col=inferno(100))
+plot(ndvi2006, col=inferno(100))
 
