@@ -1,10 +1,58 @@
 #This is an example of code for the exam
 
 ##How to improt external data in R
+
+The packages needed in this script are the following:
+```r
+library(terra) #managing raster and vector data
+library(imageRy) #analyzing RS data
+```
+
+
 In order to import data in R we should set the working directory: (use "backtick" symbol)
 ```r
-library(terra)
 setwd("C:/Users/kalih/Desktop/SPATIALECOR")
-
+```
 To check for the folder you can make use of:
 ```r
+getwd()
+```
+The import of the data is done by:
+```r
+group<-rast("OrtoBotanico_people.JPG")
+```
+To get info about hte image, digit its name
+group
+```r
+If you receive errors, check that the path is correct and that the image is inside the folder you are using as working directory
+```
+
+##Data Visualization
+In order to plot the image we will use the RGB scheeme:
+
+#layer1 = red wavelength, layer 2= green wavelength layer 3 = blue wavelength
+im.plotRGB(group, r=1, g=2, b=3)
+
+The image is flipped, so I can solve the problem by the flip()function:
+
+group<-flip(group)
+im.plotRGB(group, r=1, g=2, b=3)
+
+The output plot can be exorted by the png() function
+```r
+png("group_photo.png")
+im.plotRGB(group, r=1, g=2, b=3)
+dev.off()
+```
+The output image looks like:
+
+
+Let's invert the bands to create a false colour image:
+```r
+png("group_photo_false.png")
+im.plotRGB(group, r=1, g=2, b=3)
+dev.off()
+```
+The false colour image is something like:
+
+
