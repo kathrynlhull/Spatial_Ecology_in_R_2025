@@ -1,0 +1,10 @@
+#This is an example of code for the exam
+
+##How to improt external data in R
+In order to import data in R we should set the working directory: (use "backtick" symbol)
+```r
+library(terra)
+setwd("C:/Users/kalih/Desktop/SPATIALECOR")
+
+To check for the folder you can make use of:
+```r
