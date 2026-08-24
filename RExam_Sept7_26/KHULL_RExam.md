@@ -61,7 +61,7 @@ mar = c(12, 4, 12, 4) # margins (bottom, left, top, right)
 
 ## True Colour Multi Plot
 
-![True Colour Maps](RExam_Images/Waiparous Basin 1985 to 2022 True Colour.png)   
+![True Colour Maps](RExam_Images/TrueColourPlots.png)   
 
 A True Colour RGB composite stacks red, green and blue bands into a single image for visualization of imagery that gives an intuitive, realistic representation that matches human vision. (Red, green and blue light represent that portion of the electromagnetic spectrum visible to the human eye)- 
 
