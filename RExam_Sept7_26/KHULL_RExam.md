@@ -22,11 +22,14 @@ The primary objectives of this project include:
 
 # 3. Methodology  
 
-##Satellite Imagery acquisition 
+## Satellite Imagery Acquisition 
 Satellite imagery used in this project was obtained from [Google Earth Engine, GEE] (https://earthengine.google.com/). 
 > [!NOTE]
 > JavaScript code utilized in GEE is given in the file Code.js.
 >
-## Waiparous Basin Study Area delineation
+## Waiparous Basin Study Area Delineation
+The Waiparous Basin study area was clipped from the HydroBASINS Level 12 dataset (source: https://www.hydrosheds.org/products/hydrobasins). 
+
+## Setting the Working Directory
 
 
