@@ -7,7 +7,7 @@
 
 The Waiparous Creek watershed, in the headwaters of the greater Bow River Basin, Alberta, Canada, is ecologically significant as it contains among the last remaining critical habitat for an endangered native trout species, Westslope Cutthroat Trout (_Oncorhynchus clarkii lewisi_) (Fisheries and Oceans Canada 2014). Among the threats to this species are logging impacts that contribute sediment into suitable trout streams, negatively impacting their survival, reproduction and habitat suitability. Westslope Cutthroat Trout require cool, well oxygenated water, clean (unconsolidated) gravel substrate, and abundant riparian edge cover and shade. Cumulative logging impacts have accelerated in the Waiparous Creek basin from 2010-2022.  This project aims to visualize, quantify and analyze these impacts by way of vegetation change satellite imagery analysis and land cover classification compared to benchmark reference conditions in 1985. This analysis is validated against human footprint mapping done by the Alberta Biodiversity Monitoring Institute ([ABMI Human Footprint Inventory](https://abmi.ca/abmi-home/what-we-do/land-cover-and-land-use-mapping/human-footprint-mapping.html)). Lastly, a cursory erosion risk assessment is included for cutblocks using terrain analysis tools. 
 
-![Waiparous Basin Study Area Map](RExam_Images/WaiparousBasin_AOI.png)
+![Waiparous Creek Basin Study Area Map](RExam_Images/WaiparousBasin_AOI.png)
 
 # 2. Project Objectives 
 
@@ -26,8 +26,13 @@ The primary objectives of this project include:
 Satellite imagery used in this project was obtained from [Google Earth Engine, GEE] (https://earthengine.google.com/). 
 > [!NOTE]
 > JavaScript code utilized in GEE is given in the file Code.js.
->
-## Waiparous Basin Study Area Delineation
+> [!NOTE]
+> For 1985 and 2010, the GEE Landsat 5 Thematic Mapper (TM) Collection 2, Level-2 dataset was used (ee.ImageCollection, LANDSAT/LT05/C02/T1_L2)
+> For 2016 and 2022, Landsat 8 Operational Land Imager (OLI) / Thermal Infrared Sensor (TIRS) Collection 2, Level-2 dataset was used (ee.ImageCollection, LANDSAT/LC08/C02/T1_L2)
+> The Landsat Missions are part of the U.S. Geological Survey (USGS) National Land Imaging (NLI) Program (https://www.usgs.gov/landsat-missions/landsat-satellite-missions). 
+> Reference data source: https://www.usgs.gov/landsat-missions 
+> 
+## Waiparous Creek Watershed Study Area Delineation
 The Waiparous Basin study area was clipped from the HydroBASINS Level 12 dataset (source: https://www.hydrosheds.org/products/hydrobasins). 
 
 ## Setting the Working Directory
@@ -44,3 +49,4 @@ library(RStoolbox) #Remote sensing image processing and analysis
 library(ggplot2) #Data visualization, custom aesthetics and geometries of charts 
 library(patchwork) #Combines separate ggplot2 plots into a single composite layout
 ````
+# 4. Image Visualization
