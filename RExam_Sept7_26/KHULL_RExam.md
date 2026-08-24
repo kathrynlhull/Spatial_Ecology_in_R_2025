@@ -83,4 +83,7 @@ Reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellit
 
 ## False Colour Multi Plot
 
+![False Colour Maps] (RExam_Images/FC_Plots.png)
+
+
 
