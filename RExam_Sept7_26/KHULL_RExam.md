@@ -83,7 +83,10 @@ Reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellit
 
 ## False Colour Multi Plot
 
-![False Colour Maps] (RExam_Images/FC_Plots.png)
+![False Colour Maps](RExam_Images/FC_Plots.png)
+
+False Colour visualization uses Near-Infrared (NIR)-Red-Green (i.e. NRG). NIR is mapped to the red channel, red is mapped to the green channel and green is mapped to the blue channel. False Colour (NRG) is useful for monitoring vegetation cover and changes in vegetation composition.  Chlorophyll in plants reflect NIR intensely, thus photosynthesizing vegetation shows as red. Deciduous vegetation appear as bright red while coniferous trees, reflect less NIR and appear darker. Areas of bare ground or rock appear cyan or blue as they have low NIR reflection and  
+
 
 
 
