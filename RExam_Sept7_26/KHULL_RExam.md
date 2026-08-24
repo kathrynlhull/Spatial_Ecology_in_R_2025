@@ -23,6 +23,8 @@ The primary objectives of this project include:
 # 3. Methodology  
 
 ## Satellite Imagery Acquisition 
+GoogleEarth Pro The Waiparous Basin study area was 
+
 Satellite imagery used in this project was obtained from [Google Earth Engine, GEE] (https://earthengine.google.com/). 
 > [!NOTE]
 > JavaScript code utilized in GEE is given in the file Code.js.
@@ -50,10 +52,20 @@ library(ggplot2) #Data visualization, custom aesthetics and geometries of charts
 library(patchwork) #Combines separate ggplot2 plots into a single composite layout
 ````
 # 4. Image Visualization
+Multi plot comparisons for 1985, 2010 
+
 ## True Colour Multi Plot
+A True Colour RGB composite stacks red, green and blue bands into a single image for visualization of imagery that gives an intuitive, realistic representation that matches human vision. (Red, green and blue light represent that portion of the electromagnetic spectrum visible to the human eye)- 
 
+For Landsat 5 TM Bands (1985 and 2010 imagery), Red = Band 3, Green = Band 2, and Blue = Band 1
+> Landsat 5 image R code example: 
+````r
+wb_1985 <- rast("WaiparousBasin_1985MASKEDFINAL.tif") # Load the GeoTIFF raster file generated in GEE
+plotRGB(wb_1985, r = 3, g = 2, b = 1, stretch = "lin") # Creates a plot in R using the red, green and blue bands. Stretch="lin" means “linear stretch” to improve visual contrast and brightness of an image.    
+````
+For Landsat 8 Bands  (2016 and 2022 imagery), Red = Band 4, Green = Band 3, Blue = Band 2
+> Landsat 8 image R code example: 
+````r
+plotRGB(wb_2016, r = 4, g = 3, b = 2, stretch = "lin")
+````
 
-For Landsat 5 (1985 and 2010 imagery), Red = Band 3, Green = Band 2, and Blue = Band 1
-R code example: 
-
-For Landsat 8 (2016 and 2022 imagery), Red = Band 4, Green = Band 3, Blue = Band 2
