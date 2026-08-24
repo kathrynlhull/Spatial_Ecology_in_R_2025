@@ -1,1 +1,3 @@
-
+# WAIPAROUS BASIN VEGETATION CHANGE LAND USE ANALYSIS (1985-2022)
+### Spatial Ecology in R (B2111) (2025/2026)
+#### Kathryn Hull 
