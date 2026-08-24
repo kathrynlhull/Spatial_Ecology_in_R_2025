@@ -3,7 +3,7 @@
 # Kathryn Hull
 
 # Satellite imagery source: https://earthengine.google.com/ 
-# Below is the coding for extracting satellite imagery clipped to the Waiparous Creek Subbasin
+# Below is the JavaScript code for downloading satellite imagery clipped to the Waiparous Creek Subbasin
 # Time series shows baseline reference year (1985), year of first logging impact (2010) and subsequent full logging impacts (2016 and 2022)
 # 1985 and 2010 uses Landsat 5 imagery; 2016 and 2022 use Landsat 8 imagery
 # Coding source for cloud masking: https://servir-amazonia.github.io/barbados-training/intro-gee2/processing-cloudmasking-landsat.html 
@@ -182,8 +182,8 @@ Export.image.toDrive({
   maxPixels: 1e9
 });
 
-# Below is the coding for extracting a watercourse (hydrology) layer clipped to the study area
-# Repository source for hydrology data: https://developers.google.com/earth-engine/datasets/catalog/MERIT_Hydro_v1_0_1 
+# Below is the JavaScript Code for extracting a watercourse (hydrology) layer clipped to the study area
+# Hydrology data source: https://developers.google.com/earth-engine/datasets/catalog/MERIT_Hydro_v1_0_1 
 
 // ADDING WATERCOURSES 
 
@@ -207,7 +207,7 @@ Export.image.toDrive({
   fileFormat: 'GeoTIFF'
 });
 
-# Below is the coding for exporting a digital elevation model (DEM) for the study area
+# Below is the JavaScript Code for exporting a digital elevation model (DEM) for the study area
 
 // EXPORT A DIGITAL ELEVATION MODEL (DEM) for the Waiparous Basin AOI 
 
