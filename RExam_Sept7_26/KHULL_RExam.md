@@ -52,6 +52,9 @@ library(ggplot2) #Data visualization, custom aesthetics and geometries of charts
 library(patchwork) #Combines separate ggplot2 plots into a single composite layout
 ````
 # 4. Image Visualization
+> [!NOTE]
+> Complete R coding is given in the file Code.R
+
 Multi plot comparisons for 1985, 2010, 2016 and 2022 were generated for each of the visualizations below. 
 Example R coding to set up a 2 by 2 plot window: 
 ````r
@@ -77,3 +80,7 @@ Landsat 8 Bands  (2016 and 2022 imagery), Red = Band 4, Green = Band 3, Blue = B
 plotRGB(wb_2016, r = 4, g = 3, b = 2, stretch = "lin")
 ````
 Reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites#main-content 
+
+## False Colour Multi Plot
+
+
