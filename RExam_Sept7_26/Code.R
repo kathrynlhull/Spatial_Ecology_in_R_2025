@@ -14,7 +14,7 @@ library(RStoolbox) #Remote sensing image processing and analysis
 library(ggplot2) #Data visualization, custom aesthetics and geometries of charts 
 library(patchwork) #Combines separate ggplot2 plots into a single composite layout
 
-## SET WORKING DATABASE
+## SET WORKING DIRECTORY
 setwd ("C:/Users/kalih/Desktop/Recology/RExam_Images")
 
 ## CREATE COMPOSITE TIME SERIES (1985-2022) OF TRUE COLOUR IMAGES
@@ -512,7 +512,7 @@ roads_percentage <- (road_area_km2 / aoi_area_km2) * 100
 roads_percentage 
 #Roads = 0.52%
 
-# ABMI FOOTPRINT OVERLAY MAPPING
+# ABMI HUMAN FOOTPRINT OVERLAY MAPPING
 
 # Build legend elements and labels
 # Define your full color list
