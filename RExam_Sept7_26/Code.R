@@ -2,8 +2,8 @@
 # Spatial Ecology in R 
 # Kathryn Hull
 
-
-
+# Below is the complete R code for this project
+# Satellite imagery downloaded from GoogleEarth Engine, see related project JavaScript Coding
 
 
 ##  INSTALL R PACKAGES
