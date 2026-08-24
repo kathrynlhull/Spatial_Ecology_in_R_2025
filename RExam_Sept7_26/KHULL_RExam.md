@@ -31,5 +31,16 @@ Satellite imagery used in this project was obtained from [Google Earth Engine, G
 The Waiparous Basin study area was clipped from the HydroBASINS Level 12 dataset (source: https://www.hydrosheds.org/products/hydrobasins). 
 
 ## Setting the Working Directory
-
-
+All imagery generated in GEE was saved to a desktop folder Working Directory, using the setwd () function in R. 
+````md
+setwd("C:/Users/kalih/Desktop/Recology/RExam_Images")
+````
+## R Packages Installed
+````r
+library(imageRy) #Raster Imagery Operations, Vegetation Indices, Image Classification 
+library(terra) #Spatial data analysis with vector and raster data (e.g. satellite imagery, DEM)
+library(viridis) #Data visualization, colour maps and built-in palettes, colourblind friendly
+library(RStoolbox) #Remote sensing image processing and analysis 
+library(ggplot2) #Data visualization, custom aesthetics and geometries of charts 
+library(patchwork) #Combines separate ggplot2 plots into a single composite layout
+````
