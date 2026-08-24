@@ -47,8 +47,8 @@ par(mfrow = c(2, 2))
 mar = c(12, 4, 12, 4)
 
 # 4. Plot each year in True Colour
-# Landsat 5 (1985, 2010): Red=3, Green=2, Blue=1
-# Landsat 8 (2016, 2022): Red=4, Green=3, Blue=2 
+# Landsat 5 TM Bands (1985, 2010): Red=3, Green=2, Blue=1
+# Landsat 8 Bands (2016, 2022): Red=4, Green=3, Blue=2 
 
 # 1985
 plotRGB(wb_1985, r = 3, g = 2, b = 1, stretch = "lin")
