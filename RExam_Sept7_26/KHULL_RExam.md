@@ -50,3 +50,10 @@ library(ggplot2) #Data visualization, custom aesthetics and geometries of charts
 library(patchwork) #Combines separate ggplot2 plots into a single composite layout
 ````
 # 4. Image Visualization
+## True Colour Multi Plot
+
+
+For Landsat 5 (1985 and 2010 imagery), Red = Band 3, Green = Band 2, and Blue = Band 1
+R code example: 
+
+For Landsat 8 (2016 and 2022 imagery), Red = Band 4, Green = Band 3, Blue = Band 2
