@@ -252,6 +252,12 @@ perc2022<- c(61.6, 31.9,6.5)
 twb_luc <- data.frame(class, perc1985, perc2010, perc2016, perc2022)
 ````
 
+| classi | a2015 | a2025 |
+|--- |--- |--- |
+|   1: Suolo nudo |  0.17%  |  9.05%  |
+|   2: Vegetazione media |16.42% |90.01% |
+|   3: Vegetazione sana |83.41% |0.94% |
+ 
  | class                     | perc1985 | perc2010 | perc2016 | perc2022|
  |--- |--- |--- |
  | 1                 forest  |  59.2    |  63.9    | 59.4     |    61.6 |
