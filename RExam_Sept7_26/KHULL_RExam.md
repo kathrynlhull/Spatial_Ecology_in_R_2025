@@ -103,6 +103,6 @@ plotRGB(wb_2022, r = 5, g = 4, b = 3, stretch = "lin") # Creates a False Colour 
 ````
 ## False Colour SWIR Multi Plot
 
-![False Colour Maps](RExam_Images/FCSWIR_REVPlots.png)
+![False Colour SWIR Maps](RExam_Images/FCSWIR_REVPLOTS.png)
 
 False Colour Shortwavelength Infrared (SWIR) 
