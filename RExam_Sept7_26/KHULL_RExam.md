@@ -231,3 +231,32 @@ legend ("bottomright",
 ### Time Series Image Classification for the Waiparous Basin Study Area
 ![Time Series Image Classification Composite](RExam_Images/ImageClassification.png)
 
+# 8. Land Cover Change Analysis
+
+To quantify land cover changes over time in the study area, a simple analysis was done to calculate the relative frequency of each land cover class (i.e., frequency/total). The ncell() total number of cells (pixels) in each raster image was adjusted to exclude blank NA cells. Since the aoi was clipped to the Waiparous Basin, it includes blank NA cells that are not displayed (i.e., those that fall outside of the basin polygon). 
+
+Example R coding: 
+````r
+f1985 <- freq(wb_1985cset) # Determine the frequency of each of the three set cover types from the classification analysis above for the 1985 raster image
+ncell1985_valid <- sum(f1985$count) # Determine the valid total number of cells in the aoi by summing only the column with the cell counts from the frequency table to exclude blank NA cells.
+perc1985 = freq(wb_1985cset) * 100 / ncell1985_valid # Determine the cover class percentages for 1985
+#Repeat above coding for 2010, 2016 and 2022
+````
+Cover class percentages from this analysis were then combined into a data frame and a summary comprehensive table:
+````r
+class <- c("forest", "meadow","river/human bareground")
+perc1985<- c(59.2,31.4,9.5)
+perc2010 <- c(63.9,30.6,5.4)
+perc2016 <- c(59.4, 26.9,13.7)
+perc2022<- c(61.6, 31.9,6.5)
+twb_luc <- data.frame(class, perc1985, perc2010, perc2016, perc2022)
+````
+
+  class perc1985 perc2010 perc2016 perc2022
+1                 forest     59.2     63.9     59.4     61.6
+2                 meadow     31.4     30.6     26.9     31.9
+3 river/human bareground      9.5      5.4     13.7      6.5
+ 
+
+
+
