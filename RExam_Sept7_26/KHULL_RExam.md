@@ -260,18 +260,27 @@ twb_luc <- data.frame(class, perc1985, perc2010, perc2016, perc2022)
 | 3 River/Human Bareground  |   9.5    | 5.4      |  13.7    |   6.5   |
  
 The ggplot2 R package was used to display this data in a comparative bar graph format using the predefined "my_colours" colour scheme. 
+References: https://ggplot2.tidyverse.org/; https://r4ds.hadley.nz/data-visualize; https://r-charts.com/ranking/bar-plot-ggplot2/; https://ggplot2.tidyverse.org/reference/ggtheme.html.  
 
 Example R coding:
 ````r
-p1 <- ggplot(twb_luc, aes(x=class, y=perc1985, fill=class)) + 
-  geom_bar(stat="identity") +
+p1 <- ggplot(twb_luc, aes(x=class, y=perc1985, fill=class)) +  
+  geom_bar(stat="identity") + 
   scale_fill_manual(values = my_colours) + 
   ylim(c(0,100)) +
   labs(title = "1985", y = "Percentage (%)", x = "") +
   theme_minimal() +
   theme(legend.position = "none")
-
 # Above code (repeated for each year - p2 [2010], p3 [2016], p4 [2022])
+
+#aes() aesthetics mapping function, where "class" categories are placed on the x axis; "per1985" numerical values from the twb_luc data frame column determine the vertical y axis values for bar heights; fill=class instructs the chart to give a unique fill colour to each category in the class column.
+#geom_bar () function for rending a rectangular bar plot.
+#(stat="identity") tells R to use the exact numeric value in the perc1985 column for the bar heights.
+#scale_fill_manual(values = my_colours) forces the bars to use a custom "my_colours" colour palette
+#ylim(c(0,100)) sets the limits for the Y axis from 0% to 100%
+#theme_minimal() uses a minimalist theme for a clean, uncluttered chart.
+#theme(legend.position = "none") removes the automatically generated colour legend
+
 p1+p2+p3+p4 # develops a composite of the four plots
 ````
 ### Land Cover Class Analysis Visualization Using ggplots2 
