@@ -186,3 +186,44 @@ plot1 + plot2 + plot3 + plot4
 > **Interpretation**
 > The ridgeline plots are similar, except that 2022 RGB bands all have broader curves with longer right tails and less defined peaks indicating less vegetation uniformity. Logging disturbance means less RGB light absorption and increasing RGB light reflection due to reduced healthy vegetation cover and increased bare ground cover.  Red and then blue light is most strongly absorbed by chlorophyll in plants; green is more weakly absorbed. However, ridegeline plots are quite similar overall.  The natural landscape complexity including open grassy meadows and broad gravel floodplains along waterways in the Waiparous basin obscures and dilutes the effects of logging in the plots.
 
+# 7. Image Classification Using False Colour Bands
+
+The im.classify() function from the imageRy R package was used to conduct unsupervised image classification specifying 3 classes of land cover type (based on prior False Colour image visualization above).
+
+Example R coding:
+````r
+wb_1985c <- im.classify(wb_1985_subset, num_clusters=3) # Used to classify image into 3 land cover classes
+````
+Class clustering is randomly assigned each time this code is run. To allow for time series land cover classification comparison, classes were manually assigned as follows: Forest=1 (represents coniferous forest); Meadow=2 (represents natural open meadows and regenerating cutblocks); River/Human Bareground =3 (includes new cutblocks, roadways, and gravel riverbeds). 
+
+Example R coding to set class numbering assignment, with numbers in [] varying based on random im.classify() function above:
+````r
+wb_1985cset <- wb_1985c
+wb_1985cset[wb_1985c == 2] <- 1  # Set Forest to 1 
+wb_1985cset[wb_1985c == 3] <- 2  # Set Meadow to 2
+wb_1985cset[wb_1985c == 1] <- 3  # Set RIVER/HUMAN BAREGRND to 3
+````  
+A consistent colour palette was defined for image classification using this coding:
+````r
+my_colours <- c("darkgreen", "cornsilk4", "yellow") # c(Forest, Meadow, River/Human Bareground)
+````
+A two by two grid with an outer margin for the legend text was used to plot classified images from all years using the colour scheme legend above.
+````r
+par(mfrow = c(2, 2)) # Set up the plotting window  (2 rows, 2 columns)
+mar = c(2, 4, 4, 4) # mar = c(bottom, left, top, right)
+oma= c(12, 4, 4, 4) # oma = c(bottom, left, top, right), outer margin area
+plot(wb_1985cset, col = my_colours, main = "1985", axes = FALSE, legend=FALSE) # 1985 classified image plot
+plot(wb_2010cset, col = my_colours, main = "2010", axes = FALSE, legend=FALSE) # 2010 classified image plot
+plot(wb_2016cset, col = my_colours, main = "2016", axes = FALSE, legend=FALSE) # 2016 classified image plot
+plot(wb_2022cset, col = my_colours, main = "2022", axes = FALSE, legend=FALSE) # 2022 classified image plot
+legend ("bottomright",
+        inset = c(0.5, -0.2),
+        legend = c("Forest", "Meadow", "River/Human Bareground"), 
+        fill = my_colours, 
+        horiz = FALSE,     # horizontal legend
+        bty = "n",         # No border
+        cex = 0.8,         # Makes text larger
+        xpd = TRUE)        # ALLOWS DRAWING OUTSIDE ALL PLOTS
+````
+![Time Series Image Classification Composite](RExam_Images/ImageClassification.png)
+
