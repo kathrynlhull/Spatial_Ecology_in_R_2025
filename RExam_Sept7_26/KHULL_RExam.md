@@ -159,3 +159,7 @@ im.ridgeline(ndvi_stack, scale=2)+
 ![NDVI Stacked Ridgeline Plot](RExam_Images/NDVI_RidgelineStack.png)
 Interpretation: NDVI curves differ slightly with the 2022 plot having a more gradually sloping right tail due to logging activities increasing open meadow and young (regenerating) forest composition on the landscape. Broader curves indicate a higher diversity in land cover types whereas narrow curves indicate more vegetation uniformity.  
 
+# 6. RGB Imagery and Ridgeline Plot Time Series Analysis 
+
+![RGB Ridgeline Time Series](RExam_Images/Timeseries_RidgelineRGB.png)
+
