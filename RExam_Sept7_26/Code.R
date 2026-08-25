@@ -212,7 +212,7 @@ plot1 + plot2 + plot3 + plot4
 #Interpretation: 2022 bands all have curves with longer right tails and less defined peaks
 #Less RGB light absorption and increasing reflection due to logging disturbance. 
 #Red and then blue light is most strongly absorbed by plants; green is more weakly absorbed.  
-#Landscape compexity obscures and dilutes effects of logging (natural meadows etc.)
+#Landscape complexity obscures and dilutes effects of logging (natural meadows etc.)
 
 # Print final plot to PDF
 dev.copy2pdf(file="RGB 1985 and 2022 Imagery and Ridgeline Plots.pdf")
