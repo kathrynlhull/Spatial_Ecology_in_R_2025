@@ -35,7 +35,7 @@ Satellite imagery used in this project was obtained from [Google Earth Engine, G
 > Reference data source: https://www.usgs.gov/landsat-missions 
 > 
 ## Waiparous Creek Watershed Study Area Delineation
-The Waiparous Basin study area was clipped from the HydroBASINS Level 12 dataset (source: https://www.hydrosheds.org/products/hydrobasins). 
+The Waiparous Basin study area (area of interest - aoi) was clipped from the HydroBASINS Level 12 dataset (source: https://www.hydrosheds.org/products/hydrobasins). 
 
 ## Setting the Working Directory
 All imagery generated in GEE was saved to a desktop folder Working Directory, using the setwd () function in R. 
@@ -55,6 +55,11 @@ library(patchwork) #Combines separate ggplot2 plots into a single composite layo
 > [!NOTE]
 > Complete R coding is given in the file Code.R
 
+Prior to image visualization, GeoTiff raster files for each year generated in GEE were loaded in r. 
+Example:
+````r
+wb_1985 <- rast("WaiparousBasin_1985MASKEDFINAL.tif") # Loads the 1985 Waiparous Basin aoi GeoTIFF raster file generated in GEE
+````
 Multi plot comparisons for 1985, 2010, 2016 and 2022 were generated for each of the visualizations below. 
 Example R coding to set up a 2 by 2 plot window: 
 ````r
@@ -69,13 +74,12 @@ mar = c(12, 4, 12, 4) # margins (bottom, left, top, right)
 A True Colour RGB composite stacks red, green and blue bands into a single image for visualization of imagery that gives an intuitive, realistic representation that matches human vision. (Red, green and blue light represent that portion of the electromagnetic spectrum visible to the human eye)- 
 
 Landsat 5 TM Bands (1985 and 2010 imagery), Red = Band 3, Green = Band 2, and Blue = Band 1
-> Landsat 5 image R code example: 
+> Landsat 5 True Colour image R code example: 
 ````r
-wb_1985 <- rast("WaiparousBasin_1985MASKEDFINAL.tif") # Load the GeoTIFF raster file generated in GEE
-plotRGB(wb_1985, r = 3, g = 2, b = 1, stretch = "lin") # Creates a plot in R using the red, green and blue bands. Stretch="lin" means “linear stretch” to improve visual contrast and brightness of an image.    
+plotRGB(wb_1985, r = 3, g = 2, b = 1, stretch = "lin") # Creates a True Colour RGB plot in R using the red, green and blue bands. Stretch="lin" means “linear stretch” to improve visual contrast and brightness of an image.    
 ````
 Landsat 8 Bands  (2016 and 2022 imagery), Red = Band 4, Green = Band 3, Blue = Band 2
-> Landsat 8 image R code example: 
+> Landsat 8 True Colour image R code example: 
 ````r
 plotRGB(wb_2016, r = 4, g = 3, b = 2, stretch = "lin")
 ````
@@ -85,8 +89,15 @@ Reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellit
 
 ![False Colour Maps](RExam_Images/FC_Plots.png)
 
-False Colour visualization uses Near-Infrared (NIR)-Red-Green (i.e. NRG). NIR is mapped to the red channel, red is mapped to the green channel and green is mapped to the blue channel. False Colour (NRG) is useful for monitoring vegetation cover and changes in vegetation composition.  Chlorophyll in plants reflect NIR intensely, thus photosynthesizing vegetation shows as red. Deciduous vegetation appear as bright red while coniferous trees, reflect less NIR and appear darker. Areas of bare ground or rock appear cyan or blue as they have low NIR reflection and  
+False Colour visualization uses Near-Infrared (NIR)-Red-Green (i.e. NRG) wavelength light bands (channels). NIR is mapped to the red channel, red is mapped to the green channel and green is mapped to the blue channel. False Colour (NRG) is useful for monitoring vegetation cover and changes in vegetation composition.  Chlorophyll in plants reflect NIR intensely, thus photosynthesizing vegetation shows as red. Deciduous vegetation appear as bright red while coniferous trees, reflect less NIR and appear darker. Grassland/shrubland open meadows appear as pink or light red. Areas of bare ground or rock appear cyan or blue as they have low NIR reflection and reflect moderately across all displayed bands. Clear and clean water bodies appear black as all radiation in the spectral range is absorbed. 
 
-
-
-
+Landsat 5 TM Bands (1985 and 2010 imagery), NIR = Band 4, Red = Band 3, Green = Band 2
+> Landsat 5 False Colour NRG image R code example: 
+````r
+plotRGB(wb_1985, r = 4, g = 3, b = 2, stretch = "lin") # Creates a False Colour NRG plot in R where red channel = NIR, green channel = Red, Blue channel = Green
+````
+Landsat 8 Bands  (2016 and 2022 imagery), NIR = Band 5, Red = Band 4, Green = Band 3
+> Landsat 8 False Colour image R code example: 
+````r
+plotRGB(wb_2022, r = 5, g = 4, b = 3, stretch = "lin")  Creates a False Colour NRG plot in R where red channel = NIR, green channel = Red, Blue channel = Green
+````
