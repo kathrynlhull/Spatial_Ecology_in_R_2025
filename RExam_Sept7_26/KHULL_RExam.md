@@ -99,5 +99,9 @@ plotRGB(wb_1985, r = 4, g = 3, b = 2, stretch = "lin") # Creates a False Colour 
 Landsat 8 Bands  (2016 and 2022 imagery), NIR = Band 5, Red = Band 4, Green = Band 3
 > Landsat 8 False Colour image R code example: 
 ````r
-plotRGB(wb_2022, r = 5, g = 4, b = 3, stretch = "lin")  Creates a False Colour NRG plot in R where red channel = NIR, green channel = Red, Blue channel = Green
+plotRGB(wb_2022, r = 5, g = 4, b = 3, stretch = "lin") # Creates a False Colour NRG plot in R where red channel = NIR, green channel = Red, Blue channel = Green
 ````
+## False Colour SWIR Multi Plot
+
+![False Colour Maps](RExam_Images/FCSWIR_Plots.png)
+
