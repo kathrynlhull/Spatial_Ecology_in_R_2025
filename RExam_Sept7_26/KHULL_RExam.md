@@ -90,7 +90,8 @@ Reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellit
 
 ![False Colour Maps](RExam_Images/FC_Plots.png)
 
-False Colour visualization uses Near-Infrared (NIR)-Red-Green (i.e. NRG) wavelength light bands (channels). NIR is mapped to the red channel, red is mapped to the green channel and green is mapped to the blue channel. False Colour (NRG) is useful for monitoring vegetation cover and changes in vegetation composition.  Chlorophyll in plants reflect NIR intensely, thus photosynthesizing vegetation shows as red. Deciduous vegetation appear as bright red while coniferous trees, reflect less NIR and appear darker. Grassland/shrubland open meadows appear as pink or light red. Areas of bare ground or rock appear cyan or blue as they have low NIR reflection and reflect moderately across all displayed bands. Clear and clean water bodies appear black as all radiation in the spectral range is absorbed. 
+> **Interpretation**
+> False Colour visualization uses Near-Infrared (NIR)-Red-Green (i.e. NRG) wavelength light bands (channels). NIR is mapped to the red channel, red is mapped to the green channel and green is mapped to the blue channel. False Colour (NRG) is useful for monitoring vegetation cover and changes in vegetation composition.  Chlorophyll in plants reflect NIR intensely, thus photosynthesizing vegetation shows as red. Deciduous vegetation appear as bright red while coniferous trees, reflect less NIR and appear darker. Grassland/shrubland open meadows appear as pink or light red. Areas of bare ground or rock appear cyan or blue as they have low NIR reflection and reflect moderately across all displayed bands. Clear and clean water bodies appear black as all radiation in the spectral range is absorbed. 
 
 Landsat 5 TM Bands (1985 and 2010 imagery), NIR = Band 4, Red = Band 3, Green = Band 2
 > Landsat 5 False Colour NRG image R code example: 
@@ -106,7 +107,8 @@ plotRGB(wb_2022, r = 5, g = 4, b = 3, stretch = "lin") # Creates a False Colour 
 
 ![False Colour SWIR Maps](RExam_Images/FCSWIR_REVPLOTS.png)
 
-**Interpretation: False Colour Shortwavelength Infrared (SWIR) plots are generated using SWIR1 mapped to the red channel, NIR mapped to the green channel and Green mapped to the blue channel. This composite is useful for discriminating between vegetated and non-vegetated surfaces, where moist exposed soil appears darker than dry areas. Healthy plants reflect NIR strongly and absorb SWIR. Dense coniferous vegetation appears dark green; Grassland/shrubland open meadows appear light or lime green. Logged cutblocks appear in shades of pink since bare soil, rocks and wood reflect high levels of SWIR (boosting the red channel) and moderate visible green light (boosting the blue channel). A combination of high red (SWIR) and moderate blue (green visible band) with lower green (NIR) creates the light pink to magenta colour. Watercourses appear purple since water strongly absorbs both SWIR and NIR wavelengths (i.e., red and green are very low) and reflects some visible green light (seen as blue). Shallow gravel riverbeds as in the Waiparous basin or water with suspended sediment adds a signal back into the SWIR/red or green channels, mixing with the blue to create a purplish tone (not pure black).
+> **Interpretation**
+> False Colour Shortwavelength Infrared (SWIR) plots are generated using SWIR1 mapped to the red channel, NIR mapped to the green channel and Green mapped to the blue channel. This composite is useful for discriminating between vegetated and non-vegetated surfaces, where moist exposed soil appears darker than dry areas. Healthy plants reflect NIR strongly and absorb SWIR. Dense coniferous vegetation appears dark green; Grassland/shrubland open meadows appear light or lime green. Logged cutblocks appear in shades of pink since bare soil, rocks and wood reflect high levels of SWIR (boosting the red channel) and moderate visible green light (boosting the blue channel). A combination of high red (SWIR) and moderate blue (green visible band) with lower green (NIR) creates the light pink to magenta colour. Watercourses appear purple since water strongly absorbs both SWIR and NIR wavelengths (i.e., red and green are very low) and reflects some visible green light (seen as blue). Shallow gravel riverbeds as in the Waiparous basin or water with suspended sediment adds a signal back into the SWIR/red or green channels, mixing with the blue to create a purplish tone (not pure black).
 
 Landsat 5 TM Bands (1985 and 2010 imagery), SWIR1 = Band 5, NIR = Band 4, Red = Band 3, Green = Band 2
 > Landsat 5 False Colour NRG image R code example: 
@@ -143,7 +145,8 @@ Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R
 
 ![NDVI Time Series Composite](RExam_Images/NDVI_Plots.png)
 
-This is a colour-blind safe palette that shows clear contrasts for low values from dark/black-purple for bare soil or water to high values from orange or bright yellow for dense broadleaf or grassland vegetation. Note that conifer forests dispaly as deep purples and dark reds (low NDVI values) due to branch shadows.  Needle-shaped leaves create internal canopy gaps and shadowing which reduces the total surface area available to scatter NIR light. 
+> **Interpretation**
+> This is a colour-blind safe palette that shows clear contrasts for low values from dark/black-purple for bare soil or water to high values from orange or bright yellow for dense broadleaf or grassland vegetation. Note that conifer forests dispaly as deep purples and dark reds (low NDVI values) due to branch shadows.  Needle-shaped leaves create internal canopy gaps and shadowing which reduces the total surface area available to scatter NIR light. 
 
 ## 1985 vs 2022 Stacked NDVI Ridgeline Plot
 A stacked NDVI ridgeline plot was generated for the benchmark year (1985) compared to 2022 (post logging). By stacking the plots vertically, NDVI differences can be visualized clearly.  
@@ -157,7 +160,9 @@ im.ridgeline(ndvi_stack, scale=2)+
 ````
 
 ![NDVI Stacked Ridgeline Plot](RExam_Images/NDVI_RidgelineStack.png)
-Interpretation: NDVI curves differ slightly with the 2022 plot having a more gradually sloping right tail due to logging activities increasing open meadow and young (regenerating) forest composition on the landscape. Broader curves indicate a higher diversity in land cover types whereas narrow curves indicate more vegetation uniformity.  
+
+> **Interpretation**
+> NDVI curves differ slightly with the 2022 plot having a more gradually sloping right tail due to logging activities increasing open meadow and young (regenerating) forest composition on the landscape. Broader curves indicate a higher diversity in land cover types whereas narrow curves indicate more vegetation uniformity.  
 
 # 6. RGB Imagery and Ridgeline Plot Time Series Analysis 
 A secondary time series analysis for the 1985 (benchmark) and 2022 (post logging) images was done using RGB imagery (using only the red band to show vegetation cover change) and ridgeline plots where the Red-Green-Blue bands are extracted and combined into a 3-band raster image. 
@@ -178,5 +183,6 @@ plot1 + plot2 + plot3 + plot4
 ````
 
 ![RGB Ridgeline Time Series](RExam_Images/Timeseries_RidgelineRGB.png)
-Interpretation: The ridgeline plots are similar, except that 2022 RGB bands all have broader curves with longer right tails and less defined peaks indicating less vegetation uniformity. Logging disturbance means less RGB light absorption and increasing RGB light reflection due to reduced healthy vegetation cover and increased bare ground cover.  Red and then blue light is most strongly absorbed by chlorophyll in plants; green is more weakly absorbed. However, ridegeline plots are quite similar overall.  The natural landscape complexity including open grassy meadows and broad gravel floodplains along waterways in the Waiparous basin obscures and dilutes the effects of logging in the plots.
+> **Interpretation**
+> The ridgeline plots are similar, except that 2022 RGB bands all have broader curves with longer right tails and less defined peaks indicating less vegetation uniformity. Logging disturbance means less RGB light absorption and increasing RGB light reflection due to reduced healthy vegetation cover and increased bare ground cover.  Red and then blue light is most strongly absorbed by chlorophyll in plants; green is more weakly absorbed. However, ridegeline plots are quite similar overall.  The natural landscape complexity including open grassy meadows and broad gravel floodplains along waterways in the Waiparous basin obscures and dilutes the effects of logging in the plots.
 
