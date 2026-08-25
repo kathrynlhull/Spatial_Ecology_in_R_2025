@@ -116,20 +116,20 @@ mar = c(12, 4, 12, 4)
 # Plot each year in False Colour SWIR
 # Logic: Red channel = SWIR, Green channel = NIR, Blue channel = Green
 
-# 1985 (Landsat 5: Red=B5 (maps SWIR1 to red), Green=B4 (maps NIR to green), Blue=B3 (maps red to blue))
-plotRGB(wb_1985, r = 5, g = 4, b = 3, stretch = "lin")
+# 1985 (Landsat 5: SWIR1 = B5, NIR=B4, Red=B3, Green=B2) 
+plotRGB(wb_1985, r = 5, g = 4, b = 2, stretch = "lin")
 mtext("1985 FC SWIR", side = 3, line =2, adj = 0.15, font = 1.5)
 
-# 2010 (Landsat 5: Red=B5 (maps SWIR1 to red), Green=B4 (maps NIR to green), Blue=B3 (maps red to blue))
-plotRGB(wb_2010, r = 5, g = 4, b = 3, stretch = "lin")
+# 2010 (Landsat 5: SWIR1 = B5, NIR=B4, Red=B3, Green=B2) 
+plotRGB(wb_2010, r = 5, g = 4, b = 2, stretch = "lin")
 mtext("2010 FC SWIR", side = 3, line =2, adj = 0.15, font = 1.5)
 
-# 2016 (Landsat 8: Red=B6 (maps SWIR1 to red), Green=B5 (maps NIR to green), Blue=B4 (maps red to blue))
-plotRGB(wb_2016, r = 6, g =5, b =4, stretch = "lin")
+# 2016 (Landsat 8:SWIR1 = B6, NIR=B5, Red=B4, Green=B3) 
+plotRGB(wb_2016, r = 6, g =5, b =3, stretch = "lin")
 mtext("2016 FC SWIR", side = 3, line =2, adj = 0.15, font = 1.5)
 
-# 2022 (Landsat 8: Red=B6 (maps SWIR1 to red), Green=B5 (maps NIR to green), Blue=B4 (maps red to blue))
-plotRGB(wb_2022, r = 6, g =5, b =4, stretch = "lin")
+# 2022 (Landsat 8:SWIR1 = B6, NIR=B5, Red=B4, Green=B3) 
+plotRGB(wb_2022, r = 6, g =5, b =3, stretch = "lin")
 mtext("2022 FC SWIR", side = 3, line =2, adj = 0.2, font = 1.5)
 
 #Print SWIR False Colour image composite to PDF
