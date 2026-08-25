@@ -162,5 +162,21 @@ Interpretation: NDVI curves differ slightly with the 2022 plot having a more gra
 # 6. RGB Imagery and Ridgeline Plot Time Series Analysis 
 A secondary time series analysis for the 1985 (benchmark) and 2022 (post logging) images was done using RGB imagery (using only the red band to show vegetation cover change) and ridgeline plots where the Red-Green-Blue bands are extracted and combined into a 3-band raster image. 
 
+This analysis uses the imageRy package im.ggplot() and im.ridgeline() functions (https://cran.r-project.org/web/packages/imageRy/refman/imageRy.html). 
+
+R coding:
+````r
+p1985 <- rast("WaiparousBasin_1985MASKEDFINAL.tif") 
+p1985 <- c(p1985[[3]], p1985[[2]], p1985[[1]]) # Landsat 5 Bands: Red=3, Green=2, Blue=1; Extract RGB bands and combine into 3-band raster image
+p2022<- rast("WaiparousBasin_2016_RawBandsL8.tif")
+p2022 <- c(p2022[[4]], p2022[[3]], p2022[[2]]) # Landsat 8 Bands: Red=4, Green=3, Blue=2; Extract RGB bands and combine into 3-band raster image
+plot1 <- im.ggplot(p1985[[1]]) + labs(title = "Single Red Band 1985") # Single band visual using red band to show vegetation cover change
+plot2 <- im.ggplot(p2022[[1]]) + labs(title = "Single Red Band 2022")  # Single band visual using red band to show vegetation cover change
+plot3 <- im.ridgeline(p1985, scale=2) + labs(title = "RGB Ridgeline 1985") # Ridgeline plots show the distribution of pixel values across the RGB bands.
+plot4 <- im.ridgeline(p2022, scale=2) + labs(title = "RGB Ridgeline 2022") # Ridgeline plots show the distribution of pixel values across the RGB bands.
+plot1 + plot2 + plot3 + plot4
+````
+
 ![RGB Ridgeline Time Series](RExam_Images/Timeseries_RidgelineRGB.png)
+Interpretation: The ridgeline plots are similar, except that 2022 RGB bands all have broader curves with longer right tails and less defined peaks indicating less vegetation uniformity. Logging disturbance means less RGB light absorption and increasing RGB light reflection due to reduced healthy vegetation cover and increased bare ground cover.  Red and then blue light is most strongly absorbed by chlorophyll in plants; green is more weakly absorbed. However, ridegeline plots are quite similar overall.  The natural landscape complexity including open grassy meadows and broad gravel floodplains along waterways in the Waiparous basin obscures and dilutes the effects of logging in the plots.
 
