@@ -512,6 +512,10 @@ roads_percentage <- (road_area_km2 / aoi_area_km2) * 100
 roads_percentage 
 #Roads = 0.52%
 
+#Create a tabular dataframe to summarize the above information
+footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cutblock_percentage, total_human_footprint_km2,footprint_percentage)
+footprint_df
+
 # ABMI HUMAN FOOTPRINT OVERLAY MAPPING
 
 # Build legend elements and labels
