@@ -253,6 +253,7 @@ twb_luc <- data.frame(class, perc1985, perc2010, perc2016, perc2022)
 ````
 
  | class                     | perc1985 | perc2010 | perc2016 | perc2022|
+ |--- |--- |--- |
  | 1                 forest  |  59.2    |  63.9    | 59.4     |    61.6 |
  | 2                 meadow  |  31.4    | 30.6     | 26.9     |   31.9  |
  | 3 river/human bareground  |   9.5    | 5.4      |  13.7    |   6.5   |
