@@ -252,13 +252,28 @@ perc2022<- c(61.6, 31.9,6.5)
 twb_luc <- data.frame(class, perc1985, perc2010, perc2016, perc2022)
 ````
 
-
+### Land Cover Class Change Table
  | Class | 1985 (%) | 2010 (%) | 2016 (%) | 2022 (%) |
 |-------|:-------:|-------:|-------:|-------:|
 | 1                 Forest  |  59.2    |  63.9    | 59.4     |    61.6 |
 | 2                 Meadow  |  31.4    | 30.6     | 26.9     |   31.9  |
 | 3 River/Human Bareground  |   9.5    | 5.4      |  13.7    |   6.5   |
  
+The ggplot2 R package was used to display this data in a comparative bar graph format using the predefined "my_colours" colour scheme. 
 
+Example R coding:
+````r
+p1 <- ggplot(twb_luc, aes(x=class, y=perc1985, fill=class)) + 
+  geom_bar(stat="identity") +
+  scale_fill_manual(values = my_colours) + 
+  ylim(c(0,100)) +
+  labs(title = "1985", y = "Percentage (%)", x = "") +
+  theme_minimal() +
+  theme(legend.position = "none")
 
+# Above code (repeated for each year - p2 [2010], p3 [2016], p4 [2022])
+p1+p2+p3+p4 # develops a composite of the four plots
+````
+### Land Cover Class Analysis Visualization Using ggplots2 
+![Land Cover Change Bar Plots](RExam_Images/LandCoverChange_Barplots.png)
 
