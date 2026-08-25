@@ -51,9 +51,10 @@ library(RStoolbox) #Remote sensing image processing and analysis
 library(ggplot2) #Data visualization, custom aesthetics and geometries of charts 
 library(patchwork) #Combines separate ggplot2 plots into a single composite layout
 ````
-# 4. Image Visualization
 > [!NOTE]
-> Complete R coding is given in the file Code.R
+> Complete R coding for all of the below is given in the file Code.R
+
+# 4. Image Visualization
 
 Prior to image visualization, GeoTiff raster files for each year generated in GEE were loaded in r. 
 Example:
@@ -117,3 +118,9 @@ Landsat 8 Bands  (2016 and 2022 imagery), SWIR1 = Band 6, NIR = Band 5, Red = Ba
 ````r
 plotRGB(wb_2022, r = 6, g =5, b =3, stretch = "lin") # Creates a False Colour SWIR plot in R where red channel = SWIR1, green channel = NIR, Blue channel = Green
 ````
+# 5. NDVI Analysis
+
+A Difference Vegetation Index (DVI) is calculated as NIR-Red (plants reflect NIR and absorb red).  A Normalized Difference Vegetation Index (NDVI) enables comparison across dates, sensors and variable light conditions by standardizing vegetation greenness into a -1 to +1 scale. NDVI is calculated as (NIR-red)/(NIR+red). NDVI values approximating 1 represent dense, healthy vegetation); NDVI values approximating 0 represent bare soil and stressed vegetation. 
+
+
+
