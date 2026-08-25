@@ -159,6 +159,7 @@ im.ridgeline(ndvi_stack, scale=2)+
   labs(title = "NDVI 1985-2022 Ridgeline Plot") # 'scale=2' Controls height and visual spacing of the curves to facilitate interpretation of data.
 ````
 
+### NDVI Stacked Ridgeline Plot for the Waiparous Basin Study Area
 ![NDVI Stacked Ridgeline Plot](RExam_Images/NDVI_RidgelineStack.png)
 
 > **Interpretation**
@@ -182,6 +183,7 @@ plot4 <- im.ridgeline(p2022, scale=2) + labs(title = "RGB Ridgeline 2022") # Rid
 plot1 + plot2 + plot3 + plot4
 ````
 
+### RGB Ridgeline Time Series for the Waiparous Basin Study Area
 ![RGB Ridgeline Time Series](RExam_Images/Timeseries_RidgelineRGB.png)
 > **Interpretation**
 > The ridgeline plots are similar, except that 2022 RGB bands all have broader curves with longer right tails and less defined peaks indicating less vegetation uniformity. Logging disturbance means less RGB light absorption and increasing RGB light reflection due to reduced healthy vegetation cover and increased bare ground cover.  Red and then blue light is most strongly absorbed by chlorophyll in plants; green is more weakly absorbed. However, ridegeline plots are quite similar overall.  The natural landscape complexity including open grassy meadows and broad gravel floodplains along waterways in the Waiparous basin obscures and dilutes the effects of logging in the plots.
@@ -226,5 +228,6 @@ legend ("bottomright",
         cex = 0.8,         # Makes text larger
         xpd = TRUE)        # ALLOWS DRAWING OUTSIDE ALL PLOTS
 ````
+### Time Series Image Classification for the Waiparous Basin Study Area
 ![Time Series Image Classification Composite](RExam_Images/ImageClassification.png)
 
