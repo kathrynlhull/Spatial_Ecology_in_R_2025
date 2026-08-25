@@ -222,7 +222,7 @@ plot(wb_2022cset, col = my_colours, main = "2022", axes = FALSE, legend=FALSE) #
 legend ("bottomright",
         inset = c(0.5, -0.2),
         legend = c("Forest", "Meadow", "River/Human Bareground"), 
-        fill = my_colours, 
+        fill = my_colours,  #use custom predefined colour palette 
         horiz = FALSE,     # horizontal legend
         bty = "n",         # No border
         cex = 0.8,         # Makes text larger
@@ -285,4 +285,6 @@ p1+p2+p3+p4 # develops a composite of the four plots
 ````
 ### Land Cover Class Analysis Visualization Using ggplots2 
 ![Land Cover Change Bar Plots](RExam_Images/LandCoverChange_Barplots.png)
+
+# 9. Human Footprint Inventory and Hydrology Overlay Analysis
 
