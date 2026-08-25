@@ -142,7 +142,7 @@ Example NDVI R calcuation for Landsat 8 (2016 / 2022) Imagery:
 ndvi_2022wb <- (wb_2022[["SR_B5"]] - wb_2022 [["SR_B4"]]) / (wb_2022 [["SR_B5"]] + wb_2022 [["SR_B4"]])  #For Landsat 8, B5=NIR, B4=Red
 ````
 Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R package (https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html). 
-
+### NDVI Time Series Composite for the Waiparous Basin Study Area
 ![NDVI Time Series Composite](RExam_Images/NDVI_Plots.png)
 
 > **Interpretation**
