@@ -140,8 +140,11 @@ Example NDVI R calcuation for Landsat 8 (2016 / 2022) Imagery:
 ndvi_2022wb <- (wb_2022[["SR_B5"]] - wb_2022 [["SR_B4"]]) / (wb_2022 [["SR_B5"]] + wb_2022 [["SR_B4"]])  #For Landsat 8, B5=NIR, B4=Red
 ````
 Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R package (https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html). 
+
 ![NDVI Time Series Composite](RExam_Images/NDVI_Plots.png)
 
 This is a colour-blind safe palette that shows clear contrasts for low values from dark/black-purple for bare soil or water to high values from orange or bright yellow for dense broadleaf or grassland vegetation. Note that conifer forests dispaly as deep purples and dark reds (low NDVI values) due to branch shadows.  Needle-shaped leaves create internal canopy gaps and shadowing which reduces the total surface area available to scatter NIR light. 
 
+## 1985 vs 2022 Stacked NDVI Ridgeline Plot
 
+![NDVI Stacked Ridgeline Plot](RExam_Images/NDVI_RidgelineStack.png)
