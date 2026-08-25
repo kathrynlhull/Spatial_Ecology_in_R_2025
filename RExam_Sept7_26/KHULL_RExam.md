@@ -120,7 +120,28 @@ plotRGB(wb_2022, r = 6, g =5, b =3, stretch = "lin") # Creates a False Colour SW
 ````
 # 5. NDVI Analysis
 
-A Difference Vegetation Index (DVI) is calculated as NIR-Red (plants reflect NIR and absorb red).  A Normalized Difference Vegetation Index (NDVI) enables comparison across dates, sensors and variable light conditions by standardizing vegetation greenness into a -1 to +1 scale. NDVI is calculated as (NIR-red)/(NIR+red). NDVI values approximating 1 represent dense, healthy vegetation); NDVI values approximating 0 represent bare soil and stressed vegetation. 
+A Difference Vegetation Index (DVI) is calculated as follows:
+$` DVI = NIR - Red `$   
+Since healthy plants strongly reflect NIR and absorb red light, a DVI quantifies vegetation presence and density. Higher DVI values indicate healthier or denser vegetation; lower values indicate sparse or stressed vegetation. 
 
+A Normalized Difference Vegetation Index (NDVI) enables comparison of vegetation health and density across dates, sensors and variable light conditions by standardizing vegetation greenness into a -1 to +1 scale. 
+
+NDVI is calculated using this formula: 
+NDVI = (NIR − Red) / (NIR + Red)  
+NDVI values approximating 1 represent dense, healthy vegetation); NDVI values approximating 0 represent bare soil and stressed vegetation. 
+
+Example NDVI R calculation for Landsat 5 (1985 / 2010) Imagery:
+````r
+ndvi_1985wb <- (wb_1985[["SR_B4"]] - wb_1985 [["SR_B3"]]) / (wb_1985 [["SR_B4"]] + wb_1985 [["SR_B3"]]) #For Landsat 5, B4=NIR, B3=Red
+````
+
+Example NDVI R calcuation for Landsat 8 (2016 / 2022) Imagery:
+````r
+ndvi_2022wb <- (wb_2022[["SR_B5"]] - wb_2022 [["SR_B4"]]) / (wb_2022 [["SR_B5"]] + wb_2022 [["SR_B4"]])  #For Landsat 8, B5=NIR, B4=Red
+````
+Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R package (https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html). 
+![NDVI Time Series Composite](RExam_Images/NDVI_Plots.png)
+
+This is a colour-blind safe palette that shows clear contrasts for low values from dark/black-purple for bare soil or water to high values from orange or bright yellow for dense broadleaf or grassland vegetation. Note that conifer forests dispaly as deep purples and dark reds (low NDVI values) due to branch shadows.  Needle-shaped leaves create internal canopy gaps and shadowing which reduces the total surface area available to scatter NIR light. 
 
 
