@@ -146,5 +146,16 @@ Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R
 This is a colour-blind safe palette that shows clear contrasts for low values from dark/black-purple for bare soil or water to high values from orange or bright yellow for dense broadleaf or grassland vegetation. Note that conifer forests dispaly as deep purples and dark reds (low NDVI values) due to branch shadows.  Needle-shaped leaves create internal canopy gaps and shadowing which reduces the total surface area available to scatter NIR light. 
 
 ## 1985 vs 2022 Stacked NDVI Ridgeline Plot
+A stacked NDVI ridgeline plot was generated for the benchmark year (1985) compared to 2022 (post logging). By stacking the plots vertically, NDVI differences can be visualized clearly.  
+
+R coding:
+````r
+ndvi_stack <- c(ndvi_1985wb, ndvi_2022wb)
+names(ndvi_stack) <- c("ndvi_1985wb", " ndvi_2022wb")
+im.ridgeline(ndvi_stack, scale=2)+ 
+  labs(title = "NDVI 1985-2022 Ridgeline Plot") # 'scale=2' Controls height and visual spacing of the curves to facilitate interpretation of data.
+````
 
 ![NDVI Stacked Ridgeline Plot](RExam_Images/NDVI_RidgelineStack.png)
+Interpretation: NDVI curves differ slightly with the 2022 plot having a more gradually sloping right tail due to logging activities increasing open meadow and young (regenerating) forest composition on the landscape. Broader curves indicate a higher diversity in land cover types whereas narrow curves indicate more vegetation uniformity.  
+
