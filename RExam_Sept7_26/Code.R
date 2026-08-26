@@ -424,7 +424,7 @@ plot(wb_streams)
 
 # Ensure everything is resampled to the same grid (Landsat 30m)
 # resample () changes the resolution, orientation and pixel grid of the stream raster to match the Landsat data
-# resample () reference (https://developers.google.com/earth-engine/guides/resample)
+# resample () reference (https://www.pmassicotte.com/posts/2022-04-28-changing-spatial-resolution-of-a-raster-with-terra/)
 wbstreams_res <- resample(wb_streams , wb_2016cset, method="near")
 
 # Set all non-stream pixels (0) to NA (invisible)
