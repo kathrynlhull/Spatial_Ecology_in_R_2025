@@ -254,7 +254,7 @@ twb_luc <- data.frame(class, perc1985, perc2010, perc2016, perc2022)
 
 ### Land Cover Class Change Table
  | Class | 1985 (%) | 2010 (%) | 2016 (%) | 2022 (%) |
-|-------|:-------:|-------:|-------:|-------:|
+|-------|:-------:|:-------:|:-------:|:-------:|
 | 1                 Forest  |  59.2    |  63.9    | 59.4     |    61.6 |
 | 2                 Meadow  |  31.4    | 30.6     | 26.9     |   31.9  |
 | 3 River/Human Bareground  |   9.5    | 5.4      |  13.7    |   6.5   |
@@ -339,7 +339,9 @@ footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cu
 > **Interpretation**
 > There is good conformity between mapped ABMI cutblocks and yellow areas of land disturbance (from image classification). In 2022, the ABMI shapefile missed a cutblock in the north extent of the study area, thus the human footprint summary above is an underestimation.
 
+# 10. Terrain Mapping, Cutblock Slope Erosion Risk Analysis
 
+A cursory analysis was done as described below to identify and determine erosion risk for cutblocks based on slope steepness using digital elevation raster data for the study area imported from GEE.  
 
 
 
