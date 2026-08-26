@@ -295,14 +295,13 @@ A hydrology GeoTiff file was generated using JavaScript coding in GEE (see Code.
 The following r code was used to import the Waiparous Basin MERIT stream raster TIF, resample it to match the Landsat 30 m grid, and to create an overlay plot onto the 2016 classified image. 
 ````r
 wb_streams <- rast("WaiparousBasin_MERIT_Streams.tif") #import the Merit Stream GeoTiff from GEE
-wbstreams_res <- resample(wb_streams , wb_2016cset, method="near") # This function from the Terra package transfers the values of the Streams.tif to match the geometry (cell size) of the 30 m Landsat "wb_2016cset" raster object. 
+wbstreams_res <- resample(wb_streams , wb_2016cset, method="near") # This function from the Terra package transfers the values of the Streams.tif to match the geometry (cell size) of the 30 m Landsat "wb_2016cset" raster object.
+#Resample() function coding reference: https://www.pmassicotte.com/posts/2022-04-28-changing-spatial-resolution-of-a-raster-with-terra/
 wbstreams_final <- wbstreams_res 
 wbstreams_final[wbstreams_final ==0] <- NA #Set all non-stream pixels (0) to NA (invisible) 
 plot(wb_2016cset, col = my_colours, main = "2016", axes = FALSE, legend=FALSE) #Axes and legend set to FALSE to hide axis lines, ticks and coordinate labels and to exclude a plot legend
 plot(wbstreams_final, col="cyan", lwd=1.5, add=TRUE, legend=FALSE) #Lwd is the line thickness; Add=true forces R to draw these streams directly on top of the plot above
 ```` 
-Resample() function coding reference: https://www.pmassicotte.com/posts/2022-04-28-changing-spatial-resolution-of-a-raster-with-terra/
-
 Road and cutblock shapefiles for the study area were extracted and clipped to the aoi in QGIS from the Alberta Biological Monitoring Institute (ABMI) Human Footprint Inventory data portal (https://abmi.ca/data-portal/80.html). 
  
 The following R code was used to import ABMI shapefiles into R and to calculate road surface, cutblock area, and total human footprint for the Waiparous Basin study area.
@@ -327,7 +326,7 @@ footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cu
 ````
 ## Human Footprint Summary for the Study Area
  | Road Area (sqKm) | Road Area (%) | Cutblock Area (sqKm) | Cutblock (%) | Total Human Footprint Area (sqKm) | Total Human Footprint Area (%)|
-|:-------:|:-------:|-------:|-------:|-------:|:-------:|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |0.81|0.52|20.0|12.8|20.8|13.3|
 
 
