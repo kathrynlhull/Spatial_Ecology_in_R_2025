@@ -341,7 +341,9 @@ footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cu
 
 # 10. Terrain Mapping, Cutblock Slope Erosion Risk Analysis
 
-A cursory analysis was done as described below to identify and determine erosion risk for cutblocks based on slope steepness using digital elevation raster data for the study area imported from GEE.  
+A cursory analysis was done as described below to identify and determine erosion risk for cutblocks based on slope steepness using Digital Elevation Model (DEM) raster data for the study area imported from GEE. 
+
+
 
 
 
