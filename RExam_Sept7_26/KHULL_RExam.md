@@ -328,7 +328,6 @@ footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cu
 ## Human Footprint Summary for the Study Area
  | Road Area (sqKm) | Road Area (%) | Cutblock Area (sqKm) | Cutblock (%) | Total Human Footprint Area (sqKm) | Total Human Footprint Area (%)|
 |:-------:|:-------:|-------:|-------:|-------:|:-------:|
- road_area_km2 roads_percentage cutblock_footprint cutblock_percentage total_human_footprint_km2
 |0.81|0.52|20.0|12.8|20.8|13.3|
 
 
