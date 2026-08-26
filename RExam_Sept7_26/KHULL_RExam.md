@@ -336,6 +336,10 @@ footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cu
 
 ![Land Cover Change Bar Plots](RExam_Images/ABMI_Overlays.png)
 
+> **Interpretation**
+> There is good conformity between mapped ABMI cutblocks and yellow areas of land disturbance (from image classification). In 2022, the ABMI shapefile missed a cutblock in the north extent of the study area, thus the human footprint summary above is an underestimation.
+
+
 
 
 
