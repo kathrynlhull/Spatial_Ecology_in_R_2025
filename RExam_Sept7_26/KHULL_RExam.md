@@ -294,7 +294,7 @@ A hydrology GeoTiff file was generated using JavaScript coding in GEE (see Code.
 
 The following r code was used to import the Waiparous Basin MERIT stream raster TIF, resample it to match the Landsat 30 m grid, and to create an overlay plot onto the 2016 classified image. 
 ````r
-wb_streams <- rast("WaiparousBasin_MERIT_Streams.tif") #import the Merit Stream GeoTif from GEE
+wb_streams <- rast("WaiparousBasin_MERIT_Streams.tif") #import the Merit Stream GeoTiff from GEE
 wbstreams_res <- resample(wb_streams , wb_2016cset, method="near") # This function from the Terra package transfers the values of the Streams.tif to match the geometry (cell size) of the 30 m Landsat "wb_2016cset" raster object. 
 wbstreams_final <- wbstreams_res 
 wbstreams_final[wbstreams_final ==0] <- NA #Set all non-stream pixels (0) to NA (invisible) 
@@ -304,29 +304,38 @@ plot(wbstreams_final, col="cyan", lwd=1.5, add=TRUE, legend=FALSE) #Lwd is the l
 Resample() function coding reference: https://www.pmassicotte.com/posts/2022-04-28-changing-spatial-resolution-of-a-raster-with-terra/
 
 Road and cutblock shapefiles for the study area were extracted and clipped to the aoi in QGIS from the Alberta Biological Monitoring Institute (ABMI) Human Footprint Inventory data portal (https://abmi.ca/data-portal/80.html). 
-
+ 
 The following R code was used to import ABMI shapefiles into R and to calculate road surface, cutblock area, and total human footprint for the Waiparous Basin study area.
 
 ````r
-roads <- vect("wb_roadsclipped.shp")
-roads <- project(roads, crs(wb_2016cset))
-road_polygons <- buffer(roads, width = 5)
-road_footprint <- aggregate(road_polygons)
-road_area_sqm <- expanse(road_footprint) 
-road_area_km2 <- road_area_sqm / 1e6
-cutblocks_2022ABMI <- vect("wb_cutblockfix_clip.shp")
-cutblocks <- project(cutblocks_2022ABMI, crs(wb_2016cset))
-areas_km2_cutblocks<- expanse(cutblocks, unit = "km")
-cutblock_footprint <- sum(areas_km2_cutblocks)
-total_human_footprint_km2 <- cutblock_footprint + road_area_km2
-aoi_area_km2 <- 155.81651679640706
-footprint_percentage <- (total_human_footprint_km2 / aoi_area_km2) * 100
-cutblock_percentage <- (cutblock_footprint / aoi_area_km2) * 100
-roads_percentage <- (road_area_km2 / aoi_area_km2) * 100
-footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cutblock_percentage, total_human_footprint_km2,footprint_percentage)
+roads <- vect("wb_roadsclipped.shp") #Import the ABMI roads vector shapefile clipped to the aoi in QGIS. vect() is the Terra package function for vector shapefiles.
+roads <- project(roads, crs(wb_2016cset)) #Match the projection of the imported shapefile to that of the "wb_2016cset" raster using the crs() Terra function (Coordinate Reference System).
+road_polygons <- buffer(roads, width = 5) #To calculate road surface area create a road polygon from the line file using a buffer width of 5 m since the average road width in the aoi is approximately 10 m. Uses the buffer() function from the Terra package.
+road_footprint <- aggregate(road_polygons) #Aggregates all of the road polygons into a single polygon; aggregate() function is from the Terra package.
+road_area_sqm <- expanse(road_footprint) #Compute the surface area in square meters for the road_footprint polygon using expanse() function from Terra package.
+road_area_km2 <- road_area_sqm / 1e6 #Convert to square kilometers 
+cutblocks_2022ABMI <- vect("wb_cutblockfix_clip.shp") #Import the ABMI cutblock (timber harvest block) vector shapefile clipped to the aoi in QGIS.  
+cutblocks <- project(cutblocks_2022ABMI, crs(wb_2016cset)) #Match the Coordinate Reference System of the imported shapefile to that of the "wb_2016cset" raster
+areas_km2_cutblocks<- expanse(cutblocks, unit = "km") #Compute the surface area in square km for each individual cutblock polygons
+cutblock_footprint <- sum(areas_km2_cutblocks) #Sum the surface area for the cutblocks 
+total_human_footprint_km2 <- cutblock_footprint + road_area_km2 #Calculate a total human footprint for the study area that sums cutblock and road footprint 
+aoi_area_km2 <- 155.81651679640706 #Area in square km for the Waiparous Basin aoi generated in GEE
+footprint_percentage <- (total_human_footprint_km2 / aoi_area_km2) * 100 #Calculate a total human footprint percentage for the aoi
+cutblock_percentage <- (cutblock_footprint / aoi_area_km2) * 100 #Calculate a total cutblock footprint percentage for the aoi
+roads_percentage <- (road_area_km2 / aoi_area_km2) * 100 #Calculate a total road footprint percentage for the aoi
+footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cutblock_percentage, total_human_footprint_km2,footprint_percentage) #Summarize in a table
 ````
+## Human Footprint Summary for the Study Area
+ | Road Area (sqKm) | Road Area (%) | Cutblock Area (sqKm) | Cutblock (%) | Total Human Footprint Area (sqKm) | Total Human Footprint Area (%)|
+|:-------:|:-------:|-------:|-------:|-------:|:-------:|
+ road_area_km2 roads_percentage cutblock_footprint cutblock_percentage total_human_footprint_km2
+|0.81|0.52|20.0|12.8|20.8|13.3|
 
-### Human Footprint Inventory and Hydrology Overlay Map (Using 2016 and 2022 Classified Images Base Maps)
+
+### Human Footprint Inventory and Hydrology Overlays (Using 2016 and 2022 Classified Images Base Maps)
+> [!NOTE]
+> See the file Code.R for coding used to generate the map composite below.
+
 ![Land Cover Change Bar Plots](RExam_Images/ABMI_Overlays.png)
 
 
