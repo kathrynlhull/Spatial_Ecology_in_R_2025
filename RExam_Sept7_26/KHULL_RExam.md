@@ -294,8 +294,8 @@ A hydrology GeoTiff file was generated using JavaScript coding in GEE (see Code.
 
 The following r code was used to import the Waiparous Basin MERIT stream raster TIF, resample it to match the Landsat 30 m grid, and to create an overlay plot onto the 2016 classified image. 
 ````r
-wb_streams <- rast("WaiparousBasin_MERIT_Streams.tif") 
-wbstreams_res <- resample(wb_streams , wb_2016cset, method="near")
+wb_streams <- rast("WaiparousBasin_MERIT_Streams.tif") #import the Merit Stream GeoTiff from GEE
+wbstreams_res <- resample(wb_streams , wb_2016cset, method="near") # This function adjusts the orientation, 
 wbstreams_final <- wbstreams_res
 wbstreams_final[wbstreams_final ==0] <- NA
 plot(wb_2016cset, col = my_colours, main = "2016", axes = FALSE, legend=FALSE)
