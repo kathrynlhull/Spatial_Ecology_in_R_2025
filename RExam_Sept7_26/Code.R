@@ -571,3 +571,180 @@ legend("bottomleft",
 # Print final composite to PDF
 dev.copy2pdf(file=" Waiparous Basin 2016 and 2022 Classfied with 2022 ABMI Overlay.pdf")
 dev.off() #Closes the viewing panel after having saved image as PNG file
+
+
+##TERRAIN MAPPING, CUTBLOCK SLOPE EROSION RISK ANALYSIS
+
+# Load the DEM (elevation.tif) file generated in GEE
+elevation <- rast("WaiparousBasin_Elevation.tif")
+
+# Calculate Slope in R in degrees
+slope_r <- terrain(elevation, v="slope", unit="degrees")
+
+# Verify the height range
+summary(elevation)
+
+# Use Terra package for coding below
+# Calculate Slope and Aspect from the DEM in order to generate a hillshade map
+# R can calculate slope directly with the elevation file 
+sl <- terrain(elevation, v="slope", unit="radians")
+as <- terrain(elevation, v="aspect", unit="radians")
+
+# Create Hillshade map using Terra shade() function (see https://search.r-project.org/CRAN/refmans/terra/html/shade.html)
+hs <- shade(sl, as, angle = 45, direction = 315) #sl=input slope raster layer in radian units; as=input aspect layer in radian units; angle=45 sets the sun's angle (90 would be directly overhead); direction=315 sets the sun's azimuth direction to NW to cast shadows to SE               
+
+# Plot Hillshade image
+#Use gray colour palette with 100 shades from 0 (black) to 1 (pure white)
+#Exclude legend bar (legend=false)
+plot(hs, col=grey(0:100/100), legend=FALSE, main="Waiparous Basin 3D Image") 
+
+# Define your slope gradient custom color palette with up to 100 colour values
+# colorRampPalette () function reference https://bookdown.org/rdpeng/exdata/plotting-and-color-in-r.html 
+# White (flat) -> Yellow -> Orange -> Red -> Darkred (steep)
+slope_palette <- colorRampPalette(c("white", "gold2", "darkorange", "firebrick1", "firebrick4"))(100)
+
+# Drape the Slope Colour Palette over the hillshade image
+#reference https://cran.r-project.org/web/packages/terra/refman/terra.html#plot 
+# Use 'slope_r' (the slope raster layer in degrees) for the legend to be readable
+plot(slope_r, 
+     col=slope_palette,  
+     alpha = 0.45, #sets transparency to 45% to visualize 3D texture
+     main ="Waiparous Basin 3D Image Custom Slope Palette",
+     plg = list(title = "Slope (Deg)", shrink = 0.8)) #plg=list() list with parameters for drawing the legend. Adds the slope (deg) gradient legend on the right 
+# save image to PNG
+
+plot(slope_r, 
+     col = slope_palette, 
+     alpha = 0.45, 
+     add = TRUE, # Forces R to draw the slope layer directly on the active graphic window without clearing the previous plot
+     plg = list(title = "Slope (Deg)", shrink = 0.8)) # Adds the slope (deg) gradient legend on the right
+lines(cutblocks, col = "magenta1", lwd = 1.5) #adds ABMI cutblock line vector 
+plot(wbstreams_final, col="cyan", lwd=1.5, add=TRUE, legend=FALSE) #adds the stream layer
+lines(roads, col = "black", lwd = 1.5) #adds the ABMI road line vector
+
+legend ("bottomleft", 
+        inset=c(0.2,0),
+        legend = c("Cutblocks (ABMI 2022)", "Watercourse (Merit Hydro)", "Roads (ABMI 2022)"), 
+        col = c("magenta1", "cyan", "black"),
+        lty = c(1, 1, 1), #line type where 1 indicates a solid line
+        lwd = c(1.5, 3, 2), #line width 
+        
+        horiz = FALSE,    # horizontal legend
+        bty = "n",        # No border
+        cex = 1.0,        # Makes text larger
+        xpd = FALSE)      # ALLOWS DRAWING OUTSIDE ALL PLOTS
+
+
+dev.copy2pdf(file=" Waiparous 3D Image with Land Use Features.pdf")
+dev.off() 
+
+#Define slope steepness thresholds so as to identify flat (>10%), moderate (10-15%) and steep (>15%) slopes for erosion risk analysis
+#Reference https://sis.agr.gc.ca/cansis/nsdb/dss/v3/cmp/slope_p.html)
+#Convert the 10% Slope threshold to Degrees
+#Formula: degrees = atan(percent / 100) * (180 / pi)
+#atan() is the arctangent (or inverse tangent function) that takes the decimal ration (rise/run) and calculates the corresponding angle.
+#(180 / pi) converts the angle from radians to degrees. 
+# 10% slope = ~5.71 degrees
+threshold_10pct <- atan(10 / 100) * (180 / pi)
+# 15% slope = ~8.53 degrees
+threshold_15pct <- atan(15 / 100) * (180 / pi)
+
+# Ensure your Slope raster and Cutblock vector match in CRS (coordinate reference system) using Terra package project() function 
+cutblocks_v <- project(cutblocks_2022ABMI, crs(slope_r))
+
+# Extract the mean slope for each individual cutblock polygon using functions from Terra package
+# This creates a data frame where each row is a cutblock
+# na.rm=TRUE strips out missing data (not available) so that R ignores these and uses only valid data points
+cb_slopes <- extract(slope_r, cutblocks_v, fun = mean, na.rm = TRUE)
+cb_slopes
+
+#Add the slope values back to the original vector data into column 2
+cutblocks_v$mean_slope_deg <- cb_slopes[, 2]
+
+#Filter the cutblocks that are steeper than the threshold
+steep_cutblocks15pct <- cutblocks_v[cutblocks_v$mean_slope_deg > threshold_15pct]
+moderate_cutblocks10pct <- cutblocks_v[cutblocks_v$mean_slope_deg > threshold_10pct & cutblocks_v$mean_slope_deg < threshold_15pct]
+flat_cutblocks <- cutblocks_v[cutblocks_v$mean_slope_deg < threshold_10pct]
+
+# Calculate area and percentage of steep cutblocks only (>15%)
+areas_km2_steep_cutblocks15pct<- expanse(steep_cutblocks15pct, unit = "km")
+steep_cutblocks15pct_footprint <- sum(areas_km2_steep_cutblocks15pct)
+percent_steep_cutblocks15pct <- (steep_cutblocks15pct_footprint/cutblock_footprint)*100
+percent_steep_cutblocks15pct
+# RESULT=70.71848
+
+# Calculate area and percentage of moderate cutblocks only (>10% but <15%)
+areas_km2_moderate_cutblocks10pct<- expanse(moderate_cutblocks10pct, unit = "km")
+moderate_cutblocks10pct_footprint <- sum(areas_km2_moderate_cutblocks10pct)
+percent_moderate_cutblocks10pct <- (moderate_cutblocks10pct_footprint/cutblock_footprint)*100
+percent_moderate_cutblocks10pct
+# RESULT=18.63806
+
+#Calculate area and percentage of flat cutblocks only (<10%)
+areas_km2_flat_cutblocks<- expanse(flat_cutblocks, unit = "km")
+flat_cutblocks_footprint <- sum(areas_km2_flat_cutblocks)
+percent_flatcutblocks <- (flat_cutblocks_footprint/cutblock_footprint)*100
+percent_flatcutblocks
+# RESULT=10.64346
+
+#Create a tabular dataframe to summarize the above information
+cutblocksteepness_df <- data.frame(
+  type=c("Steep Cutblock","Moderate Cutblock","Flat Cutblock"),
+  value=c(percent_steep_cutblocks15pct, percent_moderate_cutblocks10pct, percent_flatcutblocks)
+  )
+cutblocksteepness_df
+#results:  type    value
+#    Steep Cutblock 70.71848
+# Moderate Cutblock 18.63806
+#     Flat Cutblock 10.64346
+
+# --- VISUALIZE THE RESULTS ---
+
+# Split the screen into 1 row and 2 columns
+# The matrix specifies: Panel 1 is on the left, Panel 2 is on the right
+# widths = c(3, 1) gives the map 75% of the space and the pie chart 25%
+layout(matrix(c(1, 2), nrow = 1, ncol = 2), widths = c(3, 1))
+
+# --- DRAW THE FULL COMPOSITE MAP---
+slope_palette <- colorRampPalette(c("white", "gold2", "darkorange", "firebrick1", "firebrick4"))(100)
+# Plot Hillshade with Slope draped over it
+plot(hs, col=grey(0:100/100), legend=FALSE, main="Cutblock Slope Analysis")
+
+# Drape the Slope layer (The color layer)
+# We use 'slope_r' (the one in degrees) for the legend to be readable
+# 'alpha = 0.45' makes it transparent enough to see the ridges and valleys
+plot(slope_r, 
+     col = slope_palette, 
+     alpha = 0.45, 
+     add = TRUE, 
+     plg = list(title = "Slope (Deg)", shrink = 0.8)) # Adds the legend on the right
+plot(wbstreams_final, col="cyan", lwd=1.5, add=TRUE, legend=FALSE)
+lines(roads, col = "black", lwd = 1.5)
+# Plot cutblocks
+plot(flat_cutblocks, border="olivedrab", lwd=2, add=TRUE)
+plot(moderate_cutblocks10pct, border="magenta", lwd=2, add=TRUE)
+plot(steep_cutblocks15pct, border="maroon", lwd=2, add=TRUE)
+
+legend ("bottomleft", 
+        inset=c(0,0.1),
+        legend = c("Watercourse", "Roads", "Flat Cutblocks <10% Slope", "Moderate Cutblocks 10%-15% Slope","Steep Cutblocks >15% Slope"), 
+        col = c("cyan", "black","olivedrab","magenta","maroon"),
+        lty = c(1, 1, 1, 1, 1), 
+        lwd = c(2, 2, 4, 4, 4),
+        
+        horiz = FALSE,      # horizontal legend
+        bty = "n",         # No border
+        cex = 0.8,         # Makes text larger
+        xpd = FALSE)          # ALLOWS DRAWING OUTSIDE ALL PLOTS
+
+# --- DRAW THE PIE CHART CUTBLOCK STEEPNESS, automatically goes to right panel---
+
+cutblockslope_data<-c(71,19,11)
+cutblockslope_labels<- c("71%", "19%", "11%")
+cutblockslope_colours<-c("maroon","magenta","olivedrab")
+
+pie(cutblockslope_data, 
+    labels = cutblockslope_labels, 
+    col = cutblockslope_colours, 
+    cex.main = 0.9)
+
