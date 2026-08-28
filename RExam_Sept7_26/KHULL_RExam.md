@@ -384,7 +384,7 @@ plot(slope_r,
 ````
 ## Define,Calculate and Map Cutblock Slope Steepness Categories with Percentages
 > **Interpretation**
-> There is good
+> The majority of cutblocks have a strongly elevated (71%) or moderately elevated (19%) erosion risk due to having slopes of >15% or 10% respectively. This indicates a high potential for logging activity to have contributed to short term impacts contributing sediment into trout streams. 
 ![Cublock Erosion Risk Analysis Map](RExam_Images/cutblockslopeanalysis_wpie.png)
 
 ````r
@@ -474,8 +474,10 @@ pie(cutblockslope_data,
     cex.main = 0.9)
 ````
 
+# Conclusion
+Time series satellite image analysis from 1985 to 2022 for the Waiparous Creek Basin indicates a clear visible and quantifiable signature from logging activities. Evidence of bare soil exposure is apparent with spectral signatures of logged cutblocks persisting more than 10 years post initial logging in 2010. A cursory terrain analysis confirms that most logged cutblocks have moderate to steep slope gradients, increasing potential for resulting sedimentation impacts into trout bearing streams. Logging as a land use thus represents a plausible hazard to water quality and habitat suitability for threatened Westslope Cutthroat Trout populations in the basin. Additional investigation is warranted to examine water quality and fish population and redd (gravel spawning 'nest') survey trends over this time period to quantify and verify a hazard index.  
 
-REFERENCES
+# References
 https://www.markdownguide.org/basic-syntax/ 
 
 
