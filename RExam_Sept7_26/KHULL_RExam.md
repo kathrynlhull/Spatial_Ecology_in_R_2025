@@ -383,6 +383,8 @@ plot(slope_r,
      plg = list(title = "Slope (Deg)", shrink = 0.8)) #plg=list() list with parameters for drawing the legend. Adds the slope (deg) gradient legend on the right 
 ````
 ## Define,Calculate and Map Cutblock Slope Steepness Categories with Percentages
+> **Interpretation**
+> There is good
 ![Cublock Erosion Risk Analysis Map](RExam_Images/cutblockslopeanalysis_wpie.png)
 
 ````r
