@@ -345,21 +345,35 @@ footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cu
 A cursory analysis was done as described below to identify and determine erosion risk for cutblocks based on slope steepness using Digital Elevation Model (DEM) raster data for the study area imported from GEE.
 
 This analysis entailed the following steps (see coding below):
-i) Load the DEM from GEE
-ii) Calculate slope in degrees
-iii) Generate a hillshade map using Terra package functions based on slope and aspect values from the DEM
-iv) Plot the hillshade map using a custom colour palette to show slope gradient from white (flat) to red (steep) in shades of orange
-v) Define cutblock slope steepness categories where flat slopes are defined as >10%, moderate slopes are 10% to 15%, and steep slopes are >15% (ttps://sis.agr.gc.ca/cansis/nsdb/dss/v3/cmp/slope_p.html). 
-vi) Calculate the area and percentage of each cutblock steepness category
-vii) Generate a composite plot with slope (in degrees), stream and road lines, and colour coded slope steepness categories with percentages for each shown as a pie chart graphic.
+- Load the DEM from GEE
+- Calculate slope in degrees
+- Generate a hillshade map using Terra package functions based on slope and aspect values from the DEM
+- Plot the hillshade map using a custom colour palette to show slope gradient from white (flat) to red (steep) in shades of orange
+- Define cutblock slope steepness categories where flat slopes are defined as >10%, moderate slopes are 10% to 15%, and steep slopes are >15% (ttps://sis.agr.gc.ca/cansis/nsdb/dss/v3/cmp/slope_p.html). 
+- Calculate the area and percentage of each cutblock steepness category
+- Generate a composite plot with slope (in degrees), stream and road lines, and colour coded slope steepness categories with percentages for each shown as a pie chart graphic.
+
+## Hillshade 3D Image in Grey Scale
+![Hillshade 3D Image in Grey Scale](RExam_Images/HillshadeGrey3Dimage.png)
 
 ````r
 #Coding below uses Terra package
+#Hillshade using Terra shade () function reference: https://search.r-project.org/CRAN/refmans/terra/html/shade.html
 elevation <- rast("WaiparousBasin_Elevation.tif") #Load the DEM (elevation.tif) file generated in GEE
 slope_r <- terrain(elevation, v="slope", unit="degrees") # Calculate Slope in degrees
 sl <- terrain(elevation, v="slope", unit="radians") #Calculate slope in radian units for hillshade map
 as <- terrain(elevation, v="aspect", unit="radians") #Calculate aspect in radian units for hillshade map
-hs <- shade(sl, as, angle = 45, direction = 315) 
+hs <- shade(sl, as, angle = 45, direction = 315)  #Create hillshade map where sl=input slope raster layer in radian units; as=input aspect in radian units, angle=45 sets the sun angle to maximize hillshade shadows; direction sets the sun azimuth direction as 315 NW to cast shadows to the SE
+plot(hs, col=grey(0:100/100), legend=FALSE, main="Waiparous Basin Hillshade Grey 3D Image") #plots hillshade image using grey palette with 100 shades from black(0) to white (100)
+````
+
+
+
+
+
+
+slope_palette <- colorRampPalette(c("white", "gold2", "darkorange", "firebrick1", "firebrick4"))(100) #generates a custom slope gradient colour palette from white (flat) to darkred (steep)
+
 
 REFERENCES
 https://www.markdownguide.org/basic-syntax/ 
