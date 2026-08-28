@@ -6,7 +6,7 @@
 # Satellite imagery downloaded from GoogleEarth Engine, see related project JavaScript Coding
 
 
-##  INSTALL R PACKAGES
+##  ---INSTALL R PACKAGES-------- 
 library(imageRy) #Raster Imagery Operations, Vegetation Indices, Image Classification 
 library(terra) #Spatial data analysis with vector and raster data (e.g. satellite imagery, DEM)
 library(viridis) #Data visualization, colour maps and built-in palettes, colourblind friendly
@@ -14,10 +14,10 @@ library(RStoolbox) #Remote sensing image processing and analysis
 library(ggplot2) #Data visualization, custom aesthetics and geometries of charts 
 library(patchwork) #Combines separate ggplot2 plots into a single composite layout
 
-## SET WORKING DIRECTORY
+## ---SET WORKING DIRECTORY-------
 setwd ("C:/Users/kalih/Desktop/Recology/RExam_Images")
 
-## CREATE COMPOSITE TIME SERIES (1985-2022) OF TRUE COLOUR IMAGES
+## ---CREATE COMPOSITE TIME SERIES (1985-2022) OF TRUE COLOUR IMAGES
 # Visualize individual image in true colour for proofing
 
 # Load the 1985 GeoTIFF exported from GEE
@@ -72,7 +72,7 @@ dev.copy2pdf(file="Waiparous Basin 1985 to 2022 True Colour.pdf")
 dev.off() #Closes the viewing panel after having saved as PNG file 
 
 
-##CREATE COMPOSITE TIME SERIES (1985-2022) OF FALSE COLOUR (FC) AND FC SWIR IMAGES
+##---CREATE COMPOSITE TIME SERIES (1985-2022) OF FALSE COLOUR (FC) AND FC SWIR IMAGES---
 #False colour allows Near-Infrared (NIR) visualization in the red channel. Healthy vegetation appears bright red (chlorophyll reflects NIR strongly). Bare ground appears cyan or light blue.
 #SWIR = SHORT WAVE INFRARED.  Water strongly absorbs SWIR light. FC SWIR allows visualization of different vegetation types (e.g.coniferous, deciduous, grassland)
 
@@ -136,7 +136,7 @@ mtext("2022 FC SWIR", side = 3, line =2, adj = 0.2, font = 1.5)
 dev.copy2pdf(file=" Waiparous Basin 1985 to 2022 False Colour SWIR.pdf")
 dev.off() #Close the viewing panel after having saved image as PNG file
 
-## NDVI ANALYSIS
+## ---NDVI ANALYSIS---
 # DVI=Difference Vegetation Index calculated as NIR-Red. Plants reflect NIR and absorb red. 
 # NDVI=Normalized Difference Vegetation Index (enables comparison across dates, sensors and variable light conditions by standardizing vegetation greenness into a -1 to +1 scale.) Calculated as (NIR-red)/(NIR+red). NDVI approx. 1 (Dense, healthy vegetation); NDVI approx 0 (Bare soil, stressed vegetation)
 # Calculate NDVI for each year
@@ -181,7 +181,7 @@ dev.copy2pdf(file="NDVI 1985-2022 Ridgeline Plot Stack.pdf")
 dev.off() #Closes the viewing panel after having saved image as PNG file
 
 
-## RGB IMAGERY AND RIDGELINE PLOT TIME SERIES ANALYSIS 
+## ---RGB IMAGERY AND RIDGELINE PLOT TIME SERIES ANALYSIS--- 
 
 # Extract the RGB spectral bands and combine them into a stacked 3-band raster image
 # 1985 (Landsat 5): Red=3, Green=2, Blue=1
@@ -218,7 +218,7 @@ plot1 + plot2 + plot3 + plot4
 dev.copy2pdf(file="RGB 1985 and 2022 Imagery and Ridgeline Plots.pdf")
 dev.off() #Closes the viewing panel after having saved image as PNG file
 
-## IMAGE CLASSIFICATION USING FALSE COLOUR BANDS
+## ---IMAGE CLASSIFICATION USING FALSE COLOUR BANDS---
 
 # Create raster image subsets that select only the NIR, Red, and Green bands (False colour scheme for best land cover type differentiation)
 # 1985 and 2020, Landsat 5: NIR=B4, red=B3, green=B2
@@ -281,7 +281,7 @@ wb_2022cset[wb_2022c == 1] <- 3  # Set RIVER/HUMAN BAREGRND to 3
 plot(wb_2022cset)
 dev.off() #Closes the viewing panel 
 
-## LAND COVER CHANGE ANALYSIS USING CLASSIFIED IMAGES
+## ---LAND COVER CHANGE ANALYSIS USING CLASSIFIED IMAGES---
 
 # Calculate frequencies of land cover classes (freq/total)
 # ncell() =  total number of cells (pixels) in a raster layer, including blank NA cells created when an image is cropped
@@ -379,7 +379,7 @@ dev.copy2pdf(file="Land Cover Trend, Bar Graphs 1985 to 2022.pdf")
 dev.off() #Closes the viewing panel after having saved image as PNG file
 
 
-## PLOT COMPOSITE OF TIME SERIES CLASSIFIED IMAGES
+##---PLOT COMPOSITE OF TIME SERIES CLASSIFIED IMAGES---
 
 # Set up the plotting window  (2 rows, 2 columns)
 par(mfrow = c(2, 2))
@@ -415,7 +415,7 @@ dev.copy2pdf(file=" Waiparous Basin 1985 to 2022 Classified Image Analysis.pdf")
 dev.off() #Closes the viewing panel after having saved image as PNG file
 
 
-##HUMAN FOOTPRINT AND HYDROLOGY OVERLAY ANALYSIS
+##---HUMAN FOOTPRINT AND HYDROLOGY OVERLAY ANALYSIS---
 
 # Import Hydrology (Sreams/Rivers) Tif generated in GEE
 
@@ -516,7 +516,7 @@ roads_percentage
 footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cutblock_percentage, total_human_footprint_km2,footprint_percentage)
 footprint_df
 
-# ABMI HUMAN FOOTPRINT OVERLAY MAPPING
+#---ABMI HUMAN FOOTPRINT OVERLAY MAPPING---
 
 # Build legend elements and labels
 # Define your full color list
@@ -572,13 +572,12 @@ legend("bottomleft",
 dev.copy2pdf(file=" Waiparous Basin 2016 and 2022 Classfied with 2022 ABMI Overlay.pdf")
 dev.off() #Closes the viewing panel after having saved image as PNG file
 
-
-##TERRAIN MAPPING, CUTBLOCK SLOPE EROSION RISK ANALYSIS
+##---TERRAIN MAPPING, CUTBLOCK SLOPE EROSION RISK ANALYSIS---
 
 # Load the DEM (elevation.tif) file generated in GEE
 elevation <- rast("WaiparousBasin_Elevation.tif")
 
-# Calculate Slope in R in degrees
+# Calculate slope in degrees
 slope_r <- terrain(elevation, v="slope", unit="degrees")
 
 # Verify the height range
@@ -634,8 +633,6 @@ legend ("bottomleft",
         cex = 1.0,        # Makes text larger
         xpd = FALSE)      # ALLOWS DRAWING OUTSIDE ALL PLOTS
 
-
-dev.copy2pdf(file=" Waiparous 3D Image with Land Use Features.pdf")
 dev.off() 
 
 #Define slope steepness thresholds so as to identify flat (>10%), moderate (10-15%) and steep (>15%) slopes for erosion risk analysis
@@ -661,7 +658,7 @@ cb_slopes
 #Add the slope values back to the original vector data into column 2
 cutblocks_v$mean_slope_deg <- cb_slopes[, 2]
 
-#Filter the cutblocks that are steeper than the threshold
+#Define cutblock categories
 steep_cutblocks15pct <- cutblocks_v[cutblocks_v$mean_slope_deg > threshold_15pct]
 moderate_cutblocks10pct <- cutblocks_v[cutblocks_v$mean_slope_deg > threshold_10pct & cutblocks_v$mean_slope_deg < threshold_15pct]
 flat_cutblocks <- cutblocks_v[cutblocks_v$mean_slope_deg < threshold_10pct]
@@ -698,14 +695,13 @@ cutblocksteepness_df
 # Moderate Cutblock 18.63806
 #     Flat Cutblock 10.64346
 
-# --- VISUALIZE THE RESULTS ---
-
+# Visualize the results
 # Split the screen into 1 row and 2 columns
 # The matrix specifies: Panel 1 is on the left, Panel 2 is on the right
 # widths = c(3, 1) gives the map 75% of the space and the pie chart 25%
 layout(matrix(c(1, 2), nrow = 1, ncol = 2), widths = c(3, 1))
 
-# --- DRAW THE FULL COMPOSITE MAP---
+# Draw the full composite map
 slope_palette <- colorRampPalette(c("white", "gold2", "darkorange", "firebrick1", "firebrick4"))(100)
 # Plot Hillshade with Slope draped over it
 plot(hs, col=grey(0:100/100), legend=FALSE, main="Cutblock Slope Analysis")
@@ -737,7 +733,7 @@ legend ("bottomleft",
         cex = 0.8,         # Makes text larger
         xpd = FALSE)          # ALLOWS DRAWING OUTSIDE ALL PLOTS
 
-# --- DRAW THE PIE CHART CUTBLOCK STEEPNESS, automatically goes to right panel---
+# Add a pie chart for slope steepness category percentages into the right panel
 
 cutblockslope_data<-c(71,19,11)
 cutblockslope_labels<- c("71%", "19%", "11%")
