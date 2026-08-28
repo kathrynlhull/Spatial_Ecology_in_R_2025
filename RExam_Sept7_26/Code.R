@@ -638,7 +638,7 @@ dev.off()
 
 #Define slope steepness thresholds so as to identify flat (>10%), moderate (10-15%) and steep (>15%) slopes for erosion risk analysis
 #Reference https://sis.agr.gc.ca/cansis/nsdb/dss/v3/cmp/slope_p.html)
-#Convert the 10% Slope threshold to Degrees
+#Convert slope % thresholds to degrees
 #Formula: degrees = atan(percent / 100) * (180 / pi)
 #atan() is the arctangent (or inverse tangent function) that takes the decimal ration (rise/run) and calculates the corresponding angle.
 #(180 / pi) converts the angle from radians to degrees. 
