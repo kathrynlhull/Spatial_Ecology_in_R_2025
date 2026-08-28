@@ -341,7 +341,24 @@ footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cu
 
 # 10. Terrain Mapping, Cutblock Slope Erosion Risk Analysis
 
-A cursory analysis was done as described below to identify and determine erosion risk for cutblocks based on slope steepness using Digital Elevation Model (DEM) raster data for the study area imported from GEE. 
+A cursory analysis was done as described below to identify and determine erosion risk for cutblocks based on slope steepness using Digital Elevation Model (DEM) raster data for the study area imported from GEE.
+
+This analysis entailed the following steps (see coding below):
+i) Load the DEM from GEE
+ii) Calculate slope in degrees
+iii) Generate a hillshade map using Terra package functions based on slope and aspect values from the DEM
+iv) Plot the hillshade map using a custom colour palette to show slope gradient from white (flat) to red (steep) in shades of orange
+v) Define cutblock slope steepness categories where flat slopes are defined as >10%, moderate slopes are 10% to 15%, and steep slopes are >15% (ttps://sis.agr.gc.ca/cansis/nsdb/dss/v3/cmp/slope_p.html). 
+vi) Calculate the area and percentage of each cutblock steepness category
+vii) Generate a composite plot with slope (in degrees), stream and road lines, and colour coded slope steepness categories with percentages for each shown as a pie chart graphic.
+
+````r
+#Coding below uses Terra package
+elevation <- rast("WaiparousBasin_Elevation.tif") #Load the DEM (elevation.tif) file generated in GEE
+slope_r <- terrain(elevation, v="slope", unit="degrees") # Calculate Slope in degrees
+sl <- terrain(elevation, v="slope", unit="radians") #Calculate slope in radian units for hillshade map
+as <- terrain(elevation, v="aspect", unit="radians") #Calculate aspect in radian units for hillshade map
+hs <- shade(sl, as, angle = 45, direction = 315) 
 
 
 
