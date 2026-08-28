@@ -595,7 +595,8 @@ hs <- shade(sl, as, angle = 45, direction = 315) #sl=input slope raster layer in
 # Plot Hillshade image
 #Use gray colour palette with 100 shades from 0 (black) to 1 (pure white)
 #Exclude legend bar (legend=false)
-plot(hs, col=grey(0:100/100), legend=FALSE, main="Waiparous Basin 3D Image") 
+plot(hs, col=grey(0:100/100), legend=FALSE, main="Waiparous Basin Hillshade Grey 3D Image") 
+#save image as PNG
 
 # Define your slope gradient custom color palette with up to 100 colour values
 # colorRampPalette () function reference https://bookdown.org/rdpeng/exdata/plotting-and-color-in-r.html 
