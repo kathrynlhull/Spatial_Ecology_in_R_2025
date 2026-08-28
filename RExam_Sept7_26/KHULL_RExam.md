@@ -353,12 +353,12 @@ This analysis entailed the following steps (see coding below):
 - Calculate the area and percentage of each cutblock steepness category
 - Generate a composite plot with slope (in degrees), stream and road lines, and colour coded slope steepness categories with percentages for each shown as a pie chart graphic.
 
-## Hillshade 3D Image in Grey Scale
+## Hillshade Imagery and Coding
 ![Hillshade 3D Image in Grey Scale](RExam_Images/HillshadeGrey3Dimage.png)
 
 ````r
-#Coding below uses Terra package
-#Hillshade using Terra shade () function reference: https://search.r-project.org/CRAN/refmans/terra/html/shade.html
+#Hillshade coding below uses Terra package
+#shade () function reference: https://search.r-project.org/CRAN/refmans/terra/html/shade.html
 elevation <- rast("WaiparousBasin_Elevation.tif") #Load the DEM (elevation.tif) file generated in GEE
 slope_r <- terrain(elevation, v="slope", unit="degrees") # Calculate Slope in degrees
 sl <- terrain(elevation, v="slope", unit="radians") #Calculate slope in radian units for hillshade map
@@ -366,13 +366,22 @@ as <- terrain(elevation, v="aspect", unit="radians") #Calculate aspect in radian
 hs <- shade(sl, as, angle = 45, direction = 315)  #Create hillshade map where sl=input slope raster layer in radian units; as=input aspect in radian units, angle=45 sets the sun angle to maximize hillshade shadows; direction sets the sun azimuth direction as 315 NW to cast shadows to the SE
 plot(hs, col=grey(0:100/100), legend=FALSE, main="Waiparous Basin Hillshade Grey 3D Image") #plots hillshade image using grey palette with 100 shades from black(0) to white (100)
 ````
+## Custom Slope Palette 3D Imagery and Coding
+![Terrain Map with Custom Slope Palette](RExam_Images/3D_SlopePalette.png)
 
-
-
-
-
-
-slope_palette <- colorRampPalette(c("white", "gold2", "darkorange", "firebrick1", "firebrick4"))(100) #generates a custom slope gradient colour palette from white (flat) to darkred (steep)
+````r
+# colorRampPalette () function reference https://bookdown.org/rdpeng/exdata/plotting-and-color-in-r.html 
+# White (flat) -> Yellow -> Orange -> Red -> Darkred (steep)
+slope_palette <- colorRampPalette(c("white", "gold2", "darkorange", "firebrick1", "firebrick4"))(100)
+# Drape the Slope Colour Palette over the hillshade image
+# Reference https://cran.r-project.org/web/packages/terra/refman/terra.html#plot 
+# Use 'slope_r' (the slope raster layer in degrees) for the legend to be readable
+plot(slope_r, 
+     col=slope_palette,  
+     alpha = 0.45, #sets transparency to 45% to visualize 3D texture
+     main ="Waiparous Basin 3D Image Custom Slope Palette",
+     plg = list(title = "Slope (Deg)", shrink = 0.8)) #plg=list() list with parameters for drawing the legend. Adds the slope (deg) gradient legend on the right 
+````
 
 
 REFERENCES
