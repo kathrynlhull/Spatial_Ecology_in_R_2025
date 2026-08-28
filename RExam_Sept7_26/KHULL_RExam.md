@@ -12,13 +12,13 @@ The Waiparous Creek watershed, in the headwaters of the greater Bow River Basin,
 # 2. Project Objectives 
 
 The primary objectives of this project include:
--i) Satellite imagery visualization: True Colour, False Colour and Shortwavelength-Infrared False Colour 
--ii) NDVI (Normalized Difference Vegetation Index) analysis
--iii) Time series, RGB Ridgeline Plot analysis 
--iv) Image classification time series analysis
--v) Land cover change analysis 
--vi) ABMI Human Footprint and Hydrology overlay analysis
--vii) Terrain mapping, cutblock slope erosion risk analysis
+i) Satellite imagery visualization: True Colour, False Colour and Shortwavelength-Infrared False Colour 
+ii) NDVI (Normalized Difference Vegetation Index) analysis
+iii) Time series, RGB Ridgeline Plot analysis 
+iv) Image classification time series analysis
+v) Land cover change analysis 
+vi) ABMI Human Footprint and Hydrology overlay analysis
+vii) Terrain mapping, cutblock slope erosion risk analysis
 
 # 3. Methodology  
 
