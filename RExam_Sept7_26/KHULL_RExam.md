@@ -126,7 +126,7 @@ plotRGB(wb_2022, r = 6, g =5, b =3, stretch = "lin") # Creates a False Colour SW
 
 A Difference Vegetation Index (DVI) is calculated as follows:
 
-**$` DVI = NIR - Red `$**  
+***DVI = NIR - Red***  
 
 Since healthy plants strongly reflect NIR and absorb red light, a DVI quantifies vegetation presence and density. Higher DVI values indicate healthier or denser vegetation; lower values indicate sparse or stressed vegetation. 
 
@@ -134,7 +134,8 @@ A Normalized Difference Vegetation Index (NDVI) enables comparison of vegetation
 
 NDVI is calculated using this formula: 
 
-**NDVI = (NIR − Red) / (NIR + Red)**
+***NDVI = (NIR − Red) / (NIR + Red)***
+
 NDVI values approximating 1 represent dense, healthy vegetation); NDVI values approximating 0 represent bare soil and stressed vegetation. 
 
 Example NDVI R calculation for Landsat 5 (1985 / 2010) Imagery:
