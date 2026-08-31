@@ -5,7 +5,7 @@
 
 # 1. Introduction 
 
-The Waiparous Creek watershed, in the headwaters of the greater Bow River Basin, Alberta, Canada, contains among the last remaining critical habitat for Westslope Cutthroat Trout (_Oncorhynchus clarkii lewisi_), an endangered native species (COSEWIC 2006, Fisheries and Oceans Canada 2019). Among the threats to this species are logging impacts that contribute sediment into suitable trout streams, negatively impacting their survival, reproduction and habitat suitability (Valdal and Quinn 2011, Fisheries and Oceans Canada 2019). Westslope Cutthroat Trout require cool, well oxygenated water, clean (unconsolidated) gravel substrate, and abundant riparian edge cover and shade. Cumulative logging impacts have accelerated in the Waiparous Creek basin from 2010-2022.  This project aims to visualize, quantify and analyze these impacts by way of vegetation change satellite imagery analysis and land cover classification compared to benchmark reference conditions in 1985. This analysis is validated against human footprint mapping done by the Alberta Biodiversity Monitoring Institute ([ABMI Human Footprint Inventory](https://abmi.ca/abmi-home/what-we-do/land-cover-and-land-use-mapping/human-footprint-mapping.html)). Lastly, a cursory erosion risk assessment is included for cutblocks using terrain analysis tools. 
+The Waiparous Creek watershed, in the headwaters of the greater Bow River Basin, Alberta, Canada, contains among the last remaining critical habitat for Westslope Cutthroat Trout (_Oncorhynchus clarkii lewisi_), an endangered native species (COSEWIC 2006, Fisheries and Oceans Canada 2019). Among the threats to this species are logging impacts that contribute sediment into suitable trout streams, negatively impacting their survival, reproduction and habitat suitability (Valdal and Quinn 2011, Fisheries and Oceans Canada 2019). Westslope Cutthroat Trout require cool, well oxygenated water, clean (unconsolidated) gravel substrate, and abundant riparian edge cover and shade (COSWEIC 2006). Cumulative logging impacts have accelerated in the Waiparous Creek basin from 2010-2022. This project aims to visualize, quantify and analyze these impacts by way of vegetation change satellite imagery analysis and land cover classification compared to benchmark reference conditions in 1985. This analysis is validated against human footprint mapping done by the Alberta Biodiversity Monitoring Institute ([ABMI Human Footprint Inventory](https://abmi.ca/abmi-home/what-we-do/land-cover-and-land-use-mapping/human-footprint-mapping.html)). Lastly, a cursory erosion risk assessment is included for cutblocks using terrain analysis tools. 
 
 ![Waiparous Creek Basin Study Area Map](RExam_Images/WaiparousBasin_AOI.png)
 
@@ -24,7 +24,7 @@ The primary objectives of this project include:
 # 3. Methodology  
 
 ## Satellite Imagery Acquisition 
-Preliminary visualization of the Waiparous Basin Study area was done using the GoogleEarth Pro application and QGIS, including use of historic imagery visualization tools. This refined the selection of 1985 (baseline), 2010 (start of logging impacts, 2016 (logging maximal concurrent extent), and 2022 (final year of logging) for comparative analysis. 
+Preliminary visualization of the Waiparous Basin Study area was done using the GoogleEarth Pro application and QGIS, including use of historic imagery visualization tools. This refined the selection of 1985 (baseline year, first year with Landsat 5 imagery), 2010 (start of logging impacts), 2016 (maximum logging footprint), and 2022 (final year of logging) for comparative analysis. 
 
 Satellite imagery used in this project was obtained from [Google Earth Engine, GEE] (https://earthengine.google.com/). 
 > [!NOTE]
@@ -46,7 +46,7 @@ setwd("C:/Users/kalih/Desktop/Recology/RExam_Images")
 ## R Packages Installed
 ````r
 library(imageRy) #Raster Imagery Operations, Vegetation Indices, Image Classification 
-library(terra) #Spatial data analysis with vector and raster data (e.g. satellite imagery, DEM)
+library(terra) #Spatial data analysis with vector and raster data (e.g. satellite imagery, DEM, terrain analysis, hillshade maps)
 library(viridis) #Data visualization, colour maps and built-in palettes, colourblind friendly
 library(RStoolbox) #Remote sensing image processing and analysis 
 library(ggplot2) #Data visualization, custom aesthetics and geometries of charts 
@@ -73,7 +73,8 @@ mar = c(12, 4, 12, 4) # margins (bottom, left, top, right)
 
 ![True Colour Maps](RExam_Images/TrueColourPlots.png)   
 
-A True Colour RGB composite stacks red, green and blue bands into a single image for visualization of imagery that gives an intuitive, realistic representation that matches human vision. (Red, green and blue light represent that portion of the electromagnetic spectrum visible to the human eye)- 
+> **Interpretation**
+> A True Colour RGB composite stacks red, green and blue bands into a single image for visualization of imagery that gives an intuitive, realistic representation that matches human vision. (Red, green and blue light represent that portion of the electromagnetic spectrum visible to the human eye). Disturbed areas appear in shades of white; vegetated areas appear in light (meadows/shrublands) to very dark green (conifer forests)  
 
 Landsat 5 TM Bands (1985 and 2010 imagery), Red = Band 3, Green = Band 2, and Blue = Band 1
 > Landsat 5 True Colour image R code example: 
@@ -92,7 +93,7 @@ Reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellit
 ![False Colour Maps](RExam_Images/FC_Plots.png)
 
 > **Interpretation**
-> False Colour visualization uses Near-Infrared (NIR)-Red-Green (i.e. NRG) wavelength light bands (channels). NIR is mapped to the red channel, red is mapped to the green channel and green is mapped to the blue channel. False Colour (NRG) is useful for monitoring vegetation cover and changes in vegetation composition.  Chlorophyll in plants reflect NIR intensely, thus photosynthesizing vegetation shows as red. Deciduous vegetation appear as bright red while coniferous trees, reflect less NIR and appear darker. Grassland/shrubland open meadows appear as pink or light red. Areas of bare ground or rock appear cyan or blue as they have low NIR reflection and reflect moderately across all displayed bands. Clear and clean water bodies appear black as all radiation in the spectral range is absorbed. 
+> False Colour visualization uses Near-Infrared (NIR)-Red-Green (NRG) wavelength light bands (channels). NIR is mapped to the red channel, red is mapped to the green channel and green is mapped to the blue channel. False Colour (NRG) is useful for monitoring vegetation cover and changes in vegetation composition.  Chlorophyll in plants reflect NIR intensely, thus photosynthesizing vegetation shows as red. Deciduous vegetation appear as bright red while coniferous trees, reflect less NIR and appear darker. Grassland/shrubland open meadows appear as pink or light red. Areas of bare ground or rock appear cyan or blue as they have low NIR reflection and reflect moderately across all displayed bands. Clear and clean water bodies appear black as all radiation in the spectral range is absorbed. 
 
 Landsat 5 TM Bands (1985 and 2010 imagery), NIR = Band 4, Red = Band 3, Green = Band 2
 > Landsat 5 False Colour NRG image R code example: 
@@ -143,11 +144,12 @@ Example NDVI R calcuation for Landsat 8 (2016 / 2022) Imagery:
 ndvi_2022wb <- (wb_2022[["SR_B5"]] - wb_2022 [["SR_B4"]]) / (wb_2022 [["SR_B5"]] + wb_2022 [["SR_B4"]])  #For Landsat 8, B5=NIR, B4=Red
 ````
 Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R package (https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html). 
+
 ### NDVI Time Series Composite for the Waiparous Basin Study Area
 ![NDVI Time Series Composite](RExam_Images/NDVI_Plots.png)
 
 > **Interpretation**
-> This is a colour-blind safe palette that shows clear contrasts for low values from dark/black-purple for bare soil or water to high values from orange or bright yellow for dense broadleaf or grassland vegetation. Note that conifer forests dispaly as deep purples and dark reds (low NDVI values) due to branch shadows.  Needle-shaped leaves create internal canopy gaps and shadowing which reduces the total surface area available to scatter NIR light. 
+> This is a colour-blind safe palette that shows clear contrasts for low values from dark/black-purple for bare soil or water to high values from orange or bright yellow for dense broadleaf or grassland vegetation. Note that conifer forests dispaly as deep purples and dark reds (low NDVI values) due to branch shadows.  Needle-shaped leaves create internal canopy gaps and shadowing which reduces the total surface area available to scatter NIR light. The NDVI time series also includes year-to-year variation in natural vegetation productivity and regeneration  
 
 ## 1985 vs 2022 Stacked NDVI Ridgeline Plot
 A stacked NDVI ridgeline plot was generated for the benchmark year (1985) compared to 2022 (post logging). By stacking the plots vertically, NDVI differences can be visualized clearly.  
@@ -486,9 +488,9 @@ COSEWIC 2006. COSEWIC assessment and update status report on the westslope cutth
 
 Fisheries and Oceans Canada. 2019. Recovery Strategy and Action Plan for the Westslope Cutthroat Trout (Oncorhynchus clarkii lewisi) Alberta Population (also known as Saskatchewan-Nelson River Populations) in Canada. Species at Risk Act Recovery Strategy Series. Fisheries and Oceans Canada, Ottawa. vii + 60 pp + Part 2
 
-Valdal, E.J. and Quinn, M.S., 2011. Spatial analysis of forestry related disturbance on westslope cutthroat trout (Oncorhynchus clarkii lewisi): implications for policy and management. Applied Spatial Analysis and Policy, 4(2), pp.95-111.
+Sourcewater Communications. no date. [Westslope Cutthroat Trout in Alberta's Headwater Ecosystems, A Story](https://www.ghostwatershed.ca/GWAS/ewExternalFiles/WSCT-Complete.pdf)
 
-[Westslope Cutthroat Trout in Alberta's Headwater Ecosystems](https://www.ghostwatershed.ca/GWAS/ewExternalFiles/WSCT-Complete.pdf))
+Valdal, E.J. and Quinn, M.S., 2011. Spatial analysis of forestry related disturbance on westslope cutthroat trout (Oncorhynchus clarkii lewisi): implications for policy and management. Applied Spatial Analysis and Policy, 4(2), pp.95-111.
 
 ## Ghost River Watershed (Waiparous Creek Subbasin)
 ALCES Landscape and Land-use Ltd. and GWAS.  2018. Ghost Watershed State of the Watershed Report. Available from: https://ghostwatershed.ca/GWAS/watershed.html 
