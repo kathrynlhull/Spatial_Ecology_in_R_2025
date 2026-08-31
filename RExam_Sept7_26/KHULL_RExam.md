@@ -477,13 +477,7 @@ pie(cutblockslope_data,
 # Conclusion
 Time series satellite image analysis from 1985 to 2022 for the Waiparous Creek Basin indicates a clear visible and quantifiable signature from logging activities. Evidence of bare soil exposure is apparent with spectral signatures of logged cutblocks persisting more than 10 years post initial logging in 2010. A cursory terrain analysis confirms that most logged cutblocks have moderate to steep slope gradients, increasing potential for resulting sedimentation impacts into trout bearing streams. Logging as a land use thus represents a plausible hazard to water quality and habitat suitability for threatened Westslope Cutthroat Trout populations in the basin. Additional investigation is warranted to examine water quality and fish population and redd (gravel spawning 'nest') survey trends over this time period to quantify and verify a hazard index.  
 
-
-
-
-
-
-
-
+![Logging and Trout Image](RExam_Images/logging_trout_image.png)
 
 # References
 ## Westslope Cutthroat Trout
