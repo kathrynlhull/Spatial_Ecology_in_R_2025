@@ -132,7 +132,8 @@ A **Normalized Difference Vegetation Index (NDVI)** enables comparison of vegeta
 
 NDVI is calculated using this formula: <ins> ***NDVI = (NIR − Red) / (NIR + Red)***  </ins>.  
 
-**NDVI values approximating 1 represent dense, healthy vegetation); NDVI values approximating 0 represent bare soil and stressed vegetation.**
+**NDVI values approximating 1 represent dense, healthy vegetation. NDVI values approximating 0 represent bare soil and stressed vegetation.**
+
 
 Example NDVI R calculation for Landsat 5 (1985 / 2010) Imagery:
 ````r
