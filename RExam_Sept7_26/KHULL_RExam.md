@@ -149,7 +149,7 @@ Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R
 ![NDVI Time Series Composite](RExam_Images/NDVI_Plots.png)
 
 > **Interpretation**
-> This is a colour-blind safe palette that shows clear contrasts for low values from dark/black-purple for bare soil or water to high values from orange or bright yellow for dense broadleaf or grassland vegetation. Note that conifer forests dispaly as deep purples and dark reds (low NDVI values) due to branch shadows.  Needle-shaped leaves create internal canopy gaps and shadowing which reduces the total surface area available to scatter NIR light. The NDVI time series also includes year-to-year variation in natural vegetation productivity and regeneration  
+> This is a colour-blind safe palette that shows clear contrasts for low values from dark/black-purple for bare soil or water to high values from orange or bright yellow for dense broadleaf or grassland vegetation. Note that conifer forests dispaly as deep purples and dark reds (low NDVI values) due to branch shadows.  Needle-shaped leaves create internal canopy gaps and shadowing which reduces the total surface area available to scatter NIR light. Logging impacts are not as clearly discernible since the NDVI time series has year-to-year variation in natural vegetation productivity. Landscape complexity (natural meadows, natural flood disturbance) and variable maturity of regenerating cutblocks also blur cutblock boundaries. 
 
 ## 1985 vs 2022 Stacked NDVI Ridgeline Plot
 A stacked NDVI ridgeline plot was generated for the benchmark year (1985) compared to 2022 (post logging). By stacking the plots vertically, NDVI differences can be visualized clearly.  
@@ -290,7 +290,6 @@ p1+p2+p3+p4 # develops a composite of the four plots
 ![Land Cover Change Bar Plots](RExam_Images/LandCoverChange_Barplots.png)
 
 # 9. Human Footprint Inventory and Hydrology Overlay Analysis
-
 Published hydrology and Human Footprint Inventory data for the study area was imported into R for visualization overlays using classified images generated above. This data was clipped to the Waiparous Basin aoi to quantify road and cutblock surface areas and total disturbed footprint specific to this study area. The hydrology stream overlay allows for distinction of natural gravel waterbeds versus road or other human disturbance. 
 
 A hydrology GeoTiff file was generated using JavaScript coding in GEE (see Code.js file).  Significant tributary streams were added using the [MERIT Hydro Global Hydrography Dataset](https://developers.google.com/earth-engine/datasets/catalog/MERIT_Hydro_v1_0_1). 
@@ -332,11 +331,9 @@ footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cu
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |0.81|0.52|20.0|12.8|20.8|13.3|
 
-
 ### Human Footprint Inventory and Hydrology Overlays (Using 2016 and 2022 Classified Images Base Maps)
 > [!NOTE]
 > See the file Code.R for coding used to generate the map composite below.
-
 ![Land Cover Change Bar Plots](RExam_Images/ABMI_Overlays.png)
 
 > **Interpretation**
