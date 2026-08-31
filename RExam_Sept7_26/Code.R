@@ -247,7 +247,7 @@ wb_2010c <- im.classify(wb_2010_subset, num_clusters=3)
 #Class3=FOREST, Class1=MEADOW, Class2=RIVER/HUMAN BAREGRND 
 # UPDATE if code is rerun as classes are randomly generated each time!
 
-wb_2010cset <- wb_2010c
+wb_2010cset <- wb_2010c2
 wb_2010cset[wb_2010c == 3] <- 1  # Set Forest to 1
 wb_2010cset[wb_2010c == 1] <- 2  # Set Meadow to 2
 wb_2010cset[wb_2010c == 2] <- 3  # Set RIVER/HUMAN BAREGRND to 3
