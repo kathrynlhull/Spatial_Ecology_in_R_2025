@@ -723,7 +723,7 @@ plot(moderate_cutblocks10pct, border="magenta", lwd=2, add=TRUE)
 plot(steep_cutblocks15pct, border="maroon", lwd=2, add=TRUE)
 
 legend ("bottomleft", 
-        inset=c(0,0.1),
+        inset=c(0,0.07),
         legend = c("Watercourse", "Roads", "Flat Cutblocks <10% Slope", "Moderate Cutblocks 10%-15% Slope","Steep Cutblocks >15% Slope"), 
         col = c("cyan", "black","olivedrab","magenta","maroon"),
         lty = c(1, 1, 1, 1, 1), 
