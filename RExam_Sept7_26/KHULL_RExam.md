@@ -5,7 +5,7 @@
 
 # 1. Introduction 
 
-The Waiparous Creek watershed, in the headwaters of the greater Bow River Basin, Alberta, Canada, is ecologically significant as it contains among the last remaining critical habitat for an endangered native trout species, Westslope Cutthroat Trout (_Oncorhynchus clarkii lewisi_) (Fisheries and Oceans Canada 2014). Among the threats to this species are logging impacts that contribute sediment into suitable trout streams, negatively impacting their survival, reproduction and habitat suitability. Westslope Cutthroat Trout require cool, well oxygenated water, clean (unconsolidated) gravel substrate, and abundant riparian edge cover and shade. Cumulative logging impacts have accelerated in the Waiparous Creek basin from 2010-2022.  This project aims to visualize, quantify and analyze these impacts by way of vegetation change satellite imagery analysis and land cover classification compared to benchmark reference conditions in 1985. This analysis is validated against human footprint mapping done by the Alberta Biodiversity Monitoring Institute ([ABMI Human Footprint Inventory](https://abmi.ca/abmi-home/what-we-do/land-cover-and-land-use-mapping/human-footprint-mapping.html)). Lastly, a cursory erosion risk assessment is included for cutblocks using terrain analysis tools. 
+The Waiparous Creek watershed, in the headwaters of the greater Bow River Basin, Alberta, Canada, contains among the last remaining critical habitat for Westslope Cutthroat Trout (_Oncorhynchus clarkii lewisi_), an endangered native species (Fisheries and Oceans Canada 2019). Among the threats to this species are logging impacts that contribute sediment into suitable trout streams, negatively impacting their survival, reproduction and habitat suitability. Westslope Cutthroat Trout require cool, well oxygenated water, clean (unconsolidated) gravel substrate, and abundant riparian edge cover and shade. Cumulative logging impacts have accelerated in the Waiparous Creek basin from 2010-2022.  This project aims to visualize, quantify and analyze these impacts by way of vegetation change satellite imagery analysis and land cover classification compared to benchmark reference conditions in 1985. This analysis is validated against human footprint mapping done by the Alberta Biodiversity Monitoring Institute ([ABMI Human Footprint Inventory](https://abmi.ca/abmi-home/what-we-do/land-cover-and-land-use-mapping/human-footprint-mapping.html)). Lastly, a cursory erosion risk assessment is included for cutblocks using terrain analysis tools. 
 
 ![Waiparous Creek Basin Study Area Map](RExam_Images/WaiparousBasin_AOI.png)
 
@@ -477,8 +477,32 @@ pie(cutblockslope_data,
 # Conclusion
 Time series satellite image analysis from 1985 to 2022 for the Waiparous Creek Basin indicates a clear visible and quantifiable signature from logging activities. Evidence of bare soil exposure is apparent with spectral signatures of logged cutblocks persisting more than 10 years post initial logging in 2010. A cursory terrain analysis confirms that most logged cutblocks have moderate to steep slope gradients, increasing potential for resulting sedimentation impacts into trout bearing streams. Logging as a land use thus represents a plausible hazard to water quality and habitat suitability for threatened Westslope Cutthroat Trout populations in the basin. Additional investigation is warranted to examine water quality and fish population and redd (gravel spawning 'nest') survey trends over this time period to quantify and verify a hazard index.  
 
+
+
+
+
+
+
+
+
 # References
+## Westslope Cutthroat Trout
+COSEWIC 2006. COSEWIC assessment and update status report on the westslope cutthroat trout Oncorhynchus clarkii lewisi (British Columbia population and Alberta population) in Canada. Committee on the Status of Endangered Wildlife in Canada. Ottawa. vii + 67 pp.
+
+Fisheries and Oceans Canada. 2019. Recovery Strategy and Action Plan for the Westslope Cutthroat Trout (Oncorhynchus clarkii lewisi) Alberta Population (also known as Saskatchewan-Nelson River Populations) in Canada. Species at Risk Act Recovery Strategy Series. Fisheries and Oceans Canada, Ottawa. vii + 60 pp + Part 2
+
+[Westslope Cutthroat Trout in Alberta's Headwater Ecosystems](https://www.ghostwatershed.ca/GWAS/ewExternalFiles/WSCT-Complete.pdf))
+
+## Ghost River Watershed (Waiparous Creek Subbasin)
+ALCES Landscape and Land-use Ltd. and GWAS.  2018. Ghost Watershed State of the Watershed Report. Available from: https://ghostwatershed.ca/GWAS/watershed.html 
+
+Yarmoloy, C. and B. Stelfox. 2011. An Assessment of the Cumulative Effects of Land Uses within the Ghost River Watershed, Alberta, Canada. Prepared by ALCES Landscape and Land-use Ltd. for the Ghost Watershed Alliance Society. Available from: https://www.albertawilderness.ca/2011-08-08-assessment-of-the-cumulative-effects-of-land-uses-within-the-ghost-river-watershed/ 
+
+## Markdown Syntax
 https://www.markdownguide.org/basic-syntax/ 
+
+
+
 
 
 
