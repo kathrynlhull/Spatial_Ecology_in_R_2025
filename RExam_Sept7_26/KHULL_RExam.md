@@ -126,7 +126,11 @@ plotRGB(wb_2022, r = 6, g =5, b =3, stretch = "lin") # Creates a False Colour SW
 
 A **Difference Vegetation Index (DVI)** is calculated as follows:
 
+````
+````
 ***DVI = NIR - Red***  
+````
+````
 
 Since healthy plants strongly reflect NIR and absorb red light, a DVI quantifies vegetation presence and density. Higher DVI values indicate healthier or denser vegetation; lower values indicate sparse or stressed vegetation. 
 
