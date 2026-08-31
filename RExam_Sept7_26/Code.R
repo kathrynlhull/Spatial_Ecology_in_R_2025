@@ -745,3 +745,8 @@ pie(cutblockslope_data,
     col = cutblockslope_colours, 
     cex.main = 0.9)
 
+#Print cutblock analysis plot composite to PDF
+dev.copy2pdf(file=" Waiparous Basin Cutblock Slope Analysis.pdf")
+dev.off() #Close the viewing panel after having saved image as PNG file
+
+
