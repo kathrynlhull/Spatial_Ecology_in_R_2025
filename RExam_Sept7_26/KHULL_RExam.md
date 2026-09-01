@@ -150,7 +150,7 @@ Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R
 ![NDVI Time Series Composite](RExam_Images/NDVI_Plots.png)
 
 > **Interpretation**
-> This is a colour-blind safe palette that shows clear contrasts for low values from dark/black-purple for bare soil or water to high values from orange or bright yellow for dense broadleaf or grassland vegetation. Note that conifer forests display as deep purples and dark reds (low NDVI values) due to branch shadows.  Needle-shaped leaves create internal canopy gaps and shadowing which reduces the total surface area available to scatter NIR light. Logging impacts are not as clearly discernible since the NDVI time series has year-to-year variation in natural vegetation productivity and vigour. Landscape complexity (natural meadows, natural flood disturbance) and variable maturity of regenerating cutblocks also blur cutblock boundaries. 
+> This is a colour-blind safe palette that shows clear contrasts for low values from dark/black-purple for bare soil or water to high values from orange or bright yellow for dense broadleaf or grassland vegetation. Note that conifer forests display as deep purples and dark reds (low NDVI values) due to branch shadows.  Needle-shaped leaves create internal canopy gaps and shadowing which reduces the total surface area available to scatter NIR light. Logging impacts are not clearly discernible since the NDVI time series has year-to-year variation in natural vegetation productivity and vigour. Landscape complexity (natural meadows, natural flood disturbance) and variable maturity of regenerating cutblocks also blur cutblock boundaries. 
 
 ## 1985 vs 2022 Stacked NDVI Ridgeline Plot
 A stacked NDVI ridgeline plot was generated for the benchmark year (1985) compared to 2022 (post logging). By stacking the plots vertically, NDVI differences can be visualized clearly.  
@@ -190,7 +190,7 @@ plot1 + plot2 + plot3 + plot4
 ### RGB Ridgeline Time Series for the Waiparous Basin Study Area
 ![RGB Ridgeline Time Series](RExam_Images/Timeseries_RidgelineRGB.png)
 > **Interpretation**
-> The ridgeline plots are similar, except that 2022 RGB bands all have broader curves with longer right tails and less defined peaks indicating less vegetation uniformity. Logging disturbance means less RGB light absorption and increasing RGB light reflection due to reduced healthy vegetation cover and increased bare ground cover.  Red and then blue light is most strongly absorbed by chlorophyll in plants; green is more weakly absorbed. However, ridegeline plots are quite similar overall.  The natural landscape complexity including open grassy meadows and broad gravel floodplains along waterways in the Waiparous basin obscures and dilutes the effects of logging in the plots.
+> The ridgeline plots are similar, except that 2022 RGB bands all have broader curves with longer right tails and less defined peaks indicating less vegetation uniformity. Logging disturbance means less RGB light absorption and increasing RGB light reflection due to reduced healthy vegetation cover and increased bare ground cover.  Red and then blue light is most strongly absorbed by chlorophyll in plants; green is more weakly absorbed. However, ridegeline plots are quite similar overall.  The natural landscape complexity including open grassy meadows and broad gravel floodplains along waterways in the Waiparous basin obscures and dilutes the effects of logging in the plots. Furthermore, as mentioned above, variable vegetation phenology and climate complicate interpretation of RGB time series comparisons. 
 
 # 7. Image Classification Using False Colour Bands
 
@@ -237,7 +237,7 @@ legend ("bottomright",
 
 # 8. Land Cover Change Analysis
 
-To quantify land cover changes over time in the study area, a simple analysis was done to calculate the relative frequency of each land cover class (i.e., frequency/total). The ncell() total number of cells (pixels) in each raster image was adjusted to exclude blank NA cells. Since the aoi was clipped to the Waiparous Basin, it includes blank NA cells that are not displayed (i.e., those that fall outside of the basin polygon). 
+To quantify land cover changes over time in the study area, a simple analysis was done to calculate the relative frequency of each land cover class (i.e., frequency/total). The ncell() (i.e., total number of cells (pixels)) in each raster image was adjusted to exclude blank NA cells. Since the aoi was clipped to the Waiparous Basin, it includes blank NA cells that are not displayed (i.e., those that fall outside of the basin polygon). 
 
 Example R coding: 
 ````r
