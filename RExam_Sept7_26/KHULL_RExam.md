@@ -167,7 +167,7 @@ im.ridgeline(ndvi_stack, scale=2)+
 ![NDVI Stacked Ridgeline Plot](RExam_Images/NDVI_RidgelineStack.png)
 
 > **Interpretation**
-> NDVI curves differ slightly with the 2022 plot having a more gradually sloping right tail due to logging activities increasing open meadow and young (regenerating) forest composition on the landscape. Broader curves indicate a higher diversity in land cover types whereas narrow curves indicate more vegetation uniformity.  
+> NDVI curves differ slightly with the 2022 plot having a more gradually sloping right tail possibly due to logging activities increasing open meadow and young (regenerating) forest composition on the landscape. Broader curves indicate a higher diversity in land cover types whereas narrow curves indicate more vegetation uniformity. Compared to 1985 there seems to be a dip in NDVI values from 0.25 to 0.35 possibly influenced by forestry activities. Since source images include cloud-free composites from June to August, variable vegetation growth phase (phenology) and climate complicate interpretation of NDVI time series comparisons (Notaro *et al.* 2019). Natural areas of bare ground such as broad gravel and alluvial floodplains and rocky surfaces in addition to anthropogenic ground disturbance (e.g. off-highway vehicle use) further confound interpretation of results.    
 
 # 6. RGB Imagery and Ridgeline Plot Time Series Analysis 
 A secondary time series analysis for the 1985 (benchmark) and 2022 (post logging) images was done using RGB imagery (using only the red band to show vegetation cover change) and ridgeline plots where the Red-Green-Blue bands are extracted and combined into a 3-band raster image. 
@@ -500,6 +500,8 @@ https://www.markdownguide.org/basic-syntax/
 
 ### NDVI
 Atkins, J.W., Epstein, H.E. and Welsch, D.L., 2018. Using Landsat imagery to map understory shrub expansion relative to landscape position in a mid‐Appalachian watershed. Ecosphere, 9(10), p.e02404.
+
+Notaro, M., Emmett, K. and O’Leary, D., 2019. Spatio-temporal variability in remotely sensed vegetation greenness across Yellowstone National Park. Remote Sensing, 11(7), p.798.
 
 
 
