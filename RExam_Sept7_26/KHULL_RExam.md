@@ -481,7 +481,7 @@ Time series satellite image analysis from 1985 to 2022 for the Waiparous Creek B
 
 
 # References
-### Westslope Cutthroat Trout Related
+#### Westslope Cutthroat Trout Related
 COSEWIC 2006. COSEWIC assessment and update status report on the westslope cutthroat trout Oncorhynchus clarkii lewisi (British Columbia population and Alberta population) in Canada. Committee on the Status of Endangered Wildlife in Canada. Ottawa. vii + 67 pp.
 
 Fisheries and Oceans Canada. 2019. Recovery Strategy and Action Plan for the Westslope Cutthroat Trout (Oncorhynchus clarkii lewisi) Alberta Population (also known as Saskatchewan-Nelson River Populations) in Canada. Species at Risk Act Recovery Strategy Series. Fisheries and Oceans Canada, Ottawa. vii + 60 pp + Part 2
@@ -490,15 +490,15 @@ Sourcewater Communications. no date. [Westslope Cutthroat Trout in Alberta's Hea
 
 Valdal, E.J. and Quinn, M.S., 2011. Spatial analysis of forestry related disturbance on westslope cutthroat trout (Oncorhynchus clarkii lewisi): implications for policy and management. Applied Spatial Analysis and Policy, 4(2), pp.95-111.
 
-### Ghost River Watershed (Waiparous Creek Subbasin)
+#### Ghost River Watershed (Waiparous Creek is a subbasin of the Ghost River watershed)
 ALCES Landscape and Land-use Ltd. and GWAS.  2018. Ghost Watershed State of the Watershed Report. Available from: https://ghostwatershed.ca/GWAS/watershed.html 
 
 Yarmoloy, C. and B. Stelfox. 2011. An Assessment of the Cumulative Effects of Land Uses within the Ghost River Watershed, Alberta, Canada. Prepared by ALCES Landscape and Land-use Ltd. for the Ghost Watershed Alliance Society. Available from: https://www.albertawilderness.ca/2011-08-08-assessment-of-the-cumulative-effects-of-land-uses-within-the-ghost-river-watershed/ 
 
-### Markdown Syntax
+#### Markdown Syntax
 https://www.markdownguide.org/basic-syntax/ 
 
-### NDVI
+#### NDVI
 Atkins, J.W., Epstein, H.E. and Welsch, D.L., 2018. Using Landsat imagery to map understory shrub expansion relative to landscape position in a mid‐Appalachian watershed. Ecosphere, 9(10), p.e02404.
 
 Notaro, M., Emmett, K. and O’Leary, D., 2019. Spatio-temporal variability in remotely sensed vegetation greenness across Yellowstone National Park. Remote Sensing, 11(7), p.798.
