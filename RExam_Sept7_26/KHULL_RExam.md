@@ -31,11 +31,9 @@ Satellite imagery used in this project was obtained from [Google Earth Engine, G
 > [!NOTE]
 > JavaScript code utilized in GEE is given in the file Code.js.
 > 
-> [!NOTE]
 > - For 1985 and 2010, the GEE Landsat 5 Thematic Mapper (TM) Collection 2, Level-2 dataset was used (ee.ImageCollection, LANDSAT/LT05/C02/T1_L2)
 >-  For 2016 and 2022, Landsat 8 Operational Land Imager (OLI) / Thermal Infrared Sensor (TIRS) Collection 2, Level-2 dataset was used (ee.ImageCollection, LANDSAT/LC08/C02/T1_L2)
->-  
-> The Landsat Missions are part of the U.S. Geological Survey (USGS) National Land Imaging (NLI) Program (https://www.usgs.gov/landsat-missions/landsat-satellite-missions).
+>-  The Landsat Missions are part of the U.S. Geological Survey (USGS) National Land Imaging (NLI) Program (https://www.usgs.gov/landsat-missions/landsat-satellite-missions).
 
 > Reference data source: https://www.usgs.gov/landsat-missions 
 > 
