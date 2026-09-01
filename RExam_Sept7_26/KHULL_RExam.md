@@ -28,6 +28,8 @@ Preliminary visualization of the Waiparous Basin Study area was done using the G
 
 Satellite imagery used in this project was obtained from [Google Earth Engine, GEE] (https://earthengine.google.com/). 
 
+For each study year, imagery from June 1 to August 31 (peak summer growing season) was pre-processed in GEE JavaScript code to create a single, clean, cloud-free image clipped to the study area. This processing technique calculates the median pixel value across all available dates for each image to produce a final clean composite image. 
+
 > [!NOTE]
 > JavaScript code utilized in GEE is given in the file [Code.js](https://github.com/kathrynlhull/Spatial_Ecology_in_R_2025/blob/main/RExam_Sept7_26/Code.js)
 > 
