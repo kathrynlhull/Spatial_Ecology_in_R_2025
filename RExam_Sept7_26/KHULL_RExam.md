@@ -29,7 +29,7 @@ Preliminary visualization of the Waiparous Basin Study area was done using the G
 Satellite imagery used in this project was obtained from [Google Earth Engine, GEE] (https://earthengine.google.com/). 
 
 > [!NOTE]
-> JavaScript code utilized in GEE is given in the file Code.js.
+> JavaScript code utilized in GEE is given in the file [Code.js]([url](https://github.com/kathrynlhull/Spatial_Ecology_in_R_2025/blob/main/RExam_Sept7_26/Code.js)
 > 
 > - For 1985 and 2010, the GEE Landsat 5 Thematic Mapper (TM) Collection 2, Level-2 dataset was used (ee.ImageCollection, LANDSAT/LT05/C02/T1_L2)
 >-  For 2016 and 2022, Landsat 8 Operational Land Imager (OLI) / Thermal Infrared Sensor (TIRS) Collection 2, Level-2 dataset was used (ee.ImageCollection, LANDSAT/LC08/C02/T1_L2)
