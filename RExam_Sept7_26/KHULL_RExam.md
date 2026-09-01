@@ -35,8 +35,6 @@ Satellite imagery used in this project was obtained from [Google Earth Engine, G
 >-  For 2016 and 2022, Landsat 8 Operational Land Imager (OLI) / Thermal Infrared Sensor (TIRS) Collection 2, Level-2 dataset was used (ee.ImageCollection, LANDSAT/LC08/C02/T1_L2)
 >-  The Landsat Missions are part of the U.S. Geological Survey (USGS) National Land Imaging (NLI) Program (https://www.usgs.gov/landsat-missions/landsat-satellite-missions).
 
-> Reference data source: https://www.usgs.gov/landsat-missions 
-> 
 ## Waiparous Creek Watershed Study Area Delineation
 The Waiparous Basin study area (area of interest - aoi) was clipped from the HydroBASINS Level 12 dataset (source: https://www.hydrosheds.org/products/hydrobasins). 
 
