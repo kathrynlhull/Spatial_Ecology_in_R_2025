@@ -16,7 +16,7 @@ The primary objectives of this project include:
 1. Satellite imagery visualization: True Colour, False Colour and Shortwavelength-Infrared False Colour 
 2. NDVI (Normalized Difference Vegetation Index) analysis
 3. Time series, RGB Ridgeline Plot analysis 
-4. Image classification time series analysis
+4. Land cover image classification time series analysis
 5. Land cover change analysis 
 6. ABMI Human Footprint and Hydrology overlay analysis
 7. Terrain mapping, cutblock slope erosion risk analysis.
@@ -74,7 +74,7 @@ mar = c(12, 4, 12, 4) # margins (bottom, left, top, right)
 ![True Colour Maps](RExam_Images/TrueColourPlots.png)   
 
 > **Interpretation**
-> A True Colour RGB composite stacks red, green and blue bands into a single image for visualization of imagery that gives an intuitive, realistic representation that matches human vision. (Red, green and blue light represent that portion of the electromagnetic spectrum visible to the human eye). Disturbed areas appear in shades of white; vegetated areas appear in light (meadows/shrublands) to very dark green (conifer forests)  
+> A True Colour RGB composite stacks red, green and blue bands into a single image for visualization of imagery that gives an intuitive, realistic representation that matches human vision. Red, green and blue light represent that portion of the electromagnetic spectrum visible to the human eye. Disturbed areas appear in shades of white; vegetated areas appear in light green (meadows/shrublands) to very dark green (conifer forests). 
 
 Landsat 5 TM Bands (1985 and 2010 imagery), Red = Band 3, Green = Band 2, and Blue = Band 1
 > Landsat 5 True Colour image R code example: 
