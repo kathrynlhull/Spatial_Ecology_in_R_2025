@@ -5,7 +5,7 @@
 
 # 1. Introduction 
 
-The Waiparous Creek watershed, in the headwaters of the greater Bow River Basin, Alberta, Canada, contains among the last remaining critical habitat for Westslope Cutthroat Trout (_Oncorhynchus clarkii lewisi_), an endangered native species (COSEWIC 2006, Fisheries and Oceans Canada 2019). Among the threats to this species are logging impacts that contribute sediment into suitable trout streams, negatively impacting their survival, reproduction and habitat suitability (Valdal and Quinn 2011, Fisheries and Oceans Canada 2019). Westslope Cutthroat Trout require cool, well oxygenated water, clean (unconsolidated) gravel substrate, and abundant riparian edge cover and shade (COSWEIC 2006). Cumulative logging impacts have accelerated in the Waiparous Creek basin from 2010-2022. This project aims to visualize, quantify and analyze these impacts by way of vegetation change satellite imagery analysis and land cover classification compared to benchmark reference conditions in 1985. This analysis is validated against human footprint mapping done by the Alberta Biodiversity Monitoring Institute ([ABMI Human Footprint Inventory](https://abmi.ca/abmi-home/what-we-do/land-cover-and-land-use-mapping/human-footprint-mapping.html)). Lastly, a cursory erosion risk assessment is included for cutblocks using terrain analysis tools. 
+The Waiparous Creek watershed, in the headwaters of the greater Bow River Basin, Alberta, Canada, contains among the last remaining critical habitat for Westslope Cutthroat Trout (_Oncorhynchus clarkii lewisi_), an endangered native species (COSEWIC 2006, Fisheries and Oceans Canada 2019). Among the threats to this species are logging impacts that contribute sediment into suitable trout streams, negatively impacting their survival, reproduction and habitat suitability (Valdal and Quinn 2011, Fisheries and Oceans Canada 2019). Westslope Cutthroat Trout require cool, well oxygenated water, clean unconsolidated gravel substrate, and abundant riparian edge cover and shade (COSWEIC 2006). Cumulative logging impacts have accelerated in the Waiparous Creek basin from 2010-2022. This project aims to visualize, quantify and analyze these impacts by way of vegetation change satellite imagery analysis and land cover classification compared to benchmark reference conditions in 1985. This analysis is validated against human footprint mapping done by the Alberta Biodiversity Monitoring Institute ([ABMI Human Footprint Inventory](https://abmi.ca/abmi-home/what-we-do/land-cover-and-land-use-mapping/human-footprint-mapping.html)). Lastly, a cursory erosion risk assessment is included for cutblocks using terrain analysis tools. 
 
 ![Waiparous Creek Basin Study Area Map](RExam_Images/WaiparousBasin_AOI.png)
 
@@ -18,8 +18,8 @@ The primary objectives of this project include:
 3. Time series, RGB Ridgeline Plot analysis 
 4. Land cover image classification time series analysis
 5. Land cover change analysis 
-6. ABMI Human Footprint and Hydrology overlay analysis
-7. Terrain mapping, cutblock slope erosion risk analysis.
+6. ABMI Human Footprint and hydrology overlay analysis
+7. Terrain mapping and preliminary cutblock slope erosion risk analysis.
 
 # 3. Methodology  
 
@@ -93,7 +93,7 @@ Reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellit
 ![False Colour Maps](RExam_Images/FC_Plots.png)
 
 > **Interpretation**
-> False Colour visualization uses Near-Infrared (NIR)-Red-Green (NRG) wavelength light bands (channels). NIR is mapped to the red channel, red is mapped to the green channel and green is mapped to the blue channel. False Colour (NRG) is useful for monitoring vegetation cover and changes in vegetation composition.  Chlorophyll in plants reflect NIR intensely, thus photosynthesizing vegetation shows as red. Deciduous vegetation appear as bright red while coniferous trees, reflect less NIR and appear darker. Grassland/shrubland open meadows appear as pink or light red. Areas of bare ground or rock appear cyan or blue as they have low NIR reflection and reflect moderately across all displayed bands. Clear and clean water bodies appear black as all radiation in the spectral range is absorbed. 
+> False Colour visualization uses Near-Infrared (NIR)-Red-Green (NRG) wavelength light bands (channels). NIR is mapped to the red channel, red is mapped to the green channel and green is mapped to the blue channel. False Colour (NRG) is useful for monitoring vegetation cover and changes in vegetation composition and health.  Chlorophyll in plants reflect NIR intensely, thus photosynthesizing vegetation shows as red. Deciduous vegetation appear as bright red while coniferous trees, reflect less NIR and appear darker. Grassland/shrubland open meadows appear as pink or light red. Areas of bare ground or rock appear cyan or blue as they have low NIR reflection and reflect moderately across all displayed bands. Clear and clean water bodies appear black as all radiation in the spectral range is absorbed. 
 
 Landsat 5 TM Bands (1985 and 2010 imagery), NIR = Band 4, Red = Band 3, Green = Band 2
 > Landsat 5 False Colour NRG image R code example: 
