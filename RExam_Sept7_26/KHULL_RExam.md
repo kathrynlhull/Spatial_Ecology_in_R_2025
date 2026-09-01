@@ -23,7 +23,7 @@ The primary objectives of this project include:
 
 # 3. Methodology  
 
-## Satellite Imagery Acquisition 
+## Satellite Imagery Acquisition and Processing
 Preliminary visualization of the Waiparous Basin Study area was done using the GoogleEarth Pro application and QGIS, including use of historic imagery visualization tools. This refined the selection of 1985 (baseline year, first year with Landsat 5 imagery), 2010 (start of logging impacts), 2016 (maximum logging footprint), and 2022 (final year of logging) for comparative analysis. 
 
 Satellite imagery used in this project was obtained from [Google Earth Engine, GEE] (https://earthengine.google.com/). 
