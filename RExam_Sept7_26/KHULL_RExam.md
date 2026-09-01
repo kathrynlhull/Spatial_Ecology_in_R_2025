@@ -385,9 +385,9 @@ plot(slope_r,
      plg = list(title = "Slope (Deg)", shrink = 0.8)) #plg=list() list with parameters for drawing the legend. Adds the slope (deg) gradient legend on the right 
 ````
 ## Define,Calculate and Map Cutblock Slope Steepness Categories with Percentages
+![Cublock Erosion Risk Analysis Map](RExam_Images/cutblockslopeanalysis_wpie.png)
 > **Interpretation**
 > The majority of cutblocks have a strongly elevated (71%) or moderately elevated (19%) erosion risk due to having slopes of >15% or 10% respectively. This indicates a high potential for logging activity to have contributed to short term impacts contributing sediment into trout streams. 
-![Cublock Erosion Risk Analysis Map](RExam_Images/cutblockslopeanalysis_wpie.png)
 
 ````r
 
