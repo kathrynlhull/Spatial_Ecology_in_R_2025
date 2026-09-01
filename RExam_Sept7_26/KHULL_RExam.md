@@ -23,6 +23,9 @@ The primary objectives of this project include:
 
 # 3. Methodology  
 
+## Waiparous Creek Watershed Study Area Delineation
+The Waiparous Basin study area (area of interest - aoi) was clipped from the HydroBASINS Level 12 dataset (source: https://www.hydrosheds.org/products/hydrobasins). To confirm selection of the correct subbasin this dataset was first imported into QGIS.  
+
 ## Satellite Imagery Acquisition and Processing
 Preliminary visualization of the Waiparous Basin Study area was done using the GoogleEarth Pro application and QGIS, including use of historic imagery visualization tools. This refined the selection of 1985 (baseline year, first year with Landsat 5 imagery), 2010 (start of logging impacts), 2016 (maximum logging footprint), and 2022 (final year of logging) for comparative analysis. 
 
@@ -36,9 +39,6 @@ For each study year, imagery from June 1 to August 31 (peak summer growing seaso
 > - For 1985 and 2010, the GEE Landsat 5 Thematic Mapper (TM) Collection 2, Level-2 dataset was used (ee.ImageCollection, LANDSAT/LT05/C02/T1_L2)
 >-  For 2016 and 2022, Landsat 8 Operational Land Imager (OLI) / Thermal Infrared Sensor (TIRS) Collection 2, Level-2 dataset was used (ee.ImageCollection, LANDSAT/LC08/C02/T1_L2)
 >-  The Landsat Missions are part of the U.S. Geological Survey (USGS) National Land Imaging (NLI) Program (https://www.usgs.gov/landsat-missions/landsat-satellite-missions).
-
-## Waiparous Creek Watershed Study Area Delineation
-The Waiparous Basin study area (area of interest - aoi) was clipped from the HydroBASINS Level 12 dataset (source: https://www.hydrosheds.org/products/hydrobasins). 
 
 ## Setting the Working Directory
 All imagery generated in GEE was saved to a desktop folder Working Directory, using the setwd () function in R. 
