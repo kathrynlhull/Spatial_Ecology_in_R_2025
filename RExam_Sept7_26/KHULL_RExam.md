@@ -53,7 +53,7 @@ library(ggplot2) #Data visualization, custom aesthetics and geometries of charts
 library(patchwork) #Combines separate ggplot2 plots into a single composite layout
 ````
 > [!NOTE]
-> Complete R coding for all of the below is given in the file Code.R
+> Complete R coding for all of the below is given in the file [Code.R](https://github.com/kathrynlhull/Spatial_Ecology_in_R_2025/blob/main/RExam_Sept7_26/Code.R).
 
 # 4. Image Visualization
 
