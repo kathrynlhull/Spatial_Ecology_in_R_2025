@@ -327,6 +327,9 @@ p1+p2+p3+p4 # develops a composite of the four plots
 ### Land Cover Class Analysis Visualization Using ggplots2 
 ![Land Cover Change Bar Plots](RExam_Images/LandCoverChange_Barplots.png)
 
+<br/>
+<br/>
+
 # 9. Human Footprint Inventory and Hydrology Overlay Analysis
 Published hydrology and [Human Footprint Inventory data](https://abmi.ca/data-portal/80.html) for the study area was imported into R for visualization overlays using classified images generated above. This data was clipped to the Waiparous Basin aoi to quantify road and cutblock surface areas and total disturbed footprint specific to this study area. The hydrology stream overlay allows for distinction of natural gravel waterbeds versus road or other human disturbance. 
 
@@ -377,17 +380,20 @@ footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cu
 > **Interpretation**
 > There is good conformity between mapped ABMI cutblocks and yellow areas of land disturbance (from image classification). In 2022, the ABMI shapefile missed a cutblock in the north extent of the study area, thus the human footprint summary above is an underestimation.
 
+<br/>
+<br/>
+
 # 10. Terrain Mapping, Cutblock Slope Erosion Risk Analysis
 
 A cursory analysis was done as described below to identify and determine erosion risk for cutblocks based on slope steepness using Digital Elevation Model (DEM) raster data for the study area imported from GEE.
 
 This analysis entailed the following steps (see coding below):
-- Load the DEM from GEE
-- Calculate slope in degrees
-- Generate a hillshade map using Terra package functions based on slope and aspect values from the DEM
-- Plot the hillshade map using a custom colour palette to show slope gradient from white (flat) to red (steep) in shades of orange
-- Define cutblock slope steepness categories where flat slopes are defined as >10%, moderate slopes are 10% to 15%, and steep slopes are >15% (ttps://sis.agr.gc.ca/cansis/nsdb/dss/v3/cmp/slope_p.html). 
-- Calculate the area and percentage of each cutblock steepness category
+- Load the DEM from GEE;
+- Calculate slope in degrees;
+- Generate a hillshade map using Terra package functions based on slope and aspect values from the DEM;
+- Plot the hillshade map using a custom colour palette to show slope gradient from white (flat) to red (steep) in shades of orange:
+- Define cutblock slope steepness categories where flat slopes are defined as >10%, moderate slopes are 10% to 15%, and steep slopes are >15% (https://sis.agr.gc.ca/cansis/nsdb/dss/v3/cmp/slope_p.html); 
+- Calculate the area and percentage of each cutblock steepness category; and
 - Generate a composite plot with slope (in degrees), stream and road lines, and colour coded slope steepness categories with percentages for each shown as a pie chart graphic.
 
 ## Hillshade Imagery and Coding
