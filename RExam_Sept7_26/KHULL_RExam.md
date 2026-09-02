@@ -235,7 +235,7 @@ wb_1985c <- im.classify(wb_1985_subset, num_clusters=3) # Used to classify image
 > [!NOTE]
 > ***These classes have to be manually set each time the code is rerun***</ins>. 
 
-Example R coding to set class numbering assignment, with numbers in [] varying based on random im.classify() function above:
+Example R coding to set class numbering assignment, with numbers in [  ] varying based on random im.classify() function above:
 ````r
 wb_1985cset <- wb_1985c
 wb_1985cset[wb_1985c == 2] <- 1  # Set Forest to 1 
@@ -266,6 +266,8 @@ legend ("bottomright",
 ````
 ### Time Series Image Classification for the Waiparous Basin Study Area
 ![Time Series Image Classification Composite](RExam_Images/ImageClassification.png)
+
+<br/>
 
 # 8. Land Cover Change Analysis
 
