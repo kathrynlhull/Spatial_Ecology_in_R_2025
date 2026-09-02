@@ -197,7 +197,7 @@ im.ridgeline(ndvi_stack, scale=2)+
 # 6. RGB Imagery and Ridgeline Plot Time Series Analysis 
 An additional time series analysis for the 1985 (benchmark) and 2022 (post logging) images was done using RGB imagery (using only the red band to show vegetation cover change) and ridgeline plots where the Red-Green-Blue bands are extracted and combined into a 3-band raster image. 
 
-This analysis uses the [imageRy package](https://cran.r-project.org/web/packages/imageRy/refman/imageRy.html)) **im.ggplot()** and **im.ridgeline()** functions. 
+This analysis uses the [imageRy package](https://cran.r-project.org/web/packages/imageRy/refman/imageRy.html) **im.ggplot()** and **im.ridgeline()** functions. 
 
 R coding:
 ````r
@@ -219,7 +219,7 @@ plot1 + plot2 + plot3 + plot4
 <br/>
 
 # 7. Land Cover Image Classification Using False Colour Bands
-The im.classify() function from the imageRy R package was used to conduct unsupervised image classification specifying 3 clusters (classes) of land cover type (based on prior False Colour image visualization above). Prior to classification, raster image subsets were created for each study year that select only the NIR, Red and Green Bands (i.e., False colour scheme for optimized land cover type differentiation). 
+The **im.classify()** function from the [imageRy package](https://cran.r-project.org/web/packages/imageRy/refman/imageRy.html) was used to conduct unsupervised image classification specifying 3 clusters (classes) of land cover type (based on prior False Colour image visualization above). Prior to classification, raster image subsets were created for each study year that select only the NIR, Red and Green Bands (i.e., False colour scheme for optimized land cover type differentiation). 
 
 Example R coding:
 ````r
