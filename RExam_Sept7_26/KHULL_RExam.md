@@ -74,11 +74,12 @@ par(mfrow = c(2, 2))
 mar = c(12, 4, 12, 4) # margins (bottom, left, top, right)
 ````
 
+Satellite imagery visualization methods: A) True Colour, B) False Colour and C) Shortwavelength-Infrared False Colour
 Landsat imagery band designations reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites#main-content
 <br/>
 <br/>
 
-## True Colour Multi Plot
+### A.True Colour Multi Plot
 
 ![True Colour Maps](RExam_Images/TrueColourPlots.png)   
 
@@ -98,7 +99,7 @@ plotRGB(wb_2016, r = 4, g = 3, b = 2, stretch = "lin")
 <br/>
 <br/>
 
-## False Colour Multi Plot
+### B.False Colour Multi Plot
 
 ![False Colour Maps](RExam_Images/FC_Plots.png)
 
@@ -119,7 +120,7 @@ plotRGB(wb_2022, r = 5, g = 4, b = 3, stretch = "lin") # Creates a False Colour 
 <br/>
 
 
-## False Colour SWIR Multi Plot
+### C.False Colour SWIR Multi Plot
 
 ![False Colour SWIR Maps](RExam_Images/FCSWIR_REVPLOTS.png)
 
