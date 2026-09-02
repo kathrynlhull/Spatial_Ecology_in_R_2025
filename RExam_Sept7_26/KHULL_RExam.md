@@ -75,6 +75,8 @@ mar = c(12, 4, 12, 4) # margins (bottom, left, top, right)
 ````
 
 **Satellite imagery visualization methods: A) True Colour, B) False Colour and C) Shortwavelength-Infrared False Colour**
+
+<br/>
 <br/>
 Landsat imagery band designations reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites#main-content
 <br/>
