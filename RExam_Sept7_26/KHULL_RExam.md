@@ -137,12 +137,12 @@ A **Normalized Difference Vegetation Index (NDVI)** enables comparison of vegeta
 
 NDVI is calculated using this formula: <ins> ***NDVI = (NIR − Red) / (NIR + Red)***  </ins>.  
 
-**NDVI values approximating 1 represent dense, healthy vegetation. NDVI values approximating 0 represent bare soil and stressed vegetation.**  
+**NDVI values approximating 1 represent dense, healthy vegetation. NDVI values approximating 0 represent bare soil and stressed vegetation**
 
 Reference: https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index.  
 
 
-**Example NDVI R calculation for Landsat 5 (1985 / 2010) Imagery:**
+<ins> **Example NDVI R calculation for Landsat 5 (1985 / 2010) Imagery:**</ins>. 
 ````r
 ndvi_1985wb <- (wb_1985[["SR_B4"]] - wb_1985 [["SR_B3"]]) / (wb_1985 [["SR_B4"]] + wb_1985 [["SR_B3"]]) #For Landsat 5, B4=NIR, B3=Red
 ````
@@ -151,7 +151,8 @@ ndvi_1985wb <- (wb_1985[["SR_B4"]] - wb_1985 [["SR_B3"]]) / (wb_1985 [["SR_B4"]]
 ````r
 ndvi_2022wb <- (wb_2022[["SR_B5"]] - wb_2022 [["SR_B4"]]) / (wb_2022 [["SR_B5"]] + wb_2022 [["SR_B4"]])  #For Landsat 8, B5=NIR, B4=Red
 ````
-Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R package (https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html). 
+
+Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R package (https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html): 
 
 ### NDVI Time Series Composite for the Waiparous Basin Study Area
 ![NDVI Time Series Composite](RExam_Images/NDVI_Plots.png)
