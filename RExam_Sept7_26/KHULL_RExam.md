@@ -79,7 +79,7 @@ mar = c(12, 4, 12, 4) # margins (bottom, left, top, right)
 ![True Colour Maps](RExam_Images/TrueColourPlots.png)   
 
 > **Interpretation**
-> A True Colour RGB composite stacks red, green and blue bands into a single image for visualization of imagery that gives an intuitive, realistic representation that matches human vision. Red, green and blue light represent that portion of the electromagnetic spectrum visible to the human eye. Disturbed areas appear in shades of white; vegetated areas appear in light green (meadows/shrublands) to very dark green (conifer forests). 
+> A True Colour RGB composite stacks red, green and blue bands into a single image for visualization of imagery that gives an intuitive, realistic representation that matches human vision. Red, green and blue light represent that portion of the electromagnetic spectrum visible to the human eye. Disturbed areas appear in shades of white; vegetated areas appear in lighter shades of green for broadleaf herbaceous vegetation (meadows/shrublands/deciduous forest) to very dark green (conifer forests). 
 
 **True Colour, RGB Landsat 5 TM Bands (1985 and 2010 imagery), Red = Band 3, Green = Band 2, and Blue = Band 1**
 > Landsat 5 True Colour R code example: 
@@ -98,7 +98,7 @@ Reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellit
 ![False Colour Maps](RExam_Images/FC_Plots.png)
 
 > **Interpretation**
-> False Colour visualization uses Near-Infrared (NIR)-Red-Green (NRG) wavelength light bands (channels). NIR is mapped to the red channel, red is mapped to the green channel and green is mapped to the blue channel. False Colour (NRG) is useful for monitoring vegetation cover and changes in vegetation composition and health.  Chlorophyll in plants reflect NIR intensely, thus photosynthesizing vegetation shows as red. Deciduous vegetation appear as bright red while coniferous trees, reflect less NIR and appear darker. Grassland/shrubland open meadows appear as pink or light red. Areas of bare ground or rock appear cyan or blue as they have low NIR reflection and reflect moderately across all displayed bands. Clear and clean water bodies appear black as all radiation in the spectral range is absorbed. 
+> False Colour visualization uses Near-Infrared (NIR)-Red-Green (NRG) wavelength light bands (channels). NIR is mapped to the red channel, red is mapped to the green channel and green is mapped to the blue channel. False Colour (NRG) is useful for monitoring vegetation cover and changes in vegetation composition and health. Chlorophyll in plants reflect NIR intensely, thus healthy, photosynthesizing vegetation shows as red. Deciduous (broadleaf) vegetation appear as bright red while coniferous trees, reflect less NIR and appear darker. Grassland/shrubland open meadows appear as pink or light red. Areas of bare ground or rock appear cyan or blue as they have low NIR reflection and reflect moderately across all displayed bands. Clear and clean water bodies appear black as all radiation in the spectral range is absorbed. 
 
 **False Colour Landsat 5 TM Bands (1985 and 2010 imagery) NIR = Band 4, Red = Band 3, Green = Band 2**
 > Landsat 5 False Colour NRG R code example: 
@@ -115,7 +115,7 @@ plotRGB(wb_2022, r = 5, g = 4, b = 3, stretch = "lin") # Creates a False Colour 
 ![False Colour SWIR Maps](RExam_Images/FCSWIR_REVPLOTS.png)
 
 > **Interpretation**
-> False Colour Shortwavelength Infrared (SWIR) plots are generated using SWIR1 mapped to the red channel, NIR mapped to the green channel and Green mapped to the blue channel. This composite is useful for discriminating between vegetated and non-vegetated surfaces, where moist exposed soil appears darker than dry areas. Healthy plants reflect NIR strongly and absorb SWIR. Dense coniferous vegetation appears dark green; Grassland/shrubland open meadows appear light or lime green. Logged cutblocks appear in shades of pink since bare soil, rocks and wood reflect high levels of SWIR (boosting the red channel) and moderate visible green light (boosting the blue channel). A combination of high red (SWIR) and moderate blue (green visible band) with lower green (NIR) creates the light pink to magenta colour. Watercourses appear purple since water strongly absorbs both SWIR and NIR wavelengths (i.e., red and green are very low) and reflects some visible green light (seen as blue). Shallow gravel riverbeds as in the Waiparous basin or water with suspended sediment adds a signal back into the SWIR/red or green channels, mixing with the blue to create a purplish tone (not pure black).
+> False Colour Shortwavelength Infrared (SWIR) plots are generated using SWIR1 mapped to the red channel, NIR mapped to the green channel and Green mapped to the blue channel. This composite is useful for discriminating between vegetated and non-vegetated surfaces, where moist exposed soil appears darker than dry areas. Healthy plants reflect NIR strongly and absorb SWIR. Dense coniferous vegetation appears dark green; Grassland/shrubland open meadows and deciduous forests appear light or lime green. Logged cutblocks appear in shades of pink since bare soil, rocks and wood reflect high levels of SWIR (boosting the red channel) and moderate visible green light (boosting the blue channel). A combination of high red (SWIR) and moderate blue (green visible band) with lower green (NIR) creates the light pink to magenta colour. Watercourses appear purple since water strongly absorbs both SWIR and NIR wavelengths (i.e., red and green are very low) and reflects some visible green light (seen as blue). Shallow gravel riverbeds as in the Waiparous basin or water with suspended sediment adds a signal back into the SWIR/red or green channels, mixing with the blue to create a purplish tone (not pure black).
 
 **False Colour SWIR Landsat 5 TM Bands (1985 and 2010 imagery), SWIR1 = Band 5, NIR = Band 4, Red = Band 3, Green = Band 2**
 > Landsat 5 False Colour SWIR R code example: 
@@ -139,6 +139,7 @@ NDVI is calculated using this formula: <ins> ***NDVI = (NIR − Red) / (NIR + Re
 
 **NDVI values approximating 1 represent dense, healthy vegetation. NDVI values approximating 0 represent bare soil and stressed vegetation.**  
 
+Reference: https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index.  
 
 Example NDVI R calculation for Landsat 5 (1985 / 2010) Imagery:
 ````r
