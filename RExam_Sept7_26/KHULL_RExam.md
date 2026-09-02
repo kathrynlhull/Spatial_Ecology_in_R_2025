@@ -79,7 +79,6 @@ mar = c(12, 4, 12, 4) # margins (bottom, left, top, right)
 <br/>
 Landsat imagery band designations reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites#main-content
 <br/>
-<br/>
 
 ### A - True Colour Multi Plot
 
@@ -99,7 +98,6 @@ plotRGB(wb_1985, r = 3, g = 2, b = 1, stretch = "lin") # Creates a True Colour R
 plotRGB(wb_2016, r = 4, g = 3, b = 2, stretch = "lin")
 ````
 <br/>
-<br/>
 
 ### B - False Colour Multi Plot
 
@@ -118,7 +116,6 @@ plotRGB(wb_1985, r = 4, g = 3, b = 2, stretch = "lin") # Creates a False Colour 
 ````r
 plotRGB(wb_2022, r = 5, g = 4, b = 3, stretch = "lin") # Creates a False Colour NRG plot in R where red channel = NIR, green channel = Red, Blue channel = Green
 ````
-<br/>
 <br/>
 
 
@@ -141,6 +138,7 @@ plotRGB(wb_2022, r = 6, g =5, b =3, stretch = "lin") # Creates a False Colour SW
 ````
 <br/>
 <br/>
+
 # 5. NDVI Analysis
 
 A **Difference Vegetation Index (DVI)** is calculated as follows: <ins> ***DVI = NIR - Red*** </ins>.  
