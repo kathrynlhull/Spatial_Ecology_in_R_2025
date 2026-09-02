@@ -33,7 +33,7 @@ Preliminary visualization of the Waiparous Basin Study area was done using the G
 
 Satellite imagery used in this project was obtained from [Google Earth Engine, GEE](https://earthengine.google.com/). 
 
-For each study year, imagery from June 1 to August 31 (peak summer growing season) was pre-processed in GEE JavaScript code to create a single, clean, cloud-free image clipped to the study area. This processing technique calculates the median pixel value across all available dates for each image to produce a final clean composite image. 
+For each study year, imagery from June 1 to August 31 (peak summer growing season) was pre-processed in GEE JavaScript code to create a single, clean, cloud-free image clipped to the study area. This processing technique calculates the median pixel value across all available dates for each image to produce a final clean composite image. Coding to achieve cloud and shadow masking was informed by this [SERVIR-Amazonia tutorial](https://servir-amazonia.github.io/barbados-training/intro-gee2/processing-cloudmasking-landsat.html).  ([SERVIR-Amazonia](https://alliancebioversityciat.org/projects/servir-amazonia) is informed by NASA and USAID to inform environmental management in the Amazon basin through integration of satellite data and geospatial technologies).  
 
 > [!NOTE]
 > JavaScript code utilized in GEE is given in the file [Code.js](https://github.com/kathrynlhull/Spatial_Ecology_in_R_2025/blob/main/RExam_Sept7_26/Code.js)
