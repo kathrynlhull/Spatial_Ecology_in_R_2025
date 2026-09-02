@@ -219,7 +219,7 @@ plot1 + plot2 + plot3 + plot4
 <br/>
 
 # 7. Land Cover Image Classification Using False Colour Bands
-The im.classify() function from the imageRy R package was used to conduct unsupervised image classification specifying 3 clusters (classes) of land cover type based on prior False Colour image visualization above. Prior to classification raster image subsets were created for each study year that select only the NIR, Red and Green Bands (i.e., False colour scheme for optimized land cover type differentiation). 
+The im.classify() function from the imageRy R package was used to conduct unsupervised image classification specifying 3 clusters (classes) of land cover type (based on prior False Colour image visualization above). Prior to classification, raster image subsets were created for each study year that select only the NIR, Red and Green Bands (i.e., False colour scheme for optimized land cover type differentiation). 
 
 Example R coding:
 ````r
