@@ -218,9 +218,8 @@ plot1 + plot2 + plot3 + plot4
 > The ridgeline plots are similar, except that 2022 RGB bands all have broader curves with longer right tails and slightly less defined peaks indicating less vegetation uniformity. Logging disturbance in the basin likely contributed to less RGB light absorption and increasing RGB light reflection due to reduced healthy vegetation cover and increased bare ground cover. Red (B3, 1985; B4, 2022) and then blue light (B1, 1985; B2, 2022) is most strongly absorbed by chlorophyll in plants; green is more weakly absorbed. However, ridegeline plots are quite similar overall.  The natural landscape complexity including open grassy meadows and broad gravel floodplains along waterways in the Waiparous basin obscures and dilutes the effects of logging in the ridgeline plots. 
 <br/>
 
-# 7. Image Classification Using False Colour Bands
-
-The im.classify() function from the imageRy R package was used to conduct unsupervised image classification specifying 3 classes of land cover type (based on prior False Colour image visualization above). Prior to classification raster image subsets were created for each study year that select only the NIR, Red and Green Bands (i.e., False colour scheme for optimized land cover type differentiation). 
+# 7. Land Cover Image Classification Using False Colour Bands
+The im.classify() function from the imageRy R package was used to conduct unsupervised image classification specifying 3 clusters (classes) of land cover type based on prior False Colour image visualization above. Prior to classification raster image subsets were created for each study year that select only the NIR, Red and Green Bands (i.e., False colour scheme for optimized land cover type differentiation). 
 
 Example R coding:
 ````r
