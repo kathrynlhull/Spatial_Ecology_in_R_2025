@@ -74,6 +74,10 @@ par(mfrow = c(2, 2))
 mar = c(12, 4, 12, 4) # margins (bottom, left, top, right)
 ````
 
+Landsat imagery band designations reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites#main-content
+<br/>
+<br/>
+
 ## True Colour Multi Plot
 
 ![True Colour Maps](RExam_Images/TrueColourPlots.png)   
@@ -91,7 +95,8 @@ plotRGB(wb_1985, r = 3, g = 2, b = 1, stretch = "lin") # Creates a True Colour R
 ````r
 plotRGB(wb_2016, r = 4, g = 3, b = 2, stretch = "lin")
 ````
-Reference: https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites#main-content 
+<br/>
+<br/>
 
 ## False Colour Multi Plot
 
@@ -110,6 +115,10 @@ plotRGB(wb_1985, r = 4, g = 3, b = 2, stretch = "lin") # Creates a False Colour 
 ````r
 plotRGB(wb_2022, r = 5, g = 4, b = 3, stretch = "lin") # Creates a False Colour NRG plot in R where red channel = NIR, green channel = Red, Blue channel = Green
 ````
+<br/>
+<br/>
+
+
 ## False Colour SWIR Multi Plot
 
 ![False Colour SWIR Maps](RExam_Images/FCSWIR_REVPLOTS.png)
