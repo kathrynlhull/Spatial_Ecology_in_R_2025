@@ -371,7 +371,7 @@ footprint_df <- data.frame(road_area_km2,roads_percentage, cutblock_footprint,cu
 
 ### Human Footprint Inventory and Hydrology Overlays (Using 2016 and 2022 Classified Images Base Maps)
 > [!NOTE]
-> See the file Code.R for coding used to generate the map composite below.
+> See [Code.R](https://github.com/kathrynlhull/Spatial_Ecology_in_R_2025/blob/main/RExam_Sept7_26/Code.R) for coding used to generate the map composite below.
 ![Land Cover Change Bar Plots](RExam_Images/ABMI_Overlays.png)
 
 > **Interpretation**
