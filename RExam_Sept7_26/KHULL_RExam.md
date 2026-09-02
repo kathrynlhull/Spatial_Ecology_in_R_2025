@@ -82,6 +82,7 @@ mar = c(12, 4, 12, 4) # margins (bottom, left, top, right)
 > A True Colour RGB composite stacks red, green and blue bands into a single image for visualization of imagery that gives an intuitive, realistic representation that matches human vision. Red, green and blue light represent that portion of the electromagnetic spectrum visible to the human eye. Disturbed areas appear in shades of white; vegetated areas appear in light green (meadows/shrublands) to very dark green (conifer forests). 
 
 **True Colour, RGB Landsat 5 TM Bands (1985 and 2010 imagery), Red = Band 3, Green = Band 2, and Blue = Band 1**
+
 > Landsat 5 True Colour image R code example: 
 ````r
 plotRGB(wb_1985, r = 3, g = 2, b = 1, stretch = "lin") # Creates a True Colour RGB plot in R using the red, green and blue bands. Stretch="lin" means “linear stretch” to improve visual contrast and brightness of an image.    
