@@ -396,6 +396,8 @@ This analysis entailed the following steps (see coding below):
 - Calculate the area and percentage of each cutblock steepness category; and
 - Generate a composite plot with slope (in degrees), stream and road lines, and colour coded slope steepness categories with percentages for each shown as a pie chart graphic.
 
+<br/>
+
 ## Hillshade Imagery and Coding
 ![Hillshade 3D Image in Grey Scale](RExam_Images/HillshadeGrey3Dimage.png)
 
@@ -516,12 +518,16 @@ pie(cutblockslope_data,
     col = cutblockslope_colours, 
     cex.main = 0.9)
 ````
+<br/>
+<br/>
 
 # Conclusion
 Time series satellite image analysis from 1985 to 2022 for the Waiparous Creek Basin indicates a clear visible and quantifiable signature from logging activities. Evidence of bare soil exposure is apparent in the short-term with spectral signatures of regenerating cutblocks persisting more than 10 years post initial logging in 2010. A cursory terrain analysis confirms that most logged cutblocks have moderate to steep slope gradients, increasing potential for resulting sedimentation impacts into trout bearing streams. Logging as a land use thus represents a plausible hazard to water quality and habitat suitability for threatened Westslope Cutthroat Trout populations in the basin. Additional investigation is warranted to examine water quality and fish population and redd (gravel spawning 'nest') survey trends over this time period to quantify and verify a hazard index. Logging impacts should also be considered in view of additive cumulative land use pressures in the watershed (e.g. energy and transportation infrastructure, motorized off-highway vehicles, livestock grazing and random camping). 
 
 ![Logging and Trout Image](RExam_Images/logging_trout_image.png)
 
+<br/>
+<br/>
 
 # References
 #### Westslope Cutthroat Trout Related
