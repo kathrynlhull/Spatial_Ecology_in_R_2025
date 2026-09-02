@@ -140,7 +140,7 @@ NDVI is calculated using this formula: <ins> ***NDVI = (NIR − Red) / (NIR + Re
 **NDVI values approximating 1 represent dense, healthy vegetation. NDVI values approximating 0 represent bare soil and stressed vegetation**
 
 
-Reference: https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index.\  
+Reference: https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index. <br/> 
 
 
 <ins> **Example NDVI R calculation for Landsat 5 (1985 / 2010) Imagery:** </ins> 
@@ -153,7 +153,7 @@ ndvi_1985wb <- (wb_1985[["SR_B4"]] - wb_1985 [["SR_B3"]]) / (wb_1985 [["SR_B4"]]
 ndvi_2022wb <- (wb_2022[["SR_B5"]] - wb_2022 [["SR_B4"]]) / (wb_2022 [["SR_B5"]] + wb_2022 [["SR_B4"]])  #For Landsat 8, B5=NIR, B4=Red
 ````
 
-
+<br/>
 Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R package (https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html): 
 
 ### NDVI Time Series Composite for the Waiparous Basin Study Area
