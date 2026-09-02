@@ -18,10 +18,10 @@ The primary objectives of this project include:
 1. Satellite imagery visualization: True Colour, False Colour and Shortwavelength-Infrared False Colour 
 2. NDVI (Normalized Difference Vegetation Index) analysis
 3. Time series, RGB Ridgeline Plot analysis 
-4. Land cover image classification time series analysis
-5. Land cover change analysis 
-6. ABMI Human Footprint and hydrology overlay analysis
-7. Terrain mapping and preliminary cutblock slope erosion risk analysis.
+4. Land cover image classification time series 
+5. Land cover change assessment
+6. ABMI Human Footprint and hydrology overlay 
+7. Terrain mapping and preliminary cutblock slope erosion risk assessment. 
 
 # 3. Methodology  
 
