@@ -8,6 +8,7 @@
 The Waiparous Creek watershed, in the headwaters of the greater Bow River Basin, Alberta, Canada, contains among the last remaining critical habitat for Westslope Cutthroat Trout (_Oncorhynchus clarkii lewisi_), an endangered native species (COSEWIC 2006, Fisheries and Oceans Canada 2019). Among the threats to this species are logging impacts that contribute sediment into suitable trout streams, negatively impacting their survival, reproduction and habitat suitability (Valdal and Quinn 2011, Fisheries and Oceans Canada 2019). Westslope Cutthroat Trout require cool, well oxygenated water, clean unconsolidated gravel substrate, and abundant riparian edge cover and shade (COSWEIC 2006). Cumulative logging impacts have accelerated in the Waiparous Creek basin from 2010-2022. This project aims to visualize, quantify and analyze these impacts by way of vegetation change satellite imagery analysis and land cover classification compared to benchmark reference conditions in 1985. This analysis is validated against human footprint mapping done by the Alberta Biodiversity Monitoring Institute ([ABMI Human Footprint Inventory](https://abmi.ca/abmi-home/what-we-do/land-cover-and-land-use-mapping/human-footprint-mapping.html)). Lastly, a cursory erosion risk assessment is included for cutblocks using terrain analysis tools. 
 
 ![Waiparous Creek Basin Study Area Map](RExam_Images/WaiparousBasin_AOI.png)
+#### Waiparous Creek Basin Study Area (Area of Interest- AOI) (blue polygon)
 
 # 2. Project Objectives 
 
