@@ -31,7 +31,7 @@ The Waiparous Basin study area (area of interest - aoi) was clipped from the Hyd
 ## Satellite Imagery Acquisition and Processing
 Preliminary visualization of the Waiparous Basin Study area was done using the GoogleEarth Pro application and QGIS, including use of historic imagery visualization tools. This refined the selection of 1985 (baseline year, first year with Landsat 5 imagery), 2010 (start of logging impacts), 2016 (maximum logging footprint), and 2022 (final year of logging) for comparative analysis. 
 
-Satellite imagery used in this project was obtained from [Google Earth Engine, GEE] (https://earthengine.google.com/). 
+Satellite imagery used in this project was obtained from [Google Earth Engine, GEE](https://earthengine.google.com/). 
 
 For each study year, imagery from June 1 to August 31 (peak summer growing season) was pre-processed in GEE JavaScript code to create a single, clean, cloud-free image clipped to the study area. This processing technique calculates the median pixel value across all available dates for each image to produce a final clean composite image. 
 
