@@ -215,7 +215,7 @@ plot1 + plot2 + plot3 + plot4
 ### RGB Ridgeline Time Series for the Waiparous Basin Study Area
 ![RGB Ridgeline Time Series](RExam_Images/Timeseries_RidgelineRGB.png)
 > **Interpretation**
-> The ridgeline plots are similar, except that 2022 RGB bands all have broader curves with longer right tails and slightly less defined peaks indicating less vegetation uniformity. Logging disturbance in the basin likely contributed to less RGB light absorption and increasing RGB light reflection due to reduced healthy vegetation cover and increased bare ground cover. Red (B3, 1985; B4, 2022) and then blue light (B1, 1985; B2, 2022) is most strongly absorbed by chlorophyll in plants; green is more weakly absorbed. However, ridegeline plots are quite similar overall.  The natural landscape complexity including open grassy meadows and broad gravel floodplains along waterways in the Waiparous basin obscures and dilutes the effects of logging in the ridgeline plots. 
+> The ridgeline plots are similar, except that 2022 RGB bands all have broader curves with longer right tails and slightly less defined peaks indicating less vegetation uniformity. Logging disturbance in the basin likely contributed to less RGB light absorption and increasing RGB light reflection due to reduced healthy vegetation cover and increased bare ground cover. Red (B3, 1985; B4, 2022) and then blue light (B1, 1985; B2, 2022) is most strongly absorbed by chlorophyll in plants; green is more weakly absorbed. However, ridegeline plots are quite similar overall.  Natural landscape complexity including variable slope aspects, open grassy meadows and interspersed broadleaf vegetation as well as wide gravel floodplains along waterways in the Waiparous basin obscures and dilutes the effects of logging in the ridgeline plots. 
 <br/>
 
 # 7. Land Cover Image Classification Using False Colour Bands
@@ -226,7 +226,10 @@ Example R coding:
 wb_1985_subset <- wb_1985[[c(4, 3, 2)]] # Creates a raster image subset for 1985 selecting Landsat 5 bands, NIR=B4, Red=B3, Green=B2
 wb_1985c <- im.classify(wb_1985_subset, num_clusters=3) # Used to classify image into 3 land cover classes
 ````
-Class clustering is randomly assigned each time this code is run. To allow for time series land cover classification comparison, classes were manually assigned as follows: Forest=1 (represents coniferous forest); Meadow=2 (represents natural open meadows and regenerating cutblocks); River/Human Bareground =3 (includes new cutblocks, roadways, and gravel riverbeds). 
+Class clustering is randomly assigned each time this code is run. To allow for time series land cover classification comparison, classes were manually assigned as follows: **Forest=1** (represents coniferous forest that display as shades of grey and black in False Colour); **Meadow=2** (represents natural open meadows and regenerating cutblocks, including herbaceous and broadleaf deciduous vegetation that display in shades of red in False Colour); **River/Human Bareground =3**(includes new cutblocks, roadways, and natural rock surfaces/ gravel riverbeds that display as cyan shades in False Colour). 
+
+> [!NOTE]
+> ***These classes have to be manually set each time the code is rerun***</ins>. 
 
 Example R coding to set class numbering assignment, with numbers in [] varying based on random im.classify() function above:
 ````r
