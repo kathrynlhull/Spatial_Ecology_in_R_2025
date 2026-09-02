@@ -67,6 +67,7 @@ Example:
 wb_1985 <- rast("WaiparousBasin_1985MASKEDFINAL.tif") # Loads the 1985 Waiparous Basin aoi GeoTIFF raster file generated in GEE
 ````
 Multi plot comparisons for 1985, 2010, 2016 and 2022 were generated for each of the visualizations below. 
+
 Example R coding to set up a 2 by 2 plot window: 
 ````r
 par(mfrow = c(2, 2))
