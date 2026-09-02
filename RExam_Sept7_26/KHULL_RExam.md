@@ -139,6 +139,8 @@ plotRGB(wb_1985, r = 5, g = 4, b = 2, stretch = "lin")# Creates a False Colour S
 ````r
 plotRGB(wb_2022, r = 6, g =5, b =3, stretch = "lin") # Creates a False Colour SWIR plot in R where red channel = SWIR1, green channel = NIR, Blue channel = Green
 ````
+<br/>
+<br/>
 # 5. NDVI Analysis
 
 A **Difference Vegetation Index (DVI)** is calculated as follows: <ins> ***DVI = NIR - Red*** </ins>.  
