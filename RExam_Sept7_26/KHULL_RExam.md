@@ -140,6 +140,7 @@ NDVI is calculated using this formula: <ins> ***NDVI = (NIR − Red) / (NIR + Re
 **NDVI values approximating 1 represent dense, healthy vegetation. NDVI values approximating 0 represent bare soil and stressed vegetation**
 
 Reference: https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index. 
+
 <br/>
 <br/>
 
