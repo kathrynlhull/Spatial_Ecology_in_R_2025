@@ -195,9 +195,9 @@ im.ridgeline(ndvi_stack, scale=2)+
 <br/>
 
 # 6. RGB Imagery and Ridgeline Plot Time Series Analysis 
-A secondary time series analysis for the 1985 (benchmark) and 2022 (post logging) images was done using RGB imagery (using only the red band to show vegetation cover change) and ridgeline plots where the Red-Green-Blue bands are extracted and combined into a 3-band raster image. 
+An additional time series analysis for the 1985 (benchmark) and 2022 (post logging) images was done using RGB imagery (using only the red band to show vegetation cover change) and ridgeline plots where the Red-Green-Blue bands are extracted and combined into a 3-band raster image. 
 
-This analysis uses the imageRy package im.ggplot() and im.ridgeline() functions (https://cran.r-project.org/web/packages/imageRy/refman/imageRy.html). 
+This analysis uses the [imageRy package](https://cran.r-project.org/web/packages/imageRy/refman/imageRy.html)) **im.ggplot()** and **im.ridgeline()** functions. 
 
 R coding:
 ````r
