@@ -330,7 +330,7 @@ p1+p2+p3+p4 # develops a composite of the four plots
 # 9. Human Footprint Inventory and Hydrology Overlay Analysis
 Published hydrology and [Human Footprint Inventory data](https://abmi.ca/data-portal/80.html) for the study area was imported into R for visualization overlays using classified images generated above. This data was clipped to the Waiparous Basin aoi to quantify road and cutblock surface areas and total disturbed footprint specific to this study area. The hydrology stream overlay allows for distinction of natural gravel waterbeds versus road or other human disturbance. 
 
-A hydrology GeoTiff file was generated using JavaScript coding in GEE (see [Code.js](https://github.com/kathrynlhull/Spatial_Ecology_in_R_2025/blob/main/RExam_Sept7_26/Code.js).  Significant tributary streams were added using the [MERIT Hydro Global Hydrography Dataset](https://developers.google.com/earth-engine/datasets/catalog/MERIT_Hydro_v1_0_1). 
+A hydrology GeoTiff file was generated using JavaScript coding in GEE (see [Code.js](https://github.com/kathrynlhull/Spatial_Ecology_in_R_2025/blob/main/RExam_Sept7_26/Code.js)).  Significant tributary streams were added using the [MERIT Hydro Global Hydrography Dataset](https://developers.google.com/earth-engine/datasets/catalog/MERIT_Hydro_v1_0_1). 
 
 The following r code was used to import the Waiparous Basin MERIT stream raster TIF, resample it to match the Landsat 30 m grid, and to create an overlay plot onto the 2016 classified image. 
 ````r
