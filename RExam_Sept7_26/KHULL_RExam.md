@@ -235,7 +235,7 @@ wb_1985c <- im.classify(wb_1985_subset, num_clusters=3) # Used to classify image
 > [!NOTE]
 > ***These classes have to be manually set each time the code is rerun***</ins>. 
 
-Example R coding to set class numbering assignment, with numbers in [  ] varying based on random im.classify() function above:
+Example R coding to set class numbering assignment, with numbers in [  ] varying based on the random **im.classify()** function above:
 ````r
 wb_1985cset <- wb_1985c
 wb_1985cset[wb_1985c == 2] <- 1  # Set Forest to 1 
@@ -271,7 +271,7 @@ legend ("bottomright",
 
 # 8. Land Cover Change Analysis
 
-To quantify land cover changes over time in the study area, a simple analysis was done to calculate the relative frequency of each land cover class (i.e., frequency/total). The ncell() (i.e., total number of cells (pixels)) in each raster image was adjusted to exclude blank NA cells. Since the aoi was clipped to the Waiparous Basin, it includes blank NA cells that are not displayed (i.e., those that fall outside of the basin polygon). 
+To quantify land cover changes over time in the study area, a simple analysis was done to calculate the relative frequency of each land cover class (i.e., frequency/total). The ncell() (i.e., total number of cells [pixels]) in each raster image was adjusted to exclude blank NA cells. Since the aoi was clipped to the Waiparous Basin, it includes blank NA cells that are not displayed (i.e., those that fall outside of the basin polygon). 
 
 Example R coding: 
 ````r
@@ -297,8 +297,10 @@ twb_luc <- data.frame(class, perc1985, perc2010, perc2016, perc2022)
 | 2                 Meadow  |  31.4    | 30.6     | 26.9     |   31.9  |
 | 3 River/Human Bareground  |   9.5    | 5.4      |  13.7    |   6.5   |
  
-The ggplot2 R package was used to display this data in a comparative bar graph format using the predefined "my_colours" colour scheme. 
-References: https://ggplot2.tidyverse.org/; https://r4ds.hadley.nz/data-visualize; https://r-charts.com/ranking/bar-plot-ggplot2/; https://ggplot2.tidyverse.org/reference/ggtheme.html.  
+The [**ggplot2 R package**](https://cloud.r-project.org/web/packages/ggplot2/index.html) was used to display this data in a comparative bar graph format using the predefined "my_colours" colour scheme. 
+
+
+**References:** https://ggplot2.tidyverse.org/; https://r4ds.hadley.nz/data-visualize; https://r-charts.com/ranking/bar-plot-ggplot2/; https://ggplot2.tidyverse.org/reference/ggtheme.html.  
 
 Example R coding:
 ````r
