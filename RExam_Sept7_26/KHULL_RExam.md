@@ -271,7 +271,7 @@ legend ("bottomright",
 
 # 8. Land Cover Change Analysis
 
-To quantify land cover changes over time in the study area, a simple analysis was done to calculate the relative frequency of each land cover class (i.e., frequency/total). The ncell() (i.e., total number of cells [pixels]) in each raster image was adjusted to exclude blank NA cells. Since the aoi was clipped to the Waiparous Basin, it includes blank NA cells that are not displayed (i.e., those that fall outside of the basin polygon). 
+To quantify land cover changes over time in the study area, a simple analysis was done to calculate the relative frequency of each land cover class (i.e., frequency/total). The ncell() (i.e., total number of cells [pixels]) in each raster image was adjusted to exclude blank NA cells. Since the aoi was clipped to the Waiparous Basin it includes blank NA cells that are not displayed (i.e., those that fall outside of the basin polygon). 
 
 Example R coding: 
 ````r
@@ -299,6 +299,7 @@ twb_luc <- data.frame(class, perc1985, perc2010, perc2016, perc2022)
  
 The [**ggplot2 R package**](https://cloud.r-project.org/web/packages/ggplot2/index.html) was used to display this data in a comparative bar graph format using the predefined "my_colours" colour scheme. 
 
+<br/>
 
 **References:** https://ggplot2.tidyverse.org/; https://r4ds.hadley.nz/data-visualize; https://r-charts.com/ranking/bar-plot-ggplot2/; https://ggplot2.tidyverse.org/reference/ggtheme.html.  
 
