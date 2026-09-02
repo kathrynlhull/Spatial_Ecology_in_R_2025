@@ -226,7 +226,10 @@ Example R coding:
 wb_1985_subset <- wb_1985[[c(4, 3, 2)]] # Creates a raster image subset for 1985 selecting Landsat 5 bands, NIR=B4, Red=B3, Green=B2
 wb_1985c <- im.classify(wb_1985_subset, num_clusters=3) # Used to classify image into 3 land cover classes
 ````
-Class clustering is randomly assigned each time this code is run. To allow for time series land cover classification comparison, classes were manually assigned as follows: **Forest=1** (represents coniferous forest that display as shades of grey and black in False Colour); **Meadow=2** (represents natural open meadows and regenerating cutblocks, including herbaceous and broadleaf deciduous vegetation that display in shades of red in False Colour); **River/Human Bareground =3**(includes new cutblocks, roadways, and natural rock surfaces/ gravel riverbeds that display as cyan shades in False Colour). 
+- **Class clustering is randomly assigned each time this code is run.** To allow for time series land cover classification comparison, classes were manually assigned as follows:
+- **Forest=1** (represents coniferous forest that display as shades of grey and black in False Colour); 
+- **Meadow=2** (represents natural open meadows and regenerating cutblocks, including herbaceous and broadleaf deciduous vegetation that display in shades of red in False Colour); 
+- **River/Human Bareground =3**(includes new cutblocks, roadways, and natural rock surfaces/ gravel riverbeds that display as cyan shades in False Colour). 
 
 > [!NOTE]
 > ***These classes have to be manually set each time the code is rerun***</ins>. 
