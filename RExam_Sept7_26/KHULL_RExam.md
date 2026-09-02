@@ -193,6 +193,7 @@ im.ridgeline(ndvi_stack, scale=2)+
 > NDVI curves differ slightly with the 2022 plot having a more gradually sloping right tail possibly due to logging activities increasing open meadow and young (regenerating) forest composition on the landscape. Broader curves indicate a higher diversity in land cover types whereas narrow curves indicate more vegetation uniformity. Compared to 1985 there seems to be a dip in NDVI values from 0.25 to 0.35 possibly influenced by forestry activities. Since source images include cloud-free composites from June to August, variable vegetation growth phase (phenology) and climate complicate interpretation of NDVI time series comparisons (Notaro *et al.* 2019). Natural areas of bare ground such as broad gravel and alluvial floodplains and rocky surfaces in addition to anthropogenic ground disturbance (e.g. off-highway vehicle use) further confound interpretation of results.    
 
 <br/>
+
 # 6. RGB Imagery and Ridgeline Plot Time Series Analysis 
 A secondary time series analysis for the 1985 (benchmark) and 2022 (post logging) images was done using RGB imagery (using only the red band to show vegetation cover change) and ridgeline plots where the Red-Green-Blue bands are extracted and combined into a 3-band raster image. 
 
@@ -215,6 +216,7 @@ plot1 + plot2 + plot3 + plot4
 ![RGB Ridgeline Time Series](RExam_Images/Timeseries_RidgelineRGB.png)
 > **Interpretation**
 > The ridgeline plots are similar, except that 2022 RGB bands all have broader curves with longer right tails and slightly less defined peaks indicating less vegetation uniformity. Logging disturbance in the basin likely contributed to less RGB light absorption and increasing RGB light reflection due to reduced healthy vegetation cover and increased bare ground cover. Red (B3, 1985; B4, 2022) and then blue light (B1, 1985; B2, 2022) is most strongly absorbed by chlorophyll in plants; green is more weakly absorbed. However, ridegeline plots are quite similar overall.  The natural landscape complexity including open grassy meadows and broad gravel floodplains along waterways in the Waiparous basin obscures and dilutes the effects of logging in the ridgeline plots. 
+<br/>
 
 # 7. Image Classification Using False Colour Bands
 
