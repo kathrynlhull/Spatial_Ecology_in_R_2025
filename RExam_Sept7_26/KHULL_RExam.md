@@ -142,15 +142,16 @@ NDVI is calculated using this formula: <ins> ***NDVI = (NIR − Red) / (NIR + Re
 Reference: https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index.  
 
 
-<ins> **Example NDVI R calculation for Landsat 5 (1985 / 2010) Imagery:**</ins>. 
+<ins> **Example NDVI R calculation for Landsat 5 (1985 / 2010) Imagery:** </ins> 
 ````r
 ndvi_1985wb <- (wb_1985[["SR_B4"]] - wb_1985 [["SR_B3"]]) / (wb_1985 [["SR_B4"]] + wb_1985 [["SR_B3"]]) #For Landsat 5, B4=NIR, B3=Red
 ````
 
-**Example NDVI R calcuation for Landsat 8 (2016 / 2022) Imagery:** 
+<ins> **Example NDVI R calcuation for Landsat 8 (2016 / 2022) Imagery:**  </ins> 
 ````r
 ndvi_2022wb <- (wb_2022[["SR_B5"]] - wb_2022 [["SR_B4"]]) / (wb_2022 [["SR_B5"]] + wb_2022 [["SR_B4"]])  #For Landsat 8, B5=NIR, B4=Red
 ````
+
 
 Resulting NDVI Multi Plot, using the "inferno" colour palette from the viridis R package (https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html): 
 
