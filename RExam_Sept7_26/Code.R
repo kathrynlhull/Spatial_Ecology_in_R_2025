@@ -221,7 +221,7 @@ dev.off() #Closes the viewing panel after having saved image as PNG file
 ## ---IMAGE CLASSIFICATION USING FALSE COLOUR BANDS---
 
 # Create raster image subsets that select only the NIR, Red, and Green bands (False colour scheme for best land cover type differentiation)
-# 1985 and 2020, Landsat 5: NIR=B4, red=B3, green=B2
+# 1985 and 2010, Landsat 5: NIR=B4, red=B3, green=B2
 wb_1985_subset <- wb_1985[[c(4, 3, 2)]]
 wb_2010_subset<- wb_2010[[c(4, 3, 2)]]
 
